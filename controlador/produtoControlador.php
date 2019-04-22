@@ -9,4 +9,20 @@ function visualizar(){
 
 	exibir("produto/visualizar", $produto);		
 }
+
+function adicionar(){
+	if (ehpost()){
+		$nome = $_POST["nome_produto"];
+		$pag = $_POST["pagamento"];
+		$val = $_POST["preco"];
+		$ficha = $_POST["ficha_tec"];
+		$desc = $_POST["descrição"];
+		$vend = $_POST["contato_vendedor"];
+
+		echo $nome, $pag, $val, $ficha, $desc, $vend;
+		//redirecionar("produtos/formulario");
+	}else{
+		exibir("produto/formulario");
+	}
+}
 ?>

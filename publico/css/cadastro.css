@@ -1,0 +1,36 @@
+#body{
+	color: black;
+}
+#site{
+width:90%;
+margin-left:5%;
+}
+
+#topo{
+	background-color:#D8D8D8;
+}
+
+#topo img{
+	margin-left:38%;
+}
+
+#name::-webkit-input-placeholder {
+    color:black;
+    text-transform: uppercase;
+    font-family: arial;
+    font-style: bold;
+}
+#price {
+	font-size: 25px;
+	border: solid white 2px;
+}
+#rs {
+	font-size: 25px;
+}
+
+#botao{
+	width:200%; 
+	height:160%; 
+	border-radius:30px;
+	margin-left:-100%; 
+}
