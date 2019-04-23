@@ -15,9 +15,9 @@
 			<input type="password" name="senha" placeholder="Senha" required="">
 				<br>
 			Sexo:
-			<input type="radio" name="sexo">Masculino
-			<input type="radio" name="sexo">Feminino 
-			<input type="radio" name="sexo">Prefiro não me identificar
+			<input type="radio" name="sexo" value="Masculino">Masculino
+			<input type="radio" name="sexo" value="Feminino">Feminino 
+			<input type="radio" name="sexo" value="Não identificado">Prefiro não me identificar
 				<br>
 			<input type="text" name="cpf" placeholder="CPF" required="">
 			<input type="date" name="nasc" placeholder="Nascimento" required="">

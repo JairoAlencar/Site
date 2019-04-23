@@ -12,7 +12,7 @@ function cadastro(){
 		$cidade = $_POST["cidade"];
 		$est = $_POST["estado"];
 
-		echo "$nome <br>, $sobrenome,<br>, $email,<br>, $senha,<br>, $sexo,<br>, $cpf,<br>, $nasc<br>, $cidade,<br>, $est" ;
+		echo "$nome <br> $sobrenome <br> $email <br> $senha <br> $sexo <br> $cpf <br> $nasc <br> $cidade <br> $est" ;
 		}else{
 		exibir("cliente/cadastro");
 	}	
@@ -28,7 +28,7 @@ function contato(){
 		$end = $_POST["end"];
 		$msg = $_POST["msg"];
 
-		echo "$nome, <br>, $email,<br>, $assunto,<br>, $tell,<br>, $end,<br>, $msg" ;
+		echo "$nome <br> $email <br> $assunto <br> $tell <br> $end <br> $msg" ;
 		}else{
 		exibir("cliente/contato");
 	}
