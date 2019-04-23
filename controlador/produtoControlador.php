@@ -19,7 +19,7 @@ function adicionar(){
 		$desc = $_POST["descricao"];
 		$vend = $_POST["contato_vendedor"];
 
-		echo $nome,"<br>", $pag,"<br>", $val,"<br>", $ficha,"<br>", $desc,"<br>", $vend;
+		echo "$nome,<br>, $pag,<br>, $val,<br>, $ficha,<br>, $desc,<br>, $vend";
 		//redirecionar("produtos/formulario");
 	}else{
 		exibir("produto/formulario");
