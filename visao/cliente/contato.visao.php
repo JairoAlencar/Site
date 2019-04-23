@@ -20,7 +20,7 @@
 			<br>
 		<textarea placeholder="Mensagem" name="msg" required=""></textarea>	
 			<br>
-		<input type="submit" value="Enviar">				
+		<input type="submit" value="Enviar" name="vai">				
 	</form>
 
 </body>
