@@ -1,7 +1,10 @@
 <?php
 
+include("servico/validacaoServico.php");
+
 function cadastro(){
 	if (ehpost()) {
+		
 		$nome = $_POST["nome"];
 		$sobrenome = $_POST["sobrenome"];
 		$email = $_POST["email"];
