@@ -4,7 +4,7 @@ include("servico/validacaoServico.php");
 
 function cadastro(){
 	if (ehpost()) {
-		
+
 		$nome = $_POST["nome"];
 		$sobrenome = $_POST["sobrenome"];
 		$email = $_POST["email"];
@@ -14,6 +14,9 @@ function cadastro(){
 		$nasc = $_POST["nasc"];
 		$cidade = $_POST["cidade"];
 		$est = $_POST["estado"];
+
+
+		print_r(validacao_cadastro($nome, $sobrenome, $email, $senha, $sexo, $cpf, $nasc, $cidade, $est));
 
 		echo "$nome <br> $sobrenome <br> $email <br> $senha <br> $sexo <br> $cpf <br> $nasc <br> $cidade <br> $est" ;
 		}else{

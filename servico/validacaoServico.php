@@ -1,6 +1,6 @@
 <?php
 
-	function validacao_cadastro(){
+	function validacao_cadastro($nome, $sobrenome, $email, $senha, $sexo, $cpf, $nasc, $cidade, $est){
 		if (strlen($nome)==0) {
 			$erros[] = "Você precisa preencer o campo nome.";
 		}
@@ -37,6 +37,6 @@
 			$erros[] = "Você precisa preencer o campo estado.";
 		}
 
-		return(print_r($erros));
+		return($erros);
 	}
 ?>
