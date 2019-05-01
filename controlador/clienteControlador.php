@@ -30,11 +30,10 @@ function contato(){
 		$nome = $_POST["nome"];
 		$email = $_POST["email"];
 		$assunto = $_POST["assunto"];
-		$tell = $_POST["tell"];
 		$end = $_POST["end"];
 		$msg = $_POST["msg"];
 
-		echo "$nome <br> $email <br> $assunto <br> $tell <br> $end <br> $msg" ;
+		echo "$nome <br> $email <br> $assunto <br> $end <br> $msg" ;
 		}else{
 		exibir("cliente/contato");
 	}

@@ -1,42 +1,49 @@
 <?php
 
 	function validacao_cadastro($nome, $sobrenome, $email, $senha, $sexo, $cpf, $nasc, $cidade, $est){
-		if (strlen($nome)==0) {
+		if (strlen(trim($nome))==0) {
 			$erros[] = "Você precisa preencer o campo nome.";
 		}
 
-		if (strlen($sobrenome)==0) {
+		if (strlen(trim($sobrenome))==0) {
 			$erros[] = "Você precisa preencer o campo sobrenome.";
 		}
 
-		if (strlen($email)==0) {
+		if (strlen(trim($email))==0) {
 			$erros[] = "Você precisa preencer o campo email.";
 		}
 
-		if (strlen($senha)==0) {
+		if (strlen(trim($senha))==0) {
 			$erros[] = "Você precisa preencer o campo senha.";
 		}
 
-		if (strlen($sexo)==0) {
+		if (strlen(trim($sexo))==0) {
 			$erros[] = "Você precisa preencer o campo sexo.";
 		}
 
-		if (strlen($cpf)==0) {
+		if (strlen(trim($cpf))==0) {
 			$erros[] = "Você precisa preencer o campo cpf.";
 		}
 
-		if (strlen($nasc)==0) {
+		if (strlen(trim($nasc))==0) {
 			$erros[] = "Você precisa preencer o campo nascimento.";
 		}
 
-		if (strlen($cidade)==0) {
+		if (strlen(trim($cidade))==0) {
 			$erros[] = "Você precisa preencer o campo cidade.";
 		}
 
-		if (strlen($est)==0) {
+		if (strlen(trim($est))==0) {
 			$erros[] = "Você precisa preencer o campo estado.";
 		}
 
 		return($erros);
+	}
+
+	function validacao_contato ($nome, $email, $assunto, $end, $msg){
+
+		if (condition) {
+				# code...
+			}	
 	}
 ?>
