@@ -24,7 +24,7 @@ function adicionar(){
 
 		print_r(validacao_add_produto($nome, $pag, $val, $ficha, $desc, $vend));
 
-		echo "$nome <br> $pag <br> $val <br> $ficha <br> $desc <br> $vend";
+		echo "<br> $nome <br> $pag <br> $val <br> $ficha <br> $desc <br> $vend";
 	}else{
 		exibir("produto/formulario");
 	}

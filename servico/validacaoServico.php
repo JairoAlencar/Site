@@ -13,6 +13,10 @@
 			$erros[] = "Você precisa preencer o campo email.";
 		}
 
+		if (!filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL)) {
+    		$erros[] = "Informe um email valido";
+		} 
+
 		if (strlen(trim($senha))==0) {
 			$erros[] = "Você precisa preencer o campo senha.";
 		}
@@ -50,6 +54,10 @@
 			$erros[] = "Você precisa preencer o campo email.";
 		}
 
+		if (!filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL)) {
+    		$erros[] = "Informe um email valido";
+		}
+
 		if (strlen(trim($assunto))==0) {
 			$erros[] = "Você precisa preencer o campo assunto.";
 		}
@@ -74,11 +82,13 @@
 				$erros[] = "Você precisa preencer o campo pagamento";	
 			}
 
-		$input['val']=
-		filter_input(INPUT_POST, 'val', FILTER_VALIDATE_INT);
-			if ($input['val'] == FALSE) {
-				$erros[] = 'Informe um valor valido.';
-			}
+		if (strlen(trim($val))==0) {
+				$erros[] = "Você precisa preeencer o campo valor";
+		}
+
+		if (!filter_input(INPUT_POST, "val", FILTER_VALIDATE_INT)) {
+			$erros[] = "Informe um valor valido";
+		}
 	
 
 		if (strlen(trim($ficha))==0) {
