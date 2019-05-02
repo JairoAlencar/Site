@@ -18,7 +18,7 @@ function cadastro(){
 
 		print_r(validacao_cadastro($nome, $sobrenome, $email, $senha, $sexo, $cpf, $nasc, $cidade, $est));
 
-		echo "$nome <br> $sobrenome <br> $email <br> $senha <br> $sexo <br> $cpf <br> $nasc <br> $cidade <br> $est" ;
+		echo "<br> $nome <br> $sobrenome <br> $email <br> $senha <br> $sexo <br> $cpf <br> $nasc <br> $cidade <br> $est" ;
 		}else{
 		exibir("cliente/cadastro");
 	}	
@@ -32,6 +32,8 @@ function contato(){
 		$assunto = $_POST["assunto"];
 		$end = $_POST["end"];
 		$msg = $_POST["msg"];
+
+		print_r(validacao_contato($nome, $email, $assunto, $end, $msg));
 
 		echo "$nome <br> $email <br> $assunto <br> $end <br> $msg" ;
 		}else{

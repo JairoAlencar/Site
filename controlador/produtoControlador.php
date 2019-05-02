@@ -1,5 +1,7 @@
 <?php
 
+include("servico/validacaoServico.php");
+
 function visualizar(){
 
 	$produto = array();
@@ -11,6 +13,7 @@ function visualizar(){
 }
 
 function adicionar(){
+	
 	if (ehpost()){
 		$nome = $_POST["nome_produto"];
 		$pag = $_POST["pagamento"];
@@ -19,8 +22,9 @@ function adicionar(){
 		$desc = $_POST["descricao"];
 		$vend = $_POST["contato_vendedor"];
 
-		echo "$nome,<br>, $pag,<br>, $val,<br>, $ficha,<br>, $desc,<br>, $vend";
-		//redirecionar("produtos/formulario");
+		print_r(validacao_add_produto($nome, $pag, $val, $ficha, $desc, $vend));
+
+		echo "$nome <br> $pag <br> $val <br> $ficha <br> $desc <br> $vend";
 	}else{
 		exibir("produto/formulario");
 	}
