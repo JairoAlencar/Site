@@ -16,8 +16,7 @@
 				<br>
 			Sexo:
 			<input type="radio" name="sexo" value="Masculino" checked="checked">Masculino
-			<input type="radio" name="sexo" value="Feminino">Feminino 
-			<input type="radio" name="sexo" value="Não identificado">Prefiro não me identificar
+			<input type="radio" name="sexo" value="Feminino">Feminino
 				<br>
 			<input type="text" name="cpf" placeholder="CPF">
 			<input type="date" name="nasc" placeholder="Nascimento">

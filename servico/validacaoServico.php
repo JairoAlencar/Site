@@ -29,6 +29,10 @@
 			$erros[] = "Você precisa preencer o campo cpf.";
 		}
 
+		if (is_numeric($cpf)==0) {
+			$erros[] = "Informe um numero de CPF valido";
+		}
+
 		if (strlen(trim($nasc))==0) {
 			$erros[] = "Você precisa preencer o campo nascimento.";
 		}
@@ -86,7 +90,7 @@
 				$erros[] = "Você precisa preeencer o campo valor";
 		}
 
-		if (!filter_input(INPUT_POST, "val", FILTER_VALIDATE_INT)) {
+		if (is_numeric($val)==0) {
 			$erros[] = "Informe um valor valido";
 		}
 	
