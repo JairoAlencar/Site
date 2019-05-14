@@ -3,18 +3,10 @@
 <head>
 	<title>Cadastro</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="./publico/css/cadastro.css">
 </head>
 <body>
-    
-    <div id="topo" style="background: black; height: 88px;">
-				<div id="logo" class="col-4" style="margin-left:43%;">
-					<a href="index.html" id="logo" >
-						<img src="./publico/imagens/Logo.PNG" style="margin-top: 2%;">
-					</a>
-				</div>
-		</div>
-	<form action="" method="post" class="box">
+
+	<form action="" method="post">
 			<h1>Cadastro</h1>
 
 			<input type="text" name="nome" placeholder="Nome">
@@ -33,7 +25,7 @@
 			<input type="text" name="cidade" placeholder="Cidade">	
 			<input type="text" name="estado" placeholder="Estado">	
 				<br>
-			<input type="checkbox" name="" required="">Desejo receber as ofertas por email
+			<input type="checkbox" name="">Desejo receber as ofertas por email
 				<br>
 			<input type="checkbox" name="" required="">Li, aceito e concordo com as condições e os termos de uso
 				<br>

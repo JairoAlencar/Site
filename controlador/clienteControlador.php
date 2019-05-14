@@ -1,6 +1,7 @@
 <?php
 
 include("servico/validacaoServico.php");
+require_once "modelo/clienteModelo.php";
 
 function cadastro(){
 	if (ehpost()) {
@@ -10,19 +11,24 @@ function cadastro(){
 		$email = $_POST["email"];
 		$senha = $_POST["senha"];
 		$sexo = $_POST["sexo"];
+		$cidade = $_POST["cidade"];
 		$cpf = $_POST["cpf"];
 		$nasc = $_POST["nasc"];
-		$cidade = $_POST["cidade"];
 		$est = $_POST["estado"];
 
-
-		print_r(validacao_cadastro($nome, $sobrenome, $email, $senha, $sexo, $cpf, $nasc, $cidade, $est));
-
-		echo "<br> $nome <br> $sobrenome <br> $email <br> $senha <br> $sexo <br> $cpf <br> $nasc <br> $cidade <br> $est" ;
-		}else{
+		$val = validacao_cadastro($nome, $sobrenome, $email, $senha, $sexo, $cpf, $nasc, $cidade, $est);
+		
+			if(count($val)<0){
+				$msg = adicionarCliente($nome, $sobrenome, $senha, $sexo, $cpf, $nasc, $cidade, $est, $email);
+				echo $msg;
+			}else{
+				print"É obrigatorio preencer todos os campos";
+			}
+		
+		} else {
+			//sem resposta
+		}	
 		exibir("cliente/cadastro");
-	}	
-
 }
 
 function contato(){
@@ -33,12 +39,20 @@ function contato(){
 		$end = $_POST["end"];
 		$msg = $_POST["msg"];
 
-		print_r(validacao_contato($nome, $email, $assunto, $end, $msg));
 
-		echo "$nome <br> $email <br> $assunto <br> $end <br> $msg" ;
+		$val = validacao_contato($nome, $email, $assunto, $end, $msg);
+		
+			if(count($val)<0){
+				$msg = Enviarmsg($nome, $email, $assunto, $end, $msg); 
+				echo $msg;
+			}else{
+				print"É preciso preencher todos os campos";
+			}
+		
 		}else{
+			//sem resposta
+		}
 		exibir("cliente/contato");
-	}
 }
 
 ?>

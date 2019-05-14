@@ -48,6 +48,7 @@
 		return($erros);
 	}
 
+
 	function validacao_contato ($nome, $email, $assunto, $end, $msg){
 
 		if (strlen(trim($nome))==0) {
