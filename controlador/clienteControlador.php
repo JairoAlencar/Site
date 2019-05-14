@@ -42,7 +42,7 @@ function contato(){
 
 		$val = validacao_contato($nome, $email, $assunto, $end, $msg);
 		
-			if(count($val)<0){
+			if(count($val)>0){
 				$msg = Enviarmsg($nome, $email, $assunto, $end, $msg); 
 				echo $msg;
 			}else{
