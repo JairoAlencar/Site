@@ -34,7 +34,7 @@ function adicionar(){
 		echo '</pre>';
 
 		if(count($vali)){
-			$msg = adicionarProduto(($nome, $pag, $val, $ficha, $desc, $vend);
+			$msg = adicionarProduto($nome, $pag, $val, $ficha, $desc, $vend);
 			print "Produto cadastrado com sucesso";
 		}else{
 			print "É obrigatorio preencher todos os campos";
