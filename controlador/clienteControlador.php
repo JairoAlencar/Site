@@ -35,6 +35,15 @@ function cadastro(){
 		exibir("cliente/cadastro");
 }
 
+function listarCliente() {
+
+	$listarCliente = exibirClientes();
+
+	echo '<pre>';
+		print_r($listarCliente);
+	echo '</pre>';
+}
+
 function contato(){
 	if (ehpost()) {
 		$nome = $_POST["nome"];
@@ -45,12 +54,16 @@ function contato(){
 
 
 		$vali = validacao_contato($nome, $email, $assunto, $end, $msg);
+
+		echo '<pre>';
+        	print_r($vali);
+        echo  '</pre>';
 		
 			if(count($vali)==0){
 				$msg = Enviarmsg($nome, $email, $assunto, $end, $msg); 
 				echo $msg;
 			}else{
-				print"É preciso preencher todos os campos";
+				print"É obrigatorio preencher todos os campos";
 			}
 		
 		}else{
