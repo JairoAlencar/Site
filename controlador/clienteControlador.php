@@ -11,22 +11,26 @@ function cadastro(){
 		$email = $_POST["email"];
 		$senha = $_POST["senha"];
 		$sexo = $_POST["sexo"];
-		$cidade = $_POST["cidade"];
 		$cpf = $_POST["cpf"];
 		$nasc = $_POST["nasc"];
+		$cidade = $_POST["cidade"];
 		$est = $_POST["estado"];
 
-		$val = validacao_cadastro($nome, $sobrenome, $email, $senha, $sexo, $cpf, $nasc, $cidade, $est);
-		
-			if(count($val)<0){
+		$vali = validacao_cadastro($nome, $sobrenome, $email, $senha, $sexo, $cpf, $nasc, $cidade, $est);
+
+		echo '<pre>';
+        	print_r($vali);
+        echo  '</pre>';
+
+			if(count($vali)==0){
 				$msg = adicionarCliente($nome, $sobrenome, $senha, $sexo, $cpf, $nasc, $cidade, $est, $email);
-				echo $msg;
+				print "Cadastro concluido";				
 			}else{
 				print"É obrigatorio preencer todos os campos";
 			}
 		
 		} else {
-			//sem resposta
+			//sem resposta	
 		}	
 		exibir("cliente/cadastro");
 }
@@ -40,9 +44,9 @@ function contato(){
 		$msg = $_POST["msg"];
 
 
-		$val = validacao_contato($nome, $email, $assunto, $end, $msg);
+		$vali = validacao_contato($nome, $email, $assunto, $end, $msg);
 		
-			if(count($val)>0){
+			if(count($vali)==0){
 				$msg = Enviarmsg($nome, $email, $assunto, $end, $msg); 
 				echo $msg;
 			}else{

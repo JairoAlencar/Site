@@ -1,6 +1,7 @@
 <?php
 
 include("servico/validacaoServico.php");
+require_once "modelo/produtoModelo.php";
 
 function visualizar(){
     if(ehpost()){
@@ -26,11 +27,23 @@ function adicionar(){
 		$desc = $_POST["descricao"];
 		$vend = $_POST["contato_vendedor"];
 
-		print_r(validacao_add_produto($nome, $pag, $val, $ficha, $desc, $vend));
+		$vali = (validacao_add_produto($nome, $pag, $val, $ficha, $desc, $vend));
 
-		echo "<br> $nome <br> $pag <br> $val <br> $ficha <br> $desc <br> $vend";
+		echo '<pre>';
+			print_r($vali);
+		echo '</pre>';
+
+		if(count($vali)){
+			$msg = adicionarProduto(($nome, $pag, $val, $ficha, $desc, $vend);
+			print "Produto cadastrado com sucesso";
+		}else{
+			print "É obrigatorio preencher todos os campos";
+		}
+
+
 	}else{
-		exibir("produto/formulario");
+		//sem resposta
 	}
+	exibir("produto/formulario");
 }
 ?>

@@ -44,9 +44,7 @@
 		if (strlen(trim($est))==0) {
 			$erros[] = "Você precisa preencer o campo estado.";
 		}
-		if ($erros=0){
-			$erros = 0;
-		}
+
 		return($erros);
 	}
 
