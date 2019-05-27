@@ -43,4 +43,14 @@ function listarProdutos(){
 		exibir("produto/listar", $dados);
 }
 
+//function buscarProduto(){
+	
+	//if(ehpost()) {
+		//$busca = $_POST["busca"];
+
+
+	//}
+	 //exibir("produto/pesquisa");
+//}
+
 ?>

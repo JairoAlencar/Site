@@ -24,6 +24,15 @@ function exibirProduto(){
 	return $produto;
 }
 
+function buscarProduto($busca){
 
+	$sql = "SELECT Nome FROM produto WHERE categoria=$busca";
+
+	$resultado = mysqli_query($cnv = conn(), $sql);
+
+	if(!$resultado) { die('Erro ao buscar produto' . mysqli_error($cnv)); }
+
+	return 'TESTE';
+}
 
 ?> 

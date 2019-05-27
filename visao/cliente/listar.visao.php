@@ -6,6 +6,7 @@
 				<th>ID</th>
 				<th>Nome</th>
 				<th>Email</th>
+				<th>Senha</th>
 			</tr>
 		</thead>
 
@@ -14,6 +15,7 @@
 			<td><?= $cliente['idCliente']?></td>
 			<td><?= $cliente['Nome']?></td>
 			<td><?= $cliente['email']?></td>
+			<td><?= $cliente['Senha']?></td>
 		</tr>
 		<?php endforeach; ?>	
 </TABLE>
