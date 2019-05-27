@@ -8,6 +8,9 @@
 </head>
 <body>
 
+  <h1>Adicionar produto</h1>
+    <br>
+
   <form action="" method="post" class="">
     <input type="text" name="nome_produto" placeholder="Nome do Produto">
       <br>
@@ -18,6 +21,7 @@
     <label for="dinheiro">R$</label>  
     <input type="money" name="valor" placeholder="Valor">
       <br>
+    <input type="text" name="categoria" placeholder="Categoria do Produto">  <br>
     Ficha técnica
       <textarea name="ficha_tec" placeholder="Ficha Tecnica"></textarea>
         <br>

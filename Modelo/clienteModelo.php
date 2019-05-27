@@ -12,16 +12,14 @@ function  adicionarCliente($nome, $sobrenome, $email, $senha, $sexo, $cpf, $nasc
 
 function exibirClientes(){
 
-	$comando = "SELECT * FROM cliente";
-
-	$conexao = conn();
-	$retorno = mysqli_query($conexao, $comando);
+	$sql = "SELECT * FROM cliente";
+	$resultado = mysqli_query(conn(), $sql);
 
 	$clientes = array();
-	while($registro = mysqli_fetch_assoc($retorno)) {
-		$clientes = $registro;
+	while($linha = mysqli_fetch_assoc($resultado)) {
+		$clientes[] = $linha;
 	}
-	return;
+	return $clientes;
 }
 
 function Enviarmsg($nome, $email, $assunto, $end, $msg){

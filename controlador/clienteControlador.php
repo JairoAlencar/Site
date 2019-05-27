@@ -23,7 +23,7 @@ function cadastro(){
         echo  '</pre>';
 
 			if(count($vali)==0){
-				$msg = adicionarCliente($nome, $sobrenome, $senha, $sexo, $cpf, $nasc, $cidade, $est, $email);
+				$msg = adicionarCliente($nome, $sobrenome, $email, $senha, $sexo, $cpf, $nasc, $cidade, $est);
 				print "Cadastro concluido";				
 			}else{
 				print"É obrigatorio preencer todos os campos";
@@ -37,11 +37,10 @@ function cadastro(){
 
 function listarCliente() {
 
-	$listarCliente = exibirClientes();
+	$dados = array();
 
-	echo '<pre>';
-		print_r($listarCliente);
-	echo '</pre>';
+	$dados["clientes"] = exibirClientes();
+	exibir("cliente/listar", $dados);
 }
 
 function contato(){

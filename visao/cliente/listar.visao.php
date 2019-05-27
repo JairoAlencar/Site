@@ -1,15 +1,20 @@
-<h1>Clientes</h1>
+<h1>Clientes IFtech</h1>
 
-<?=$msg?>
+<TABLE class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nome</th>
+				<th>Email</th>
+			</tr>
+		</thead>
 
-<?php foreach($Clientes as $cliente): ?>
+		<?php foreach($clientes as $cliente): ?>
+		<tr>
+			<td><?= $cliente['idCliente']?></td>
+			<td><?= $cliente['Nome']?></td>
+			<td><?= $cliente['email']?></td>
+		</tr>
+		<?php endforeach; ?>	
+</TABLE>
 
-	<h3>
-		<?= $cliente['nome'] ?>
-	</h3>
-
-	<p>
-		<?= $cliente['email'] ?>
-	</p>
-
-<?php endforeach; ?>	
