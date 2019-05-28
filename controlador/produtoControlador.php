@@ -10,19 +10,18 @@ function adicionar(){
 		$nome = $_POST["nome_produto"];
 		$pag = $_POST["pagamento"];
 		$val = $_POST["valor"];
-		$cat = $_POST["categoria"];
 		$ficha = $_POST["ficha_tec"];
 		$desc = $_POST["descricao"];
 		$vend = $_POST["contato_vendedor"];
 
-		$vali = (validacao_add_produto($nome, $pag, $val, $cat, $ficha, $desc, $vend));
+		$vali = (validacao_add_produto($nome, $pag, $val, $ficha, $desc, $vend));
 
 		echo '<pre>';
 			print_r($vali);
 		echo '</pre>';
 
 		if(count($vali)==0){
-			$msg = adicionarProduto($nome, $pag, $val, $cat, $ficha, $desc, $vend);
+			$msg = adicionarProduto($nome, $pag, $val, $ficha, $desc, $vend);
 			print "Produto cadastrado com sucesso";
 		}else{
 			print "É obrigatorio preencher todos os campos";

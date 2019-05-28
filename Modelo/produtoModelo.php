@@ -1,8 +1,8 @@
 <?php
 
-function adicionarProduto($nome, $pag, $val, $cat, $ficha, $desc, $vend){
+function adicionarProduto($nome, $pag, $val, $ficha, $desc, $vend){
 
-	$sql = "INSERT INTO produto (Nome, Pagamento, Valor, Categoria, Ficha_Tec, Descricao, Vendedor) VALUES ('$nome', '$pag', '$val', '$cat', '$ficha', '$desc', '$vend')";
+	$sql = "INSERT INTO produto (Nome, Pagamento, Valor, Ficha_Tec, Descricao, Vendedor) VALUES ('$nome', '$pag', '$val', '$ficha', '$desc', '$vend')";
 
 	$resultado = mysqli_query($cnv = conn(), $sql);
 

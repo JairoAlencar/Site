@@ -78,7 +78,7 @@
 		return($erros);
 	}
 
-	function validacao_add_produto ($nome, $pag, $val, $cat, $ficha, $desc, $vend){
+	function validacao_add_produto ($nome, $pag, $val, $ficha, $desc, $vend){
 
 		if (strlen(trim($nome))==0) {
 				$erros[] = "Você precisa preencher o campo nome do produto";
@@ -94,10 +94,6 @@
 		if (is_numeric($val)==0) {
 			$erros[] = "Informe um valor valido";
 		}
-		
-		if (strlen(trim($cat))==0){
-			$erros[] = "Informe uma categoria valida";
-		}
 
 		if (strlen(trim($ficha))==0) {
 				$erros[] = "Você precisa preencher o campo da ficha tecnica";
@@ -112,5 +108,13 @@
 			}	
 
 		return($erros); 					
+	}
+
+	function validacaoCategoria($nome) {
+
+		if (strlen(trim($nome))==0) {
+				$erros[] = "Você precisa preencher o campo contato vendedor";
+		}
+		return($erros);
 	}
 ?>

@@ -21,7 +21,6 @@
     <label for="dinheiro">R$</label>  
     <input type="money" name="valor" placeholder="Valor">
       <br>
-    <input type="text" name="categoria" placeholder="Categoria do Produto">  <br>
     Ficha técnica
       <textarea name="ficha_tec" placeholder="Ficha Tecnica"></textarea>
         <br>
