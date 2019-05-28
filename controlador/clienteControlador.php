@@ -71,4 +71,12 @@ function contato(){
 		exibir("cliente/contato");
 }
 
+function listarContato() {
+
+	$dados = array();
+
+	$dados["mensagem"] = exibirClientes();
+	exibir("cliente/listarMsg", $dados);
+}
+
 ?>

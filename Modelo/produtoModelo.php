@@ -32,7 +32,7 @@ function buscarProduto($busca){
 
 	if(!$resultado) { die('Erro ao buscar produto' . mysqli_error($cnv)); }
 
-	return 'TESTE';
+	return 'categoria';
 }
 
 ?> 

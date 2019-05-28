@@ -36,8 +36,14 @@ function Enviarmsg($nome, $email, $assunto, $end, $msg){
 
 function exibirMsg() {
 
+	$sql = "SELECT * FROM contato";
+	$resultado = mysqli_query(conn(), $sql);
 
-
+	$mensagem = array();
+	while($linha = mysqli_fetch_assoc($resultado)) {
+		$mensagem[] = $linha;
+	}
+	return $mensagem;
 }
 
 ?>
