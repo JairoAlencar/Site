@@ -22,6 +22,15 @@ function exibirClientes(){
 	return $clientes;
 }
 
+function pegarClientePorId($id){
+
+	$sql = "SELECT * FROM cliente WHERE idCliente = $id";
+	$resultado = mysqli_query(conn(), $sql);
+
+	$cliente = mysqli_fetch_assoc($resultado);
+	return $cliente;
+}
+
 function Enviarmsg($nome, $email, $assunto, $end, $msg){
 
 	$sql = "INSERT INTO contato (Nome, Email, Assunto, Endereco, Mensagem) VALUES ('$nome', '$email', '$assunto', '$end', '$msg')";
@@ -45,5 +54,4 @@ function exibirMsg() {
 	}
 	return $mensagem;
 }
-
 ?>

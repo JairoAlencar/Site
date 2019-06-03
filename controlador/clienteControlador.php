@@ -43,6 +43,12 @@ function listarCliente() {
 	exibir("cliente/listar", $dados);
 }
 
+function ver(){
+
+	$dados["cliente"] = pegarClientePorId($id);
+	exibir("cliente/listar1", $dados);
+}
+
 function contato(){
 	if (ehpost()) {
 		$nome = $_POST["nome"];

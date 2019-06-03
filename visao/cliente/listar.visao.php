@@ -7,6 +7,7 @@
 				<th>Nome</th>
 				<th>Email</th>
 				<th>Senha</th>
+				<th>Ver Detalhes</th>
 			</tr>
 		</thead>
 
@@ -16,6 +17,7 @@
 			<td><?= $cliente['Nome']?></td>
 			<td><?= $cliente['email']?></td>
 			<td><?= $cliente['Senha']?></td>
+			<td> <a href="./cliente/ver/<?=$cliente['id']?>">Ver</a> </td>
 		</tr>
 		<?php endforeach; ?>	
 </TABLE>
