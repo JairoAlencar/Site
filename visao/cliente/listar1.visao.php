@@ -3,3 +3,5 @@
 <p>Id: <?=$cliente['idCliente']?> </p>
 <p>Nome: <?=$cliente['Nome']?> </p>
 <p>Email: <?=$cliente['email']?> </p>
+
+<!--Funcionando quase perfeitamente-->
