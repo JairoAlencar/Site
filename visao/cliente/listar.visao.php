@@ -17,7 +17,7 @@
 			<td><?= $cliente['Nome']?></td>
 			<td><?= $cliente['email']?></td>
 			<td><?= $cliente['Senha']?></td>
-			<td> <a href="./cliente/ver/<?=$cliente['id']?>">Ver</a> </td>
+			<td> <a href="./cliente/ver/<?=$cliente['idCliente']?>">Ver</a> </td>
 		</tr>
 		<?php endforeach; ?>	
 </TABLE>

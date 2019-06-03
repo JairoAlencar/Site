@@ -43,9 +43,9 @@ function listarCliente() {
 	exibir("cliente/listar", $dados);
 }
 
-function ver(){
+function ver($idCliente){
 
-	$dados["cliente"] = pegarClientePorId($id);
+	$dados["cliente"] = pegarClientePorId($idCliente);
 	exibir("cliente/listar1", $dados);
 }
 
