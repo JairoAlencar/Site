@@ -18,21 +18,21 @@ function cadastro(){
 
 		$vali = validacao_cadastro($nome, $sobrenome, $email, $senha, $sexo, $cpf, $nasc, $cidade, $est);
 
-		echo '<pre>';
-        	print_r($vali);
-        echo  '</pre>';
-
 			if(count($vali)==0){
 				$msg = adicionarCliente($nome, $sobrenome, $email, $senha, $sexo, $cpf, $nasc, $cidade, $est);
-				print "Cadastro concluido";				
+				print "Cadastro concluido";	
+				redirecionar("cliente/listarCliente");			
 			}else{
 				print"É obrigatorio preencer todos os campos";
+				$dados = array();
+				$dados["erros"] = $vali;
+				exibir("cliente/cadastro", $dados);
 			}
 		
 		} else {
-			//sem resposta	
+			exibir("cliente/cadastro");	
 		}	
-		exibir("cliente/cadastro");
+		
 }
 
 function listarCliente() {
@@ -59,10 +59,6 @@ function contato(){
 
 
 		$vali = validacao_contato($nome, $email, $assunto, $end, $msg);
-
-		echo '<pre>';
-        	print_r($vali);
-        echo  '</pre>';
 		
 			if(count($vali)==0){
 				$msg = Enviarmsg($nome, $email, $assunto, $end, $msg); 

@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Cadastro</title>
-	<meta charset="utf-8">
-</head>
-<body>
+<?php
+	if(ehPost()){
+		foreach ($erros as $erro){
+			echo "$erro<br>";
+		}
+	}
+?>
 
 	<form action="" method="post">
+
 			<h1>Cadastro</h1>
 
 			<input type="text" name="nome" placeholder="Nome">
