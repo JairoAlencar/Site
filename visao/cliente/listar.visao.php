@@ -18,6 +18,7 @@
 			<td><?= $cliente['email']?></td>
 			<td><?= $cliente['Senha']?></td>
 			<td> <a href="./cliente/ver/<?=$cliente['idCliente']?>">Ver</a> </td>
+			<td> <a href=".cliente/deletar/<?=$['idCliente']>Deletar</a> </td>
 		</tr>
 		<?php endforeach; ?>	
 </TABLE>
