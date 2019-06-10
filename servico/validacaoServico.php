@@ -1,12 +1,8 @@
 <?php
 
-	function validacao_cadastro($nome, $sobrenome, $email, $senha, $sexo, $cpf, $nasc, $cidade, $est){
+	function validacao_cadastro($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo){
 		if (strlen(trim(strip_tags($nome)))==0) {
 			$erros[] = "Você precisa preencer o campo nome.";
-		}
-
-		if (strlen(trim($sobrenome))==0) {
-			$erros[] = "Você precisa preencer o campo sobrenome.";
 		}
 
 		if (strlen(trim($email))==0) {
@@ -21,12 +17,8 @@
 			$erros[] = "Você precisa preencer o campo senha.";
 		}
 
-		if (strlen(trim($sexo))==0) {
-			$erros[] = "Você precisa preencer o campo sexo.";
-		}
-
 		if (strlen(trim($cpf))==0) {
-			$erros[] = "Você precisa preencer o campo cpf.";
+					$erros[] = "Você precisa preencer o campo cpf.";
 		}
 
 		if (is_numeric($cpf)==0) {
@@ -37,12 +29,12 @@
 			$erros[] = "Você precisa preencer o campo nascimento.";
 		}
 
-		if (strlen(trim($cidade))==0) {
-			$erros[] = "Você precisa preencer o campo cidade.";
+		if (strlen(trim($sexo))==0) {
+			$erros[] = "Você precisa preencer o campo sexo.";
 		}
 
-		if (strlen(trim($est))==0) {
-			$erros[] = "Você precisa preencer o campo estado.";
+		if (strlen(trim($tipo))==0) {
+			$erros[] = "Você precisa preencer o campo tipo de usuario.";
 		}
 
 		return($erros);

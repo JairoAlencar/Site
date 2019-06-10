@@ -1,7 +1,7 @@
 <?php
-function  adicionarCliente($nome, $sobrenome, $email, $senha, $sexo, $cpf, $nasc, $cidade, $est) {
+function  adicionarCliente($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo) {
 
-	$sql  =  "INSERT INTO cliente (Nome, Sobrenome, Email, Senha, Sexo, Cpf, Nascimento, Cidade, Estado) VALUES ('$nome', '$sobrenome', '$email', '$senha', '$sexo', '$cpf', '$nasc', '$cidade', '$est')" ;
+	$sql  =  "INSERT INTO usuario (nomeusuario, email, senha, cpf, datadenascimento, sexo, tipousuario) VALUES ('$nome', '$email', '$senha', '$cpf', '$nasc', '$sexo', '$tipo')" ;
 
 	$resultado  =  mysqli_query ( $cnv  = conn (), $sql );
 
@@ -12,7 +12,7 @@ function  adicionarCliente($nome, $sobrenome, $email, $senha, $sexo, $cpf, $nasc
 
 function exibirClientes(){
 
-	$sql = "SELECT * FROM cliente";
+	$sql = "SELECT * FROM usuario";
 	$resultado = mysqli_query(conn(), $sql);
 
 	$clientes = array();
@@ -24,11 +24,23 @@ function exibirClientes(){
 
 function pegarClientePorId($id){
 
-	$sql = "SELECT * FROM cliente WHERE idCliente = $id";
+	$sql = "SELECT * FROM usuario WHERE idusuario = $id";
 	$resultado = mysqli_query(conn(), $sql);
 
 	$cliente = mysqli_fetch_assoc($resultado);
 	return $cliente;
+}
+
+function deletarCliente($id){
+
+	$sql = "DELETE FROM usuario WHERE idusuario = $id";
+	$resultado = mysqli_query(conn(), $sql);
+
+	if(!$resultado){
+		die('Erro ao deletar cliente'. mysqli_error($cnx));
+	}
+
+	return 'Cliente deletado com sucesso';
 }
 
 function Enviarmsg($nome, $email, $assunto, $end, $msg){
@@ -53,17 +65,5 @@ function exibirMsg() {
 		$mensagem[] = $linha;
 	}
 	return $mensagem;
-}
-
-function deletarCliente($id){
-
-	$sql = "DELETE FROM cliente WHERE idCliente = $id";
-	$resultado = mysqli_query(conn(), $sql);
-
-	if(!$resultado){
-		die('Erro ao deletar cliente'. mysqli_error($cnx));
-	}
-
-	return 'Cliente deletado com sucesso';
 }
 ?>

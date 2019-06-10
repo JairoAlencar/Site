@@ -1,11 +1,12 @@
 <h2>Detalhes do Cliente</h2>
 
-<p>Id: <?=$cliente['idCliente']?> </p>
-<p>Nome: <?=$cliente['Nome']?> </p>
-<p>Sobrenome: <?=$cliente['Sobrenome']?> </p>
+<p>Id: <?=$cliente['idusuario']?> </p>
+<p>Nome: <?=$cliente['nomeusuario']?> </p>
 <p>Email: <?=$cliente['email']?> </p>
-<p>CPF: <?=$cliente['Cpf']?> </p>
-<p>Nascimento: <?=$cliente['Nascimento']?> </p>
-<p>Cidade: <?=$cliente['Cidade']?> </p>
+<p>Senha: <?=$cliente['senha']?> </p>
+<p>CPF: <?=$cliente['cpf']?> </p>
+<p>Nascimento: <?=$cliente['datadenascimento']?> </p>
+<p>Sexo: <?=$cliente['sexo']?> </p>
+<p>Tipo: <?=$cliente['tipousuario']?></p>
 
 <a href="./cliente/listarCliente">Voltar</a>

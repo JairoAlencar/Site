@@ -7,19 +7,19 @@ function cadastro(){
 	if (ehpost()) {
 
 		$nome = $_POST["nome"];
-		$sobrenome = $_POST["sobrenome"];
 		$email = $_POST["email"];
 		$senha = $_POST["senha"];
-		$sexo = $_POST["sexo"];
 		$cpf = $_POST["cpf"];
 		$nasc = $_POST["nasc"];
-		$cidade = $_POST["cidade"];
-		$est = $_POST["estado"];
+		$sexo = $_POST["sexo"];
+		$tipo = $_POST['tipo'];
+		
 
-		$vali = validacao_cadastro($nome, $sobrenome, $email, $senha, $sexo, $cpf, $nasc, $cidade, $est);
+
+		$vali = validacao_cadastro($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo);
 
 			if(count($vali)==0){
-				$msg = adicionarCliente($nome, $sobrenome, $email, $senha, $sexo, $cpf, $nasc, $cidade, $est);
+				$msg = adicionarCliente($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo);
 				print "Cadastro concluido";	
 				redirecionar("cliente/listarCliente");			
 			}else{
