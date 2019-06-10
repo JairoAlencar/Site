@@ -54,4 +54,16 @@ function exibirMsg() {
 	}
 	return $mensagem;
 }
+
+function deletarCliente($id){
+
+	$sql = "DELETE FROM cliente WHERE idCliente = $id";
+	$resultado = mysqli_query(conn(), $sql);
+
+	if(!$resultado){
+		die('Erro ao deletar cliente'. mysqli_error($cnx));
+	}
+
+	return 'Cliente deletado com sucesso';
+}
 ?>

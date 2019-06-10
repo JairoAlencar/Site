@@ -8,6 +8,7 @@
 				<th>Email</th>
 				<th>Senha</th>
 				<th>Ver Detalhes</th>
+				<th>Deletar Cliente</th>
 			</tr>
 		</thead>
 
@@ -18,8 +19,10 @@
 			<td><?= $cliente['email']?></td>
 			<td><?= $cliente['Senha']?></td>
 			<td> <a href="./cliente/ver/<?=$cliente['idCliente']?>">Ver</a> </td>
-			<td> <a href=".cliente/deletar/<?=$['idCliente']>Deletar</a> </td>
+			<td> <a href="./cliente/deletar/<?=$cliente['idCliente']?>">Deletar</a> </td>
 		</tr>
 		<?php endforeach; ?>	
 </TABLE>
+
+<a href="./cliente/cadastro">Cadastrar um novo cliente</a>
 

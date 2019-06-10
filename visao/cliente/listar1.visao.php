@@ -8,5 +8,4 @@
 <p>Nascimento: <?=$cliente['Nascimento']?> </p>
 <p>Cidade: <?=$cliente['Cidade']?> </p>
 
-
-<!--Funcionando quase perfeitamente-->
+<a href="./cliente/listarCliente">Voltar</a>

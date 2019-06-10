@@ -49,6 +49,11 @@ function ver($idCliente){
 	exibir("cliente/listar1", $dados);
 }
 
+function deletar($id){
+	$msg = deletarCliente($id);
+	redirecionar("cliente/listarCliente");
+}
+
 function contato(){
 	if (ehpost()) {
 		$nome = $_POST["nome"];
