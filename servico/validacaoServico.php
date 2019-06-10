@@ -48,36 +48,6 @@
 		return($erros);
 	}
 
-
-	function validacao_contato ($nome, $email, $assunto, $end, $msg){
-
-		if (strlen(trim($nome))==0) {
-			$erros[] = "Você precisa preencer o campo nome.";
-		}
-
-		if (strlen(trim($email))==0) {
-			$erros[] = "Você precisa preencer o campo email.";
-		}
-
-		if (!filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL)) {
-    		$erros[] = "Informe um email valido";
-		}
-
-		if (strlen(trim($assunto))==0) {
-			$erros[] = "Você precisa preencer o campo assunto.";
-		}
-
-		if (strlen(trim($end))==0) {
-			$erros[] = "Você precisa preencer o campo endereço.";
-		}
-
-		if (strlen(trim($msg))==0) {
-			$erros[] = "Você precisa preencer o campo mensagem.";
-		}	
-
-		return($erros);
-	}
-
 	function validacao_add_produto ($nome, $pag, $val, $ficha, $desc, $vend){
 
 		if (strlen(trim($nome))==0) {
@@ -115,6 +85,35 @@
 		if (strlen(trim($nome))==0) {
 				$erros[] = "Você precisa preencher o campo contato vendedor";
 		}
+		return($erros);
+	}
+
+	function validacao_contato ($nome, $email, $assunto, $end, $msg){
+
+		if (strlen(trim($nome))==0) {
+			$erros[] = "Você precisa preencer o campo nome.";
+		}
+
+		if (strlen(trim($email))==0) {
+			$erros[] = "Você precisa preencer o campo email.";
+		}
+
+		if (!filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL)) {
+    		$erros[] = "Informe um email valido";
+		}
+
+		if (strlen(trim($assunto))==0) {
+			$erros[] = "Você precisa preencer o campo assunto.";
+		}
+
+		if (strlen(trim($end))==0) {
+			$erros[] = "Você precisa preencer o campo endereço.";
+		}
+
+		if (strlen(trim($msg))==0) {
+			$erros[] = "Você precisa preencer o campo mensagem.";
+		}	
+
 		return($erros);
 	}
 ?>

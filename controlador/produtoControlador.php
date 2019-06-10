@@ -14,24 +14,24 @@ function adicionar(){
 		$desc = $_POST["descricao"];
 		$vend = $_POST["contato_vendedor"];
 
-		$vali = (validacao_add_produto($nome, $pag, $val, $ficha, $desc, $vend));
-
-		echo '<pre>';
-			print_r($vali);
-		echo '</pre>';
+		$vali = validacao_add_produto($nome, $pag, $val, $ficha, $desc, $vend);
 
 		if(count($vali)==0){
 			$msg = adicionarProduto($nome, $pag, $val, $ficha, $desc, $vend);
 			print "Produto cadastrado com sucesso";
+			redirecionar("produto/listarProdutos");
 		}else{
 			print "É obrigatorio preencher todos os campos";
+			$dados = array();
+			$dados['erros'] = $vali;
+			exibir("produto/adicionar", $dados);
 		}
 
 
 	}else{
-		//sem resposta
+		exibir("produto/formulario");
 	}
-	exibir("produto/formulario");
+	
 }
 
 function listarProdutos(){

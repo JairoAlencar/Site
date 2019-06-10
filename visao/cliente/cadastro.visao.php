@@ -1,10 +1,3 @@
-<?php
-	if(ehPost()){
-		foreach ($erros as $erro){
-			echo "$erro<br>";
-		}
-	}
-?>
 
 	<form action="" method="post">
 
@@ -32,5 +25,12 @@
 				<br>
 			<input type="submit" name="vai" value="Cadastrar">	
 		</form>
-</body>
-</html>
+
+
+<?php
+	if(ehPost()){
+		foreach ($erros as $erro){
+			echo "$erro<br>";
+		}
+	}
+?>
