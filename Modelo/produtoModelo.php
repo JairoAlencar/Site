@@ -1,8 +1,8 @@
 <?php
 
-function adicionarProduto($nome, $pag, $val, $ficha, $desc, $vend){
+function adicionarProduto($preco, $nome, $desc, $imagem, $estoque_min, $estoque_max){
 
-	$sql = "INSERT INTO produto (Nome, Pagamento, Valor, Ficha_Tec, Descricao, Vendedor) VALUES ('$nome', '$pag', '$val', '$ficha', '$desc', '$vend')";
+	$sql = "INSERT INTO produtos (idproduto, preco, nomeproduto, descricao, imagem, estoque_minimo, estoque_maximo) VALUES (null, '$preco', '$nome', '$desc', '$imagem', '$estoque_min', '$estoque_max')";
 
 	$resultado = mysqli_query($cnv = conn(), $sql);
 
@@ -14,7 +14,7 @@ function adicionarProduto($nome, $pag, $val, $ficha, $desc, $vend){
 
 function exibirProduto(){
 
-	$sql = "SELECT * FROM produto";	
+	$sql = "SELECT * FROM produtos";	
 	$resultado = mysqli_query(conn(), $sql);
 
 	$produto = array();
@@ -24,15 +24,23 @@ function exibirProduto(){
 	return $produto;
 }
 
-function buscarProduto($busca){
+function pegrProdutoPorId($id){
+	$sql = "SELECT * FROM produtos WHERE idproduto = $id";
+	$resultado = mysqli_query(conn(), $sql);
 
-	$sql = "SELECT Nome FROM produto WHERE categoria=$busca";
+	$produto = mysqli_fetch_assoc($resultado);
+	return $produto;
+}
 
-	$resultado = mysqli_query($cnv = conn(), $sql);
+function deletarProduto(){
+	$sql = "DELETE FROM produtos WHERE idproduto = $id";
+	$resultado = mysqli_query(conn(), $sql);
 
-	if(!$resultado) { die('Erro ao buscar produto' . mysqli_error($cnv)); }
+	if(!$resultado){
+		die('Erro ao deletar produto'. mysqli_error($cnx));
+	}
 
-	return 'categoria';
+	return 'Produto deletado com sucesso';
 }
 
 ?> 

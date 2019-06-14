@@ -2,7 +2,7 @@
 
 function adicionarCategoria($nome){
 
-	$sql = "INSERT INTO categoria (Nome) VALUES ('$nome')";
+	$sql = "INSERT INTO categoria (idcategoria, descricao) VALUES (NULL, '$nome')";
 
 	$resultado = mysqli_query($cnv = conn(), $sql);
 
@@ -23,6 +23,27 @@ function exibirCategoria(){
 		$categoria[] = $linha;
 	}
 	return $categoria;
+}
+
+function pegarCategoriaPorIf($id){
+
+	$sql = "SELECT * FROM categoria WHERE idcategoria = $id";
+	$resultado = mysqli_query(conn(), $sql);
+
+	$categoria = mysqli_fetch_assoc($resultado);
+	return $categoria;
+}
+
+function deletearCategoria($id){
+
+	$sql = "DELETE FROM categoria WHERE idcategoria = $id";
+	$resultado = mysqli_query(conn(), $sql);
+
+	if(!$resultado){
+		die('Erro ao deletar categoria'. mysqli_error($cnx));
+	}
+
+	return 'Categoria deletado com sucesso';
 }
 
 ?>

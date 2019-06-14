@@ -20,10 +20,8 @@ function cadastro(){
 
 			if(count($vali)==0){
 				$msg = adicionarCliente($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo);
-				print "Cadastro concluido";	
 				redirecionar("cliente/listarCliente");			
 			}else{
-				print"É obrigatorio preencer todos os campos";
 				$dados = array();
 				$dados["erros"] = $vali;
 				exibir("cliente/cadastro", $dados);
@@ -54,36 +52,9 @@ function deletar($id){
 	redirecionar("cliente/listarCliente");
 }
 
-function contato(){
-	if (ehpost()) {
-		$nome = $_POST["nome"];
-		$email = $_POST["email"];
-		$assunto = $_POST["assunto"];
-		$end = $_POST["end"];
-		$msg = $_POST["msg"];
+function login(){
 
-
-		$vali = validacao_contato($nome, $email, $assunto, $end, $msg);
-		
-			if(count($vali)==0){
-				$msg = Enviarmsg($nome, $email, $assunto, $end, $msg); 
-				echo $msg;
-			}else{
-				print"É obrigatorio preencher todos os campos";
-			}
-		
-		}else{
-			//sem resposta
-		}
-		exibir("cliente/contato");
-}
-
-function listarContato() {
-
-	$dados = array();
-
-	$dados["mensagem"] = exibirClientes();
-	exibir("cliente/listarMsg", $dados);
+	exibir("cliente/login");
 }
 
 ?>

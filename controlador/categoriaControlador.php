@@ -21,7 +21,7 @@ function categoria() {
 				print "Não foi possivel adicionar a categoria";
 			}	
 	}
-	exibir("categoria/categoria");
+	exibir("categoria/adicionarCate");
 }
 
 function listarCategoria() {
@@ -30,6 +30,18 @@ function listarCategoria() {
 
 	$dados["Categoria"] = exibirCategoria();
 	exibir("categoria/listar", $dados);
+}
+
+function ver($id){
+
+	$dados["categoria"] = pegarCategoriaPorId($id);
+	exibir("categoria/listar1", $dados);
+}
+
+function deletar($id){
+
+	$msg = deletarCategoria($id);
+	redirecionar("categoria/listarCategoria");
 }
 
 ?>

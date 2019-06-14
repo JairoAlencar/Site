@@ -100,10 +100,3 @@ CREATE TABLE `usuario` (
   `tipousuario` varchar(5) NOT NULL,
   PRIMARY KEY (`idusuario`)
 );
-
-ENGINE = InnoDB
-AUTO_INCREMENT = 24
-DEFAULT CHARACTER SET = utf8
-
-INSERT INTO `mvcd`.`usuario` (`nome`, `senha`, `email`, `papel`) VALUES ('admin', '123', 'admin@admin', 'admin');
-INSERT INTO `mvcd`.`usuario` (`nome`, `senha`, `email`, `papel`) VALUES ('usuario', '123', 'usuario@usuario', 'usuario');

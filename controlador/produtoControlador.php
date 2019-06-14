@@ -18,12 +18,10 @@ function adicionar(){
 
 		if(count($vali)==0){
 			$msg = adicionarProduto($nome, $pag, $val, $ficha, $desc, $vend);
-			print "Produto cadastrado com sucesso";
 			redirecionar("produto/listarProdutos");
 		}else{
-			print "É obrigatorio preencher todos os campos";
 			$dados = array();
-			$dados['erros'] = $vali;
+			$dados["erros"] = $vali;
 			exibir("produto/adicionar", $dados);
 		}
 
@@ -42,14 +40,15 @@ function listarProdutos(){
 		exibir("produto/listar", $dados);
 }
 
-//function buscarProduto(){
-	
-	//if(ehpost()) {
-		//$busca = $_POST["busca"];
+function ver($idproduto){
 
+	$dados["produto"] = pegarProdutoPorId($idproduto);
+	exibir("produto/listar1", $dados);
+}
 
-	//}
-	 //exibir("produto/pesquisa");
-//}
+function deletar($id){
+	$msg = deletarProduto($id);
+	redirecionar("produto/listarProduto");
+}
 
 ?>

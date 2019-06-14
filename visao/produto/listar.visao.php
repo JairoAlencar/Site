@@ -1,25 +1,37 @@
-<h1>Produtos IFtech</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	 <link rel="stylesheet" type="text/css" href="./publico/css/pagprin">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+</head>
+<body>
 
-<TABLE class="table">
-		<thead>
+	<h1>Produtos IFtech</h1>
+
+	<TABLE class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nome</th>
+					<th>Valor</th>
+					<th>Vendedor</th>
+					<th>Ver Detalhes</th>
+					<th>Deltar Produto</th>
+				</tr>
+			</thead>
+
+			<?php foreach($produtos as $produto): ?>
 			<tr>
-				<th>ID</th>
-				<th>Nome</th>
-				<th>Valor</th>
-				<th>Vendedor</th>
-				<th>Ver Detalhes</th>
-				<th>Deltar Produto</th>
+				<td><?= $produto['idproduto']?></td>
+				<td><?= $produto['nomeproduto']?></td>
+				<td><?= $produto['preco']; echo",00";?></td>
+				<td><?= $produto['categoria']?></td>
+				<td> <a href="./produto/ver/<?=$produto['idProduto']?>">Ver</a> </td>
+				<td> <a href="./produto/ver/<?=$produto['idProduto']?>">Deletar</a> </td>
 			</tr>
-		</thead>
+			<?php endforeach; ?>	
+	</TABLE>
 
-		<?php foreach($produtos as $produto): ?>
-		<tr>
-			<td><?= $produto['idProduto']?></td>
-			<td><?= $produto['Nome']?></td>
-			<td><?= $produto['Valor']; echo",00";?></td>
-			<td><?= $produto['Vendedor']?></td>
-			<td> <a href="./produto/ver/<?=$produto['idProduto']?>">Ver</a> </td>
-			<td> <a href="./produto/ver/<?=$produto['idProduto']?>">Deletar</a> </td>
-		</tr>
-		<?php endforeach; ?>	
-</TABLE>
+</body>
+</html>

@@ -8,8 +8,8 @@
 <body class="container">
   <div id="topo">
         <div id="logo" class="col-4">
-          <a href="index.html" id="logo">
-            <img src="./publico/imagens/Logo.PNG">
+          <a href="//localhost/site" id="logo">
+            <h1 id="logo1">IF Tech</h1>
           </a>
         </div>
 
@@ -18,17 +18,10 @@
           <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
         </div>
 
-        <div class="icons-btn">
-          <div class="dropdown">
-              <button class="dropbtn" style="border-radius: 20%"><i class="fas fa-user"></i></button>
-
-              <div class="dropdown-content">
-                  <a href="./login/"><h3>Login</h3></a>
-                  <a href="./cliente/cadastro"><h3>Cadastro</h3></a>
-              </div>
-          </div>
-          <button class="dropbtn" style="border-radius: 20%"><i class="fas fa-cart-plus"></i></button>            
-        </div>
+         <div class="icons-btn">
+          <a class="icons-user" href="./cliente/login"><i class="fas fa-user"></i></a>
+          <a class="icons-car" href=""><i class="fas fa-cart-plus"></i></a>  
+        </div> 
         
 
   </div>

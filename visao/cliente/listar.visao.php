@@ -2,14 +2,12 @@
 <html>
 <head>
 	<title></title>
-	  <link rel="stylesheet" type="text/css" href="./publico/css/pagprin">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+	<link rel="stylesheet" type="text/css" href="./publico/css/pagprin">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 </head>
 <body>
 
-</body>
-</html>
-<TABLE class="table">
+	<TABLE class="table">
 		<thead>
 			<tr>
 				<th>ID</th>
@@ -29,7 +27,6 @@
 			<td><?= $cliente['senha']?></td>
 			<td> <a href="./cliente/ver/<?=
 			$cliente['idusuario']?>">Ver</a> </td>
-
 			<td> <a href="./cliente/deletar/<?=$cliente['idusuario']?>">Deletar</a> </td>
 		</tr>
 		<?php endforeach; ?>	
@@ -37,3 +34,5 @@
 
 <a href="./cliente/cadastro">Cadastrar um novo cliente</a>
 
+</body>
+</html>

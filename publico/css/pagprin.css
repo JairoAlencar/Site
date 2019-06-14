@@ -15,11 +15,15 @@ body{
 
 }
 
-#logo img{
+a{
+	font-family: "Courier New", Courier, Monospace;
+	text-decoration: none;
+}
+
+#logo h1{
 	margin-left:35%;
 	margin-top: 8%;
-	margin-bottom: 4%;
-	width: 45%;  
+	margin-bottom: 4%; 
 	height: 9%;
 }
 
@@ -88,10 +92,13 @@ body{
 	margin-left: 10%;
 }
 
+/*INICIO RODAPE*/
+
 #rodape{
 	background-color:black;
 	color: gray;
-  width: 101.1%;
+  width: 100%;
+  margin-left: 0%;
 }
 
 #rodape div{
