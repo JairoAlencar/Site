@@ -37,7 +37,7 @@ function listarProdutos(){
         $produto = array();
 
 		$dados["produtos"] = exibirProduto();
-		exibir("produto/listar", $dados);
+		exibir("produto/listar", "template", $dados);
 }
 
 function ver($idproduto){

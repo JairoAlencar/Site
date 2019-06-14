@@ -50,6 +50,33 @@
         <main class="container">
             <?php require $viewFilePath; ?>
         </main>
+
+        <h1  style="color: black">Produtos IFtech</h1>
+
+  <TABLE class="table" style="color: black">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Valor</th>
+          <th>Vendedor</th>
+          <th>Ver Detalhes</th>
+          <th>Deltar Produto</th>
+        </tr>
+      </thead>
+
+      <?php foreach($produtos as $produto): ?>
+      <tr>
+        <td><?= $produto['idproduto']?></td>
+        <td><?= $produto['nomeproduto']?></td>
+        <td><?= $produto['preco']; echo",00";?></td>
+        <td><?= $produto['categoria']?></td>
+        <td> <a href="./produto/ver/<?=$produto['idProduto']?>">Ver</a> </td>
+        <td> <a href="./produto/ver/<?=$produto['idProduto']?>">Deletar</a> </td>
+      </tr>
+      <?php endforeach; ?>  
+  </TABLE>
+
 <div class="row" id="rodape">
     <div class="col-3" id="adms">
       <h5><strong>Administradores</strong></h5>
