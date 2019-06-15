@@ -19,18 +19,18 @@
 				</tr>
 			</thead>
 
-			<?php foreach($Categoria as $cat): ?>
+			<?php foreach($categoria as $cate): ?>
 			<tr>
-				<td><?= $cat['idcategoria']?></td>
-				<td><?= $cat['descrição']?></td>
+				<td><?= $cate['idcategoria']?></td>
+				<td><?= $cate['descricao']?></td>
 				<td> <a href="./categoria/ver/<?=
-			$categoria['idcategoria']?>">Ver</a> </td>
+			$cate['idcategoria']?>">Ver</a> </td>
 				<td> <a href="./categoria/deletar/<?=
-			$categoria['idcategoria']?>"></a> </td>
+			$cate['idcategoria']?>">Deletar</a> </td>
 			</tr>
 			<?php endforeach; ?>	
 	</TABLE>
 
-	<a href="./categoria/adiconarCate">Adicionar uma nova Categoria</a>
+	<a href="./categoria/categoria">Adicionar uma nova Categoria</a>
 </body>
 </html>

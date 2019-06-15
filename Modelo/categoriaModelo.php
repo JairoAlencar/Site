@@ -25,7 +25,7 @@ function exibirCategoria(){
 	return $categoria;
 }
 
-function pegarCategoriaPorIf($id){
+function pegarCategoriaPorId($id){
 
 	$sql = "SELECT * FROM categoria WHERE idcategoria = $id";
 	$resultado = mysqli_query(conn(), $sql);
@@ -34,7 +34,7 @@ function pegarCategoriaPorIf($id){
 	return $categoria;
 }
 
-function deletearCategoria($id){
+function deletarCategoria($id){
 
 	$sql = "DELETE FROM categoria WHERE idcategoria = $id";
 	$resultado = mysqli_query(conn(), $sql);

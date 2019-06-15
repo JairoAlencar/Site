@@ -6,19 +6,17 @@ require_once "modelo/categoriaModelo.php";
 function categoria() {
 
 	if (ehpost()) {
-		$nome = $_POST['categoria'];
+		$desc = $_POST['descricao'];
 
-		$vali = validacaoCategoria($nome);
-
-		echo '<pre>';
-			print_r($vali);
-		echo '</pre>';
+		$vali = validacaoCategoria($desc);
 		
 			if (count($vali)==0){
-					$msg = adicionarCategoria($nome);
-					print "Categoria adionada com sucesso!";
+					$msg = adicionarCategoria($desc);
+					redirecionar("categoria/listarcategoria");
 			}else{
-				print "Não foi possivel adicionar a categoria";
+				$dados = array();
+				$dados["erros"] = $vali;
+				exibir("categoria/adicionarCate", $dados);
 			}	
 	}
 	exibir("categoria/adicionarCate");
@@ -28,7 +26,7 @@ function listarCategoria() {
 
 	$dados = array();
 
-	$dados["Categoria"] = exibirCategoria();
+	$dados["categoria"] = exibirCategoria();
 	exibir("categoria/listar", $dados);
 }
 

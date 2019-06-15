@@ -8,21 +8,22 @@ function adicionar(){
 	
 	if (ehpost()){
 		$nome = $_POST["nome_produto"];
-		$pag = $_POST["pagamento"];
-		$val = $_POST["valor"];
-		$ficha = $_POST["ficha_tec"];
+		$preco = $_POST["preco"];
 		$desc = $_POST["descricao"];
-		$vend = $_POST["contato_vendedor"];
+		$cate = $_POST["categoria"];
+		$imagem = $_POST["imagem"];
+		$estoque_min = $_POST["estoque_min"];
+		$estoque_max = $_POST["estoque_max"];
 
-		$vali = validacao_add_produto($nome, $pag, $val, $ficha, $desc, $vend);
+		$vali = validacao_add_produto($cate, $preco, $nome, $desc, $imagem, $estoque_min, $estoque_max);
 
 		if(count($vali)==0){
-			$msg = adicionarProduto($nome, $pag, $val, $ficha, $desc, $vend);
+			$msg = adicionarProduto($cate, $preco, $nome, $desc, $imagem, $estoque_min, $estoque_max);
 			redirecionar("produto/listarProdutos");
 		}else{
 			$dados = array();
 			$dados["erros"] = $vali;
-			exibir("produto/adicionar", $dados);
+			exibir("produto/formulario", $dados);
 		}
 
 
@@ -37,7 +38,7 @@ function listarProdutos(){
         $produto = array();
 
 		$dados["produtos"] = exibirProduto();
-		exibir("produto/listar", "template", $dados);
+		exibir("produto/listar", $dados);
 }
 
 function ver($idproduto){
@@ -48,7 +49,7 @@ function ver($idproduto){
 
 function deletar($id){
 	$msg = deletarProduto($id);
-	redirecionar("produto/listarProduto");
+	redirecionar("produto/listarProdutos");
 }
 
 ?>

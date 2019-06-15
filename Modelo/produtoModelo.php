@@ -1,8 +1,8 @@
 <?php
 
-function adicionarProduto($preco, $nome, $desc, $imagem, $estoque_min, $estoque_max){
+function adicionarProduto($cate, $preco, $nome, $desc, $imagem, $estoque_min, $estoque_max){
 
-	$sql = "INSERT INTO produtos (idproduto, preco, nomeproduto, descricao, imagem, estoque_minimo, estoque_maximo) VALUES (null, '$preco', '$nome', '$desc', '$imagem', '$estoque_min', '$estoque_max')";
+	$sql = "INSERT INTO produtos (idproduto, idcategoria, preco, nomeproduto, descricao, imagem, estoque_minimo, estoque_maximo) VALUES (null, '$cate', '$preco', '$nome', '$desc', '$imagem', '$estoque_min', '$estoque_max')";
 
 	$resultado = mysqli_query($cnv = conn(), $sql);
 
@@ -24,7 +24,7 @@ function exibirProduto(){
 	return $produto;
 }
 
-function pegrProdutoPorId($id){
+function pegarProdutoPorId($id){
 	$sql = "SELECT * FROM produtos WHERE idproduto = $id";
 	$resultado = mysqli_query(conn(), $sql);
 
@@ -32,7 +32,7 @@ function pegrProdutoPorId($id){
 	return $produto;
 }
 
-function deletarProduto(){
+function deletarProduto($id){
 	$sql = "DELETE FROM produtos WHERE idproduto = $id";
 	$resultado = mysqli_query(conn(), $sql);
 

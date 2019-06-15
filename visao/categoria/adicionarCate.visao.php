@@ -7,10 +7,18 @@
 </head>
 <body>
 
+<?php
+    if(ehPost()){
+      foreach($erros as $erro){
+        echo "$erro<br>";
+      }
+    }
+?> 	
+
 	<h2>Categoria</h2>
 
 	<form method="post">
-		<input type="text" name="categoria" placeholder="Descrição">
+		<input type="text" name="descricao" placeholder="Descrição">
 		<br>
 		<br>
 		<input type="submit" name="enviar" value="Enviar">
