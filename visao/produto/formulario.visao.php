@@ -17,22 +17,31 @@
 ?>   
 
   <form action="" method="post" class="">
-    <input type="text" name="nome_produto" placeholder="Nome do Produto">
-      <br>
-    <label for="dinheiro">R$</label>  
-    <input type="money" name="preco" placeholder="Valor">
-      <br>
-    <input type="text" name="imagem" placeholder="Imagem">
-      <br>
-    <input type="number" name="categoria" placeholder="categoria">
-    <br>  
-    Estoque minimo:  
-    <input type="number" name="estoque_min" placeholder="Estoque minimo">
-      <br>
-    Estoque maximo:  
-    <input type="number" name="estoque_max" placeholder="Estoque maximo">      
-      <br>
-    Descrição
+    Nome:<br>
+    <input type="text" name="nome_produto" placeholder="Ex: Samsung s10">
+      <br><br>
+
+    Preço:<br>  
+    <input type="money" name="preco" placeholder="Ex: 100.00">
+      <br><br>
+
+    Imagem:<br> 
+    <input type="text" name="imagem" placeholder="Ex: https//google/12v3ty">
+      <br><br>
+
+    Categoria:<br>  
+    <input type="number" name="categoria" placeholder="Ex: 4">
+    <br><br>
+
+    Estoque minimo:<br> 
+    <input type="number" name="estoque_min" placeholder="Ex: 1">
+      <br><br>
+
+    Estoque maximo:<br>  
+    <input type="number" name="estoque_max" placeholder="Ex: 10">      
+      <br><br>
+
+    Descrição<br>
       <textarea name="descricao" placeholder="Descrição"></textarea>
         <br>
     <input type="checkbox" name="" required=""> Li, aceito e concordo com as condições e os termos de uso

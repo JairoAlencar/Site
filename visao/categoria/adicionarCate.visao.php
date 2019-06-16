@@ -18,7 +18,8 @@
 	<h2>Categoria</h2>
 
 	<form method="post">
-		<input type="text" name="descricao" placeholder="Descrição">
+		Descrição:<br>
+		<input type="text" name="descricao" placeholder="">
 		<br>
 		<br>
 		<input type="submit" name="enviar" value="Enviar">

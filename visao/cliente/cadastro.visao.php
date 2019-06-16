@@ -19,25 +19,38 @@
 	<form action="" method="post">
 
 			<h1>Cadastro</h1>
+			Nome:<br>
+			<input type="text" name="nome" placeholder="Ex: Cletin">
+				<br><br>
 
-			<input type="text" name="nome" placeholder="Nome">
-			<input type="text" name="email" placeholder="Email">
-				<br>
+			Email:<br>
+			<input type="text" name="email" placeholder="Ex: Cleitin09@gmail.com">
+				<br><br>
+
+			Senha:<br>	
 			<input type="password" name="senha" placeholder="Senha">
-			<input type="text" name="cpf" placeholder="CPF">
-				<br>
-			<input type="date" name="nasc" placeholder="Nascimento">
-				<br>	
+				<br><br>
+
+			CPF:<br>	
+			<input type="text" name="cpf" placeholder="Ex: 123456789">
+				<br><br>
+
+			Data de Nascimento:<br>	
+			<input type="date" name="nasc">
+				<br><br>
+					
 			Sexo:
 				<br>
 			<input type="radio" name="sexo" value="Masculino" checked="checked">Masculino
 			<input type="radio" name="sexo" value="Feminino">Feminino
-				<br>
+				<br><br>
+
 			Tipo de usuario:
 				<br>
 			<input type="radio" name="tipo" value="Adm">Administrador
 			<input type="radio" name="tipo" value="User" checked="checked">Cliente	
-				<br>
+				<br><br>
+				
 			<input type="checkbox" name="" required="">Li, aceito e concordo com as condições e os termos de uso
 				<br>
 			<input type="submit" name="vai" value="Cadastrar">	
