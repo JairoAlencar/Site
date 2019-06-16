@@ -24,7 +24,8 @@
       <br>
     <input type="text" name="imagem" placeholder="Imagem">
       <br>
-    <input type="number" name="categoria" placeholder="categoria">  
+    <input type="number" name="categoria" placeholder="categoria">
+    <br>  
     Estoque minimo:  
     <input type="number" name="estoque_min" placeholder="Estoque minimo">
       <br>

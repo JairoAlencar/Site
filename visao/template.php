@@ -20,7 +20,8 @@
 
          <div class="icons-btn">
           <a class="icons-user" href="./cliente/login"><i class="fas fa-user"></i></a>
-          <a class="icons-car" href=""><i class="fas fa-cart-plus"></i></a>  
+          <a class="icons-car" href="./produto/adicionar"><i class="fas fa-mobile-alt"></i></a> 
+          <a href="./categoria/categoria" style="margin-left: 27px"><i class="fas fa-archive"></i></a> 
         </div> 
         
 
