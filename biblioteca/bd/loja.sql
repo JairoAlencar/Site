@@ -1,3 +1,9 @@
+DROP DATABASE IF EXISTS loja;
+
+CREATE DATABASE loja;
+
+USE loja;
+
 
 DROP TABLE IF EXISTS `categoria`;
 CREATE TABLE IF NOT EXISTS `categoria` (
