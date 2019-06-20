@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="./publico/css/pagprin">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-</head>
-<body>
-
 	<TABLE class="table">
 		<thead>
 			<tr>
@@ -33,6 +24,3 @@
 </TABLE>
 
 <a href="./cliente/cadastro">Cadastrar um novo cliente</a>
-
-</body>
-</html>

@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Cadastro Produto</title>
-    <link rel="stylesheet" type="text/css" href="./publico/css/pagprin">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-</head>
-<body>
   <h1>Adicionar produto</h1>
     
 <?php
@@ -48,8 +40,3 @@
       <br>
     <input type="submit" name="vai na fé" value="Adicionar">        
   </form>
-   
-</body>
-</html>
-
-

@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	 <link rel="stylesheet" type="text/css" href="./publico/css/pagprin">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-</head>
-<body>
-
 <?php
     if(ehPost()){
       foreach($erros as $erro){
@@ -26,6 +17,3 @@
 		<br>
 		<br>
 	</form>
-	
-</body>
-</html>
