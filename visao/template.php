@@ -1,57 +1,21 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="./publico/css/pagprin">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-</head>
-<body class="container">
-  <div id="topo">
-        <div id="logo" class="col-4">
-          <a href="//localhost/site" id="logo">
-            <h1 id="logo1">IF Tech</h1>
-          </a>
-        </div>
-
-        <div class="search-box">
-          <input class="search-txt" type="text" name="busca" placeholder="Pesquisa">
-          <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
-        </div>
-
-         <div class="icons-btn">
-          <a class="icons-user" href="./cliente/login"><i class="fas fa-user"></i></a>
-          <a class="icons-car" href="./produto/adicionar"><i class="fas fa-mobile-alt"></i></a> 
-          <a href="./categoria/categoria" style="margin-left: 27px"><i class="fas fa-archive"></i></a> 
-        </div> 
-        
-
-  </div>
-       
+    <head>
         <title>template MVC</title>
+        <meta charset="utf-8">
         <base href="<?= URL_BASE ?>"><!--Esta instrução é super importante e não deve ser mudada!-->
 
         <link rel="stylesheet" href="./publico/css/app.css">
-
-        <!--css do site de add produto!-->
-        <link rel="stylesheet" type="text/css" href="./publico/css/cadastro.css">
-          <link rel="shoutcut icon" href="imagens/icone.ico">
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-          <style>
-          /* Make the image fully responsive */
-          .carousel-inner img {
-              width: 100%;
-              height: 100%;
-          }
-          </style>
-    
+    </head>
+    <body class="container">
+      <a href="http://iftech-2019.000webhostapp.com/"> Inicial</a>
+      <a href="./cliente/listarCliente">Clientes</a>
+      <a href="./produto/listarProdutos">Produtos</a>
+      <a href="./categoria/listarCategoria">Categorias</a>
 
         <main class="container">
             <?php require $viewFilePath; ?>
         </main>
-
+        
 <div class="row" id="rodape">
     <div class="col-3" id="adms">
       <h5><strong>Administradores</strong></h5>
