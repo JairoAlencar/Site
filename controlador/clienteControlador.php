@@ -52,9 +52,4 @@ function deletar($id){
 	redirecionar("cliente/listarCliente");
 }
 
-function login(){
-
-	exibir("cliente/login");
-}
-
 ?>

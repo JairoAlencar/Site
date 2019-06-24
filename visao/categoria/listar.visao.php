@@ -1,3 +1,12 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <title></title> 
+  <link rel="stylesheet" type="text/css" href="./publico/css/pagprin">  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">  
+</head>
+
+<body>
 	<h2>Categoria</h2>
 
 	<TABLE class="table">
@@ -23,3 +32,5 @@
 	</TABLE>
 
 	<a href="./categoria/categoria">Adicionar uma nova Categoria</a>
+</body>
+</html>
