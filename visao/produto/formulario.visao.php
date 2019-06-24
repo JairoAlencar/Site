@@ -30,7 +30,12 @@
       <br><br>
 
     Categoria:<br>  
-    <input type="number" name="categoria" placeholder="Ex: 4">
+      <select name="categoria">
+        <option value="default">Selecione uma categoria</option>
+        <?php foreach ($categoria as $cate): ?>
+          <option value="<?= $cate['idcategoria'] ?>"><?= $cate['descricao'] ?></option>
+        <?php endforeach; ?>
+      </select>
     <br><br>
 
     Estoque minimo:<br> 

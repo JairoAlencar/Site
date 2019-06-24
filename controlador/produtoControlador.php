@@ -2,6 +2,7 @@
 
 include("servico/validacaoServico.php");
 require_once "modelo/produtoModelo.php";
+require_once "modelo/categoriaModelo.php";
 
 
 function adicionar(){
@@ -15,6 +16,7 @@ function adicionar(){
 		$estoque_min = $_POST["estoque_min"];
 		$estoque_max = $_POST["estoque_max"];
 
+
 		$vali = validacao_add_produto($cate, $preco, $nome, $desc, $imagem, $estoque_min, $estoque_max);
 
 		if(count($vali)==0){
@@ -23,12 +25,15 @@ function adicionar(){
 		}else{
 			$dados = array();
 			$dados["erros"] = $vali;
+			$dados["categoria"] = exibirCategoria();
 			exibir("produto/formulario", $dados);
 		}
 
 
 	}else{
-		exibir("produto/formulario");
+		$dados = array();
+		$dados["categoria"] = exibirCategoria();
+		exibir("produto/formulario", $dados);
 	}
 	
 }

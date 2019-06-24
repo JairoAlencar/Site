@@ -9,7 +9,7 @@
   <div id="topo"> 
         <div id="logo" class="col-4"> 
           <a href="//localhost/site" id="logo"> 
-            <img src="./publico/imagens/Logo.PNG"> 
+            <h1>IF Tech</h1> 
           </a>  
         </div>  
 
