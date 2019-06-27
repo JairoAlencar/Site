@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   `estoque_minimo` int(11) DEFAULT NULL,
   `estoque_maximo` int(11) DEFAULT NULL,
   PRIMARY KEY (`idproduto`),
-  KEY `idcategoria` (`idcategoria`)
+  FOREIGN KEY(idcategoria) REFERENCES categoria(idcategoria) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS `usuario`;
