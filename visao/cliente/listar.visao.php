@@ -15,6 +15,7 @@
 				<th>Senha</th>
 				<th>Ver Detalhes</th>
 				<th>Deletar Cliente</th>
+				<th>Editar</th>
 			</tr>
 		</thead>
 
@@ -27,6 +28,7 @@
 			<td> <a href="./cliente/ver/<?=
 			$cliente['idusuario']?>">Ver</a> </td>
 			<td> <a href="./cliente/deletar/<?=$cliente['idusuario']?>">Deletar</a> </td>
+			<td> <a href="./cliente/editar/<?=$cliente['idusuario']?>">Editar</a> </td>
 		</tr>
 		<?php endforeach; ?>	
 </TABLE>

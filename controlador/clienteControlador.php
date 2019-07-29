@@ -52,4 +52,25 @@ function deletar($id){
 	redirecionar("cliente/listarCliente");
 }
 
+function editar($id){
+
+	if(ehpost()){
+
+		$nome = $_POST["nome"];
+		$email = $_POST["email"];
+		$senha = $_POST["senha"];
+		$cpf = $_POST["cpf"];
+		$nasc = $_POST["nasc"];
+		$sexo = $_POST["sexo"];
+		$tipo = $_POST['tipo'];
+
+		editarCliente($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo);
+		redirecionar("cliente/listarCliente");
+	}else{
+
+		$dados["cliente"] = pegarClientePorId($id);
+		exibir("cliente/cadastro", $dados);
+	}
+}
+
 ?>

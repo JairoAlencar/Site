@@ -43,4 +43,15 @@ function deletarCliente($id){
 	return 'Cliente deletado com sucesso';
 }
 
+function editarCliente($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo){
+
+	$sql = "UPDATE usuario SET nomeusuario = '$nome', email = '$email', senha = '$senha', cpf = '$cpf', datadenascimento = '$nasc', sexo = '$sexo', tipousuario = '$tipo'";
+
+	$resultado  =  mysqli_query ( $cnv  = conn (), $sql );
+
+	if (!$resultado) {die ('Erro ao atualizar cadastro de cliente' . mysqli_error($cnv)); }
+
+	return 'Cadastro de cliente atualizado com sucesso!';
+}
+
 ?>
