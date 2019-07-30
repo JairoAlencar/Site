@@ -7,7 +7,7 @@
 </head>
 
 <body>
-	<h2>Categoria</h2>
+	<h1>Categoria</h1>
 
 	<TABLE class="table">
 			<thead>

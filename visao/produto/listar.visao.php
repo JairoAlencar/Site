@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">  
 </head>
 
-	<h1>Produtos IFtech</h1>
+	<h1>Produtos</h1>
 
 	<TABLE class="table">
 			<thead>

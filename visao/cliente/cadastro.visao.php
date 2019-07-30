@@ -39,14 +39,37 @@
 					
 			Sexo:
 				<br>
-			<input type="radio" name="sexo" value="Masculino" checked="checked" value="<?=@$cliente['sexo']?>">Masculino
-			<input type="radio" name="sexo" value="Feminino">Feminino
+
+				<?php 
+					if(@$cliente['sexo']=="Masculino"){
+						echo '<input type="radio" name="sexo" value="Masculino" checked="checked"> Masculino';
+							echo "<br>";
+						echo '<input type="radio" name="sexo" value="Feminino"> Feminino';
+					}else{
+						echo '<input type="radio" name="sexo" value="Masculino"> Masculino';
+							echo "<br>";
+						echo '<input type="radio" name="sexo" value="Feminino"  checked="checked"> Feminino';		
+					}
+				?>
+
 				<br><br>
 
 			Tipo de usuario:
 				<br>
-			<input type="radio" name="tipo" value="Adm">Administrador
-			<input type="radio" name="tipo" value="User" checked="checked" value="<?=@$cliente['tipousuario']?>">Cliente	
+
+				<?php 
+					if(@$cliente['tipousuario']=="Adm"){
+						echo '<input type="radio" name="tipo" value="Adm" checked="checked">Administrador';
+							echo "<br>";
+						echo '<input type="radio" name="tipo" value="User">Cliente';
+					}else{
+						echo '<input type="radio" name="tipo" value="Adm">Administrador';
+							echo "<br>";
+						echo '<input type="radio" name="tipo" value="User" checked="checked">Cliente';
+					} 
+				?>
+
+				
 				<br><br>
 				
 			<input type="checkbox" name="" required="">Li, aceito e concordo com as condições e os termos de uso
