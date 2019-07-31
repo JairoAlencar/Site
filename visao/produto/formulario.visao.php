@@ -18,15 +18,15 @@
 
   <form action="" method="post" class="">
     Nome:<br>
-    <input type="text" name="nome_produto" placeholder="Ex: Samsung s10">
+    <input type="text" name="nome_produto" placeholder="Ex: Samsung s10" value="<?=@$produto['nomeproduto']?>">
       <br><br>
 
     Preço:<br>  
-    <input type="money" name="preco" placeholder="Ex: 100.00">
+    <input type="money" name="preco" placeholder="Ex: 100.00" value="<?=@$produto['preco']?>">
       <br><br>
 
     Imagem:<br> 
-    <input type="text" name="imagem" placeholder="Ex: https//google/12v3ty">
+    <input type="text" name="imagem" placeholder="Ex: https//google/12v3ty" value="<?=@$produto['imagem']?>">
       <br><br>
 
     Categoria:<br>  
@@ -39,15 +39,15 @@
     <br><br>
 
     Estoque minimo:<br> 
-    <input type="number" name="estoque_min" placeholder="Ex: 1">
+    <input type="number" name="estoque_min" placeholder="Ex: 1" value="<?=@$produto['estoque_maximo']?>">
       <br><br>
 
     Estoque maximo:<br>  
-    <input type="number" name="estoque_max" placeholder="Ex: 10">      
+    <input type="number" name="estoque_max" placeholder="Ex: 10 " value="<?=@$produto['estoque_minimo']?>">      
       <br><br>
 
     Descrição<br>
-      <textarea name="descricao" placeholder="Descrição"></textarea>
+      <textarea name="descricao" placeholder="Descrição" value="<?=@$produto['descricao']?>"></textarea>
         <br>
     <input type="checkbox" name="" required=""> Li, aceito e concordo com as condições e os termos de uso
       <br>

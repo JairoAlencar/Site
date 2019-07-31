@@ -22,6 +22,25 @@ function categoria() {
 	exibir("categoria/adicionarCate");
 }
 
+function editar($id){
+
+	if(ehpost()){
+		$desc = $_POST['descricao'];
+
+		$vali = validacaoCategoria($desc);
+
+			if(count($vali)==0){
+					$msg = adicionarCategoria($desc);
+					redirecionar("categoria/listarcategoria");
+			}else{
+				$dados = array();
+				$dados["erros"] = $vali;
+				exibir("categoria/adicionarCate", $dados);
+			}
+	}
+	exibir("categoria/adicionarCate");
+}
+
 function listarCategoria() {
 
 	$dados = array();

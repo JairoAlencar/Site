@@ -43,4 +43,15 @@ function deletarProduto($id){
 	return 'Produto deletado com sucesso';
 }
 
+function editarProduto($preco, $nome, $desc, $imagem, $estoque_min, $estoque_max){
+
+	$sql = "UPDATE produtos SET preco = '$preco', nomeproduto = '$nome', descricao = '$desc', imagem = '$imagem', estoque_minimo = '$estoque_min', estoque_maximo = '$estoque_max'";
+
+	$resultado  =  mysqli_query ( $cnv  = conn (), $sql );
+
+	if (!$resultado) {die ('Erro ao atualizar edição de produto' . mysqli_error($cnv)); }
+
+	return 'Edição de produto atualizado com sucesso!';
+}
+
 ?> 

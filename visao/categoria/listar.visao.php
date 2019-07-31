@@ -16,6 +16,7 @@
 					<th>Descrição</th>
 					<th>Ver Detalhes</th>
 					<th>Deletar Categoria</th>
+					<th>Editar</th>
 				</tr>
 			</thead>
 
@@ -27,6 +28,7 @@
 			$cate['idcategoria']?>">Ver</a> </td>
 				<td> <a href="./categoria/deletar/<?=
 			$cate['idcategoria']?>">Deletar</a> </td>
+				<td> <a href="./categoria/editar/<?=$cate['idcategoria']?>">Editar</a> </td>
 			</tr>
 			<?php endforeach; ?>	
 	</TABLE>

@@ -17,6 +17,7 @@
 					<th>Valor</th>
 					<th>Ver Detalhes</th>
 					<th>Deltar Produto</th>
+					<th>Editar</th>
 				</tr>
 			</thead>
 
@@ -28,6 +29,7 @@
 				<td><?= $produto['preco']; echo",00";?></td>
 				<td> <a href="./produto/ver/<?=$produto['idproduto']?>">Ver</a> </td>
 				<td> <a href="./produto/deletar/<?=$produto['idproduto']?>">Deletar</a> </td>
+				<td> <a href="./produto/editar/<?=$produto['idproduto']?>">Editar</a> </td>
 			</tr>
 			<?php endforeach; ?>	
 	</TABLE>

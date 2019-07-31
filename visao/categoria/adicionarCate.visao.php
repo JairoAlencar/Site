@@ -19,7 +19,7 @@
 
 	<form method="post">
 		Descrição:<br>
-		<input type="text" name="descricao" placeholder="">
+		<input type="text" name="descricao" placeholder="Ex: Samsung" value="<?=@$categoria['descricao']?>?>">
 		<br>
 		<br>
 		<input type="submit" name="enviar" value="Enviar">

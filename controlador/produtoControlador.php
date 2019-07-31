@@ -38,6 +38,26 @@ function adicionar(){
 	
 }
 
+function editar($id){
+
+	if(ehpost()){
+
+		$nome = $_POST["nome_produto"];
+		$preco = $_POST["preco"];
+		$desc = $_POST["descricao"];
+		$imagem = $_POST["imagem"];
+		$estoque_min = $_POST["estoque_min"];
+		$estoque_max = $_POST["estoque_max"];
+
+		editarProduto($preco, $nome, $desc, $imagem, $estoque_min, $estoque_max);
+		redirecionar("produto/listarProdutos");
+	}else{
+
+		$dados["produto"] = pegarProdutoPorId($id);
+		exibir("produto/formulario", $dados);
+	}
+}
+
 function listarProdutos(){
 
         $produto = array();
