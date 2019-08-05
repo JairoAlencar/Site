@@ -48,7 +48,13 @@ function deletarCategoria($id){
 
 function editarCategoria($nome){
 
+	$sql = "UPDATE categoria SET descricao='$nome'";
 
+	$resultado  =  mysqli_query ( $cnv  = conn (), $sql );
+
+	if (!$resultado) {die ('Erro ao atualizar edição de categoria' . mysqli_error($cnv)); }
+
+	return 'Edição de categoria atualizado com sucesso!';	
 }
 
 ?>

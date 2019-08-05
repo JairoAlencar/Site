@@ -17,9 +17,9 @@
 
 	<h2>Categoria</h2>
 
-	<form method="post">
+	<form method="post" action="">
 		Descrição:<br>
-		<input type="text" name="descricao" placeholder="Ex: Samsung" value="<?=@$categoria['descricao']?>?>">
+		<input type="text" name="descricao" placeholder="Ex: Samsung" value="<?=@$categoria['descricao']?>">
 		<br>
 		<br>
 		<input type="submit" name="enviar" value="Enviar">

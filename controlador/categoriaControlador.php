@@ -25,20 +25,24 @@ function categoria() {
 function editar($id){
 
 	if(ehpost()){
+
 		$desc = $_POST['descricao'];
 
 		$vali = validacaoCategoria($desc);
 
 			if(count($vali)==0){
-					$msg = adicionarCategoria($desc);
+					$msg = editarCategoria($desc);
 					redirecionar("categoria/listarcategoria");
 			}else{
 				$dados = array();
 				$dados["erros"] = $vali;
 				exibir("categoria/adicionarCate", $dados);
 			}
+	}else{
+		
+		$dados["categoria"] = pegarCategoriaPorId($id);
+		exibir("categoria/adicionarCate", $dados);
 	}
-	exibir("categoria/adicionarCate");
 }
 
 function listarCategoria() {

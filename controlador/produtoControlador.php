@@ -44,7 +44,8 @@ function editar($id){
 
 		$nome = $_POST["nome_produto"];
 		$preco = $_POST["preco"];
-		$desc = $_POST["descricao"];
+		$desc = $_POST["descricao"]		;
+		$cate = $_POST["categoria"];
 		$imagem = $_POST["imagem"];
 		$estoque_min = $_POST["estoque_min"];
 		$estoque_max = $_POST["estoque_max"];
@@ -54,6 +55,7 @@ function editar($id){
 	}else{
 
 		$dados["produto"] = pegarProdutoPorId($id);
+		$dados["categoria"] = exibirCategoria();
 		exibir("produto/formulario", $dados);
 	}
 }

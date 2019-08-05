@@ -33,7 +33,7 @@
       <select name="categoria">
         <option value="default">Selecione uma categoria</option>
         <?php foreach ($categoria as $cate): ?>
-          <option value="<?= $cate['idcategoria'] ?>"><?= $cate['descricao'] ?></option>
+          <option value="<?= $cate['idcategoria'] ?>" selected="selected"><?= $cate['descricao'] ?></option>
         <?php endforeach; ?>
       </select>
     <br><br>
