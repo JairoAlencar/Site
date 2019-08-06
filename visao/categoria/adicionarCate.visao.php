@@ -3,7 +3,8 @@
 <head>
   <title></title> 
   <link rel="stylesheet" type="text/css" href="./publico/css/pagprin">  
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"> 
+  <link rel="stylesheet" type="text/css" href="./publico/css/cadastro"> 
 </head>
 
 <body>
@@ -17,7 +18,7 @@
 
 	<h2>Categoria</h2>
 
-	<form method="post" action="">
+	<form method="post" action="" class="box">
 		Descrição:<br>
 		<input type="text" name="descricao" placeholder="Ex: Samsung" value="<?=@$categoria['descricao']?>">
 		<br>
