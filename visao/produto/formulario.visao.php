@@ -26,7 +26,7 @@
       <br><br>
 
     Imagem:<br> 
-    <input type="text" name="imagem" placeholder="Ex: https//google/12v3ty" value="<?=@$produto['imagem']?>">
+    <input type="file" name="imagem" placeholder="Ex: https//google/12v3ty" value="<?=@$produto['imagem']?>">
       <br><br>
 
     Categoria:<br>  

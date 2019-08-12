@@ -20,6 +20,7 @@ function adicionar(){
 		$vali = validacao_add_produto($cate, $preco, $nome, $desc, $imagem, $estoque_min, $estoque_max);
 
 		if(count($vali)==0){
+                        //$imagem = uploadImagem($imagem);
 			$msg = adicionarProduto($cate, $preco, $nome, $desc, $imagem, $estoque_min, $estoque_max);
 			redirecionar("produto/listarProdutos");
 		}else{
