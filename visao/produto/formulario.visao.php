@@ -16,7 +16,7 @@
     }
 ?>   
 
-  <form action="" method="post" class="">
+  <form action="" method="post" class="" enctype="multipart/form-data"> <!-- entype, um teste para o upload de imagens!-->
     Nome:<br>
     <input type="text" name="nome_produto" placeholder="Ex: Samsung s10" value="<?=@$produto['nomeproduto']?>">
       <br><br>
@@ -26,7 +26,7 @@
       <br><br>
 
     Imagem:<br> 
-    <input type="file" name="imagem" placeholder="Ex: https//google/12v3ty" value="<?=@$produto['imagem']?>">
+    <input type="file" name="imagem" value="<?=@$produto['imagem']?>">
       <br><br>
 
     Categoria:<br>  
