@@ -14,7 +14,7 @@
 	}
 ?>
 
-	<form action="" method="post">
+	<form action="" method="post" class="box">
 
 			<h1>Cadastro</h1>
 			Nome:<br>

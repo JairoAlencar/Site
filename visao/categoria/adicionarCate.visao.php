@@ -3,8 +3,7 @@
 <head>
   <title></title> 
   <link rel="stylesheet" type="text/css" href="./publico/css/pagprin">  
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"> 
-  <link rel="stylesheet" type="text/css" href="./publico/css/cadastro"> 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">  
 </head>
 
 <body>

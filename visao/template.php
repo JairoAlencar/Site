@@ -41,7 +41,7 @@
            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>  
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
           <style> 
-          /* Make the image fully responsive */ 
+          /* Make the image fully responsive*/
           .carousel-inner img { 
               width: 100%;  
               height: 100%; 
@@ -54,7 +54,7 @@
              <?php require $viewFilePath; ?>
          </main>
 
-<div class="row" id="rodape">
+<!--<div class="row" id="rodape">
       <div class="col-3" id="adms">
         <h5><strong>Administradores</strong></h5>
           <a href="adm.html">

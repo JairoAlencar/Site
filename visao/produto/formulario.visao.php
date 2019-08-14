@@ -16,7 +16,7 @@
     }
 ?>   
 
-  <form action="" method="post" class="" enctype="multipart/form-data"> <!-- entype, um teste para o upload de imagens!-->
+  <form action="" method="post" class="box" enctype="multipart/form-data"> <!-- entype, um teste para o upload de imagens!-->
     Nome:<br>
     <input type="text" name="nome_produto" placeholder="Ex: Samsung s10" value="<?=@$produto['nomeproduto']?>">
       <br><br>
