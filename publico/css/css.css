@@ -1,7 +1,11 @@
 /*CSS PAGINA PRINCIPAL*/
 
 body{
-  font-family: "montserrat",sans-serif;
+  	font-family: "montserrat",sans-serif;
+  	margin: 0;
+	padding: 0;
+	background: white;
+	color: dimgray;
 }
 
 #site{
@@ -11,7 +15,9 @@ body{
 
 #topo{
 	background-color: black;
+	margin-top: 0%; 
 	height: 8%;
+	width: 100%;
 
 }
 
@@ -92,6 +98,56 @@ a{
 	margin-left: 10%;
 }
 
+/*Slide bar lateral*/
+
+.fixo{
+  position: fixed;
+  top: 19%;
+  z-index: 99999;
+  left: 0;
+}
+
+
+.opição{
+  cursor: pointer;
+  position: relative;
+}
+.opição a{
+  color: white;
+} 
+.opição i{
+  display: block;
+  width: 60px;
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  background: #f1f1f1;
+  color: #b9b9b9;
+  font-size: 18px;
+  transition: 0.6s;
+}
+
+.opição:hover i{
+  color: #3498db;
+}
+.desc{
+  position: absolute;
+  height: 60px;
+  width: 250px;
+  background: #1b1b1b;
+  top: 0;
+  z-index: -1;
+  left: -190px;
+  color: #fff;
+  line-height: 60px;
+  text-align: center;
+  transition: 0.6s;
+}
+
+.opição:hover .desc{
+  left: 60px;
+}
+
 /*Conteudo central*/
 
 
@@ -102,8 +158,8 @@ a{
 #rodape{
 	background-color:black;
 	color: gray;
-  width: 100%;
-  margin-left: 0%;
+  	width: 100%;
+  	margin-left: 0%;
 }
 
 #rodape div{
@@ -140,38 +196,36 @@ a{
 /*CSS CADASTRO*/
 
 .box{
-	width: 800px;
-	padding: 40px;
-	position: absolute;
-	margin-top: 28%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background: black;
-	text-align: center;
+	width: 150%; 
+	padding: 40px 40px 40px 0px;
+	transform: translate(0%, 0%);
+	background: /*#f2f2f2*/ white;
+	text-align: justify;
+	color: black;
 }
 
-.box input[type = "text"], .box input[type = "password"], .box input[type = "date"]{
+.box input[type = "text"], .box input[type = "password"], .box input[type = "date"], .box input[type = "money"], .box input[type = "file"], .box input[type = "number"], .box select, .box textarea{
 	border: 0;
-	background: none;
-	color: dimgray;
+	background: white;
+	color: black;
 	margin: 20px auto;
 	text-align: center;
 	border: 2px solid #3498db; 
 	padding: 14px 10px;
-	width: 200px;
+	width: 250px;
 	outline: none;
-	color: white;
+	color: black;
 	border-radius: 24px;
 	transition: 0.25s;
 }
 
-.box input[type = "text"]:focus, .box input[type = "password"]:focus, .box input[type = "date"]:focus{
+.box input[type = "text"]:focus, .box input[type = "password"]:focus, .box input[type = "money"]:focus, .box input[type = "file"]:focus, .box input[type = "date"]:focus, .box input[type = "number"]:focus, .box select:focus, .box textarea:focus{
 	width: 280px;
 	border-color: #2ecc71;
 }
 
 .box h1{
-	color: white;
+	color: black;
 	text-transform: uppercase;
 	font-weight: 500;
 
@@ -179,14 +233,14 @@ a{
 
 .box input[type = "submit"]{
 		border: 0;
-		background: none;
+		background: #3498db;
 		display: block;
-		margin: 20px auto;
+		margin: 20px 8%;
 		text-align: center;
-		border: 2px solid #2ecc71;
+		border: 2px solid #3498db;
 		padding: 14px 40px;
 		outline: none;
-		color: white;
+		color: black;
 		border-radius: 24px;
 		transition: 0.25s;
 		cursor: pointer;
@@ -194,4 +248,5 @@ a{
 
 .box input[type = "submit"]:hover{
 	background: #2ecc71;
+	border: 2px solid #2ecc71;
 }
