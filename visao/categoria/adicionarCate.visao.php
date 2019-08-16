@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">  
 </head>
 
-<body>
+<body  style="width: 100%; margin-top: 0%;">
 <?php
     if(ehPost()){
       foreach($erros as $erro){

@@ -26,9 +26,9 @@ a{
 	text-decoration: none;
 }
 
-#logo h1{
+#logo img{
 	margin-left:35%;
-	margin-top: 8%;
+	margin-top: 10%;
 	margin-bottom: 4%; 
 	height: 9%;
 }
@@ -41,7 +41,7 @@ a{
 
 .search-box{
 	position: absolute;
-	margin-top: -1.5%;
+	margin-top: 2.5%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background-color: #2f3649;
@@ -90,7 +90,6 @@ a{
 .icons-btn{
 	margin-left: 75%;
 	font-size: 250%;
-	margin-top: -5%;
 	margin-bottom: 4%;
 }
 
