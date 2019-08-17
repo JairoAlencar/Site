@@ -50,9 +50,9 @@
 				$erros[] = "Você precisa preeencer o campo valor";
 		}
 
-		if (strlen(trim($imagem))==0) {
+		/*if (strlen(trim($imagem))==0) {
 				$erros[] = "Você precisa preencher o campo da Imagem";
-			}
+			}*/
 
 		if (strlen(trim($desc))==0) {
 				$erros[] = "Você precisa preencer o campo descrição";
