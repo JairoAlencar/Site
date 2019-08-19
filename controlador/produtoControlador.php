@@ -18,8 +18,7 @@ function adicionar(){
 		$estoque_max = $_POST["estoque_max"];
 
 
-		$vali = validacao_add_produto($cate, $preco, $nome, $desc, /*$imagem,*/ $estoque_min, $estoque_max);
-		uploadImagem($imagem);
+		$vali = validacao_add_produto($cate, $preco, $nome, $desc, $imagem, $estoque_min, $estoque_max);
 
 		if(count($vali)==0){
             

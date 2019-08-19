@@ -15,10 +15,10 @@ body{
 
 #topo{
 	background-color: black;
-	margin-top: 0%; 
 	height: 8%;
 	width: 100%;
-
+	display: flex;
+	justify-content: space-around; 
 }
 
 a{
@@ -26,11 +26,9 @@ a{
 	text-decoration: none;
 }
 
-#logo h1{
-	margin-left:35%;
-	margin-top: 8%;
-	margin-bottom: 4%; 
-	height: 9%;
+#logo img{ 
+	margin-left: 20%; 
+	margin-top: 5%;
 }
 
 #icones{
@@ -41,7 +39,7 @@ a{
 
 .search-box{
 	position: absolute;
-	margin-top: 2.5%;
+	margin-top: 3.5%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background-color: #2f3649;
@@ -88,12 +86,17 @@ a{
 }
 
 .icons-btn{
-	margin-left: 75%;
 	font-size: 250%;
-	margin-bottom: 4%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	width: 200px;
 }
 
 .icons-car{
+	margin-left: 10%;
+}
+
+.icons-box{
 	margin-left: 10%;
 }
 
@@ -101,7 +104,7 @@ a{
 
 .fixo{
   position: fixed;
-  top: 19%;
+  top: auto;
   z-index: 99999;
   left: 0;
 }
