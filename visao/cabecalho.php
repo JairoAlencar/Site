@@ -5,8 +5,10 @@
           </a>  
         </div>  
 
-         <div class="search-box"> 
-          <input class="search-txt" type="text" name="busca" placeholder="Pesquisa">  
+         <div class="search-box">
+         <form  class="search-txt" action="produto/buscar">
+           <input type="text" name="busca" placeholder="Pesquisa"> 
+         </form>  
           <a class="search-btn" href="#"><i class="fas fa-search"></i></a>  
         </div>  
 

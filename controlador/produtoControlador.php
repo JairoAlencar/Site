@@ -5,6 +5,12 @@ include("servico/uploadServico.php");
 require_once "modelo/produtoModelo.php";
 require_once "modelo/categoriaModelo.php";
 
+function buscar(){
+	if (ehpost()){
+		$busca = $_POST["busca"];
+
+	}
+}
 
 function adicionar(){
 	
