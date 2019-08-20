@@ -15,7 +15,7 @@
 
            
   </head> 
-<body style="width: 100%; margin-top: 0%;"><!--arrumar essa merda de container!-->
+<body style="width: 100%; margin-top: 0%;">
 
 <?php 
   if (($_SERVER['PHP_SELF'] != '/site/index.php/cliente/adicionar') && ($_SERVER['PHP_SELF'] != '/site/index.php/login/')) {
