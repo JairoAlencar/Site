@@ -85,9 +85,11 @@ a{
 	height: 50px;
 }
 
-.search-txt input{
+#Pesquisa{
 	background: none;
 }
+
+
 
 .icons-btn{
 	font-size: 250%;

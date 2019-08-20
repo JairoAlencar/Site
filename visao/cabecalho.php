@@ -7,7 +7,7 @@
 
          <div class="search-box">
          <form class="search-txt" action="produto/buscar">
-           <input type="text" name="busca" placeholder="Pesquisa" class="Pesquisa"> 
+           <input type="text" name="busca" placeholder="Pesquisa" id="Pesquisa"> 
          </form>  
           <a class="search-btn" href="#"><i class="fas fa-search"></i></a>  
         </div>  
