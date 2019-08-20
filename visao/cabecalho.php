@@ -6,8 +6,8 @@
         </div>  
 
          <div class="search-box">
-         <form  class="search-txt" action="produto/buscar">
-           <input type="text" name="busca" placeholder="Pesquisa"> 
+         <form class="search-txt" action="produto/buscar">
+           <input type="text" name="busca" placeholder="Pesquisa" class="Pesquisa"> 
          </form>  
           <a class="search-btn" href="#"><i class="fas fa-search"></i></a>  
         </div>  
