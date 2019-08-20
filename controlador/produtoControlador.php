@@ -59,7 +59,7 @@ function editar($id){
 		$estoque_min = $_POST["estoque_min"];
 		$estoque_max = $_POST["estoque_max"];
 
-		editarProduto($preco, $nome, $desc, $imagem, $estoque_min, $estoque_max);
+		editarProduto($preco, $nome, $desc, $imagem, $estoque_min, $estoque_max, $id);
 		redirecionar("produto/listarProdutos");
 	}else{
 

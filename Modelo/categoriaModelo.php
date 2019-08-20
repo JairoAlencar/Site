@@ -46,9 +46,9 @@ function deletarCategoria($id){
 	return 'Categoria deletado com sucesso';
 }
 
-function editarCategoria($nome){
+function editarCategoria($nome, $id){
 
-	$sql = "UPDATE categoria SET descricao='$nome'";
+	$sql = "UPDATE categoria SET descricao='$nome' WHERE idcategoria = $id";
 
 	$resultado  =  mysqli_query ( $cnv  = conn (), $sql );
 

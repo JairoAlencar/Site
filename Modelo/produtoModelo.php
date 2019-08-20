@@ -43,9 +43,9 @@ function deletarProduto($id){
 	return 'Produto deletado com sucesso';
 }
 
-function editarProduto($preco, $nome, $desc, $imagem, $estoque_min, $estoque_max){
+function editarProduto($preco, $nome, $desc, $imagem, $estoque_min, $estoque_max, $id){
 
-	$sql = "UPDATE produtos SET preco = '$preco', nomeproduto = '$nome', descricao = '$desc', imagem = '$imagem', estoque_minimo = '$estoque_min', estoque_maximo = '$estoque_max'";
+	$sql = "UPDATE produtos SET preco = '$preco', nomeproduto = '$nome', descricao = '$desc', imagem = '$imagem', estoque_minimo = '$estoque_min', estoque_maximo = '$estoque_max' WHERE idproduto = $id";
 
 	$resultado  =  mysqli_query ( $cnv  = conn (), $sql );
 

@@ -43,9 +43,9 @@ function deletarCliente($id){
 	return 'Cliente deletado com sucesso';
 }
 
-function editarCliente($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo){
+function editarCliente($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo, $id){
 
-	$sql = "UPDATE usuario SET nomeusuario = '$nome', email = '$email', senha = '$senha', cpf = '$cpf', datadenascimento = '$nasc', sexo = '$sexo', tipousuario = '$tipo'";
+	$sql = "UPDATE usuario SET nomeusuario = '$nome', email = '$email', senha = '$senha', cpf = '$cpf', datadenascimento = '$nasc', sexo = '$sexo', tipousuario = '$tipo' WHERE idusuario = $id";
 
 	$resultado  =  mysqli_query ( $cnv  = conn (), $sql );
 

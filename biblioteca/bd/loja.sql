@@ -101,3 +101,11 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `tipousuario` varchar(5) NOT NULL,
   PRIMARY KEY (`idusuario`)
 );
+
+DROP TABLE IF EXISTS `FormaPagamento`;
+CREATE TABLE IF NOT EXISTS `FormaPagamento` (
+  `idFormaPagamento` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(45) NOT NULL,
+  PRIMARY KEY (`idFormaPagamento`)
+);
+

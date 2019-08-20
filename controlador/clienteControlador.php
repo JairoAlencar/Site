@@ -48,7 +48,7 @@ function editar($id){
 		$vali = validacao_cadastro($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo);
 		
 			if(count($vali)==0){
-				$msg = editarCliente($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo);
+				$msg = editarCliente($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo, $id);
 				redirecionar("cliente/listarCliente");
 			}else{
 				$dados = array();

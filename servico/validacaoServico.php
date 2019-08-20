@@ -76,4 +76,47 @@
 		}
 		return($erros);
 	}
+        
+	function validacaoCupom($nomecupom, $desconto) {
+
+		if (strlen(trim($nomecupom))==0) {
+				$erros[] = "Você precisa preencher o nome do cupom";
+		}
+		if (strlen(trim($desconto))==0) {
+				$erros[] = "Você precisa preencher o desconto";
+		}
+		return($erros);
+	}
+        
+ 	function validacaoFormaPagamento($desc) {
+
+		if (strlen(trim($desc))==0) {
+				$erros[] = "Você precisa preencher o descrição";
+		}
+		return($erros);
+	}
+
+ 	function validacao_endereco($logradouro, $numero, $bairro, $cidade, $cep) {
+
+		if (strlen(trim($logradouro))==0) {
+				$erros[] = "Você precisa preencher o logradouro";
+		}
+		if (strlen(trim($numero))==0) {
+				$erros[] = "Você precisa preencher o numero do local";
+			}
+
+		if (strlen(trim($bairro))==0) {
+				$erros[] = "Você precisa preeencer o bairro";
+		}
+
+		if (strlen(trim($cidade))==0) {
+				$erros[] = "Você precisa preencher a cidde";
+			}
+
+		if (strlen(trim($cep))==0) {
+				$erros[] = "Você precisa preencer o cep";
+			}	
+		return($erros);
+	}
+        
 ?>	

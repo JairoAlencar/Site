@@ -31,7 +31,7 @@ function editar($id){
 		$vali = validacaoCategoria($desc);
 
 			if(count($vali)==0){
-					$msg = editarCategoria($desc);
+					$msg = editarCategoria($desc, $id);
 					redirecionar("categoria/listarcategoria");
 			}else{
 				$dados = array();
