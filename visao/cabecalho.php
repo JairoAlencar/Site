@@ -5,11 +5,11 @@
           </a>  
         </div>  
 
-         <div class="search-box">
-         <form class="search-txt" action="produto/buscar">
-           <input type="text" name="busca" placeholder="Pesquisa" id="Pesquisa"> 
-         </form>  
-          <a class="search-btn" href="#"><i class="fas fa-search"></i></a>  
+        <div>
+           <form class="search-box" action="produto/buscar" method="POST">
+             <input class="search-txt" type="text" name="busca" placeholder="Pesquisa"> 
+             <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
+           </form>    
         </div>  
 
           <div class="icons-btn"> 

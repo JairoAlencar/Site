@@ -41,6 +41,7 @@
 	}
 
 	function validacao_add_produto ($preco, $nome, $desc, $imagem, $estoque_min, $estoque_max){
+		$erros = array();
 
 		if (strlen(trim($nome))==0) {
 				$erros[] = "Você precisa preencher o campo nome do produto";

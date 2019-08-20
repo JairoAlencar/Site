@@ -8,7 +8,12 @@ require_once "modelo/categoriaModelo.php";
 function buscar(){
 	if (ehpost()){
 		$busca = $_POST["busca"];
+	 
+	 	$produto = array();
 
+		$dados["produtos"] = buscar_prod($busca);
+		exibir("produto/listar", $dados);
+		
 	}
 }
 

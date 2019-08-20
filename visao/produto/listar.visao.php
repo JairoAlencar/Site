@@ -33,7 +33,7 @@
 				<td> <a href="./produto/deletar/<?=$produto['idproduto']?>">Deletar</a> </td>
 				<td> <a href="./produto/editar/<?=$produto['idproduto']?>">Editar</a> </td>
 			</tr>
-			<?php endforeach; ?>	
-	</TABLE>
+			<?php endforeach; ?>
+	</TABLE>	
 
 	<a href="./produto/Adicionar">Adicionar um novo produto</a>

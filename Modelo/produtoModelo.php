@@ -1,12 +1,27 @@
 <?php
 
+function buscar_prod($buscar){
+	$sql = "SELECT * FROM produtos WHERE nomeproduto LIKE '%$buscar%'";
+
+		$resultado = mysqli_query(conn(), $sql);
+
+		$produto = array();
+			while($linha = mysqli_fetch_assoc($resultado)){
+				$produto[] = $linha;
+			}
+
+	return $produto;
+}
+
 function adicionarProduto($cate, $preco, $nome, $desc, $imagem, $estoque_min, $estoque_max){
 
 	$sql = "INSERT INTO produtos (idproduto, idcategoria, preco, nomeproduto, descricao, imagem, estoque_minimo, estoque_maximo) VALUES (null, '$cate', '$preco', '$nome', '$desc', '$imagem', '$estoque_min', '$estoque_max')";
 
 	$resultado = mysqli_query($cnv = conn(), $sql);
 
-	if(!$resultado) { die('Erro ao cadastrar produto ' . mysqli_error($cnv)); }
+	if(!$resultado) { 
+		die('Erro ao cadastrar produto ' . mysqli_error($cnv)); 
+	}
 
 	return 'Produto cadastrado com sucesso!';
 	
