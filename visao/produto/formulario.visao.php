@@ -35,10 +35,18 @@
 
     Categoria:<br>  
       <select name="categoria">
+
         <option value="default">Selecione uma categoria</option>
-        <?php foreach ($categoria as $cate): ?>
-          <option value="<?= $cate['idcategoria'] ?>" selected="selected"><?= $cate['descricao'] ?></option>
-        <?php endforeach; ?>
+
+        <?php foreach ($categoria as $cate):?> 
+
+          <?php if($produto['idcategoria'] == $categoria['id'] ){ ?>
+            <option value="<?= $cate['idcategoria'] ?>" select><?= $cate['descricao'] ?></option>
+          <?php }else{ ?>
+            <option value="<?= $cate['idcategoria'] ?>" <?= $cate['descricao'] ?>></option>
+          <?php }?>  
+        <?php endforeach;?>
+
       </select>
     <br><br>
 
