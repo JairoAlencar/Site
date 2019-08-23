@@ -29,12 +29,12 @@
 
 		<?php foreach($produtos as $produto): ?>
 			<tr>
-				<td></td><!--Imagem!--></td>
+				<td><!-- Imagem !--></td>
 				<td> <?= $produto['descricao'] ?> </td>
 				<td>R$ <?= $Produto['preco'] ?> </td>
 				<td><?php  
-						for ($i=0; $i < count($_SESSION['carrinho']); $i++) { 
-							if ($_SESSION['carrinho'][$i]['id'] == $produto['idproduto']) {
+						for ($i = 0; $i < count($_SESSION['carrinho']); $i++) { 
+							if ($_SESSION['carrinho'][$i]['id'] == $produto['idProduto']) {
 					?>	
 						<a href="./carrinho/tirarproduto/<?= $_SESSION["carrinho"][$i]["id"]?>">-</a>
 							<input min="1" type="int" name="Quantidade Produto" value="<?=$_SESSION["carrinho"][$i]["quantidade"]?>">
@@ -48,9 +48,11 @@
 			</tr>
 		
 		<?php endforeach;
-			/*else{
-				echo "<h1 class="text-center">Não tem produtos no seu carrinho</h1>";
-			}*/
+                }else{
+        ?>            
+				<h5 class="text-center" style="color: black">Não tem produtos no seu carrinho</h5>
+		<?php
+                    }
 		?>	
 	</TABLE>
 	
