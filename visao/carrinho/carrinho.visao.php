@@ -16,7 +16,7 @@
 
 	<h1>Carrinho de Compras</h1>
 
-<?php if(!empty($produtos)){ ?>
+<!--<?php //if(!empty($produtos)>0){ ?>!-->
 	<TABLE class="table" style="width: 75%; float: left;">
 		<thead>
 			<tr>
@@ -48,11 +48,11 @@
 			</tr>
 		
 		<?php endforeach;
-                }else{
+                //}else{
         ?>            
-				<h5 class="text-center" style="color: black">Não tem produtos no seu carrinho</h5>
+				<!--<h5 class="text-center" style="color: black">Não tem produtos no seu carrinho</h5>!-->
 		<?php
-                    }
+                //    }
 		?>	
 	</TABLE>
 	
