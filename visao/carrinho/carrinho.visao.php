@@ -16,28 +16,42 @@
 
 	<h1>Carrinho de Compras</h1>
 
+<?php if(!empty($produtos)){ ?>
 	<TABLE class="table" style="width: 75%; float: left;">
 		<thead>
 			<tr>
 				<th>Produto</th>
 				<th>Preço</th>
-				<th>Entrega</th>
 				<th>Quantidade</th>
+				<th>Excluir</th>
 			</tr>	
 		</thead>
 
-		<tr>
-			<td>Teste</td>
-			<td>100.00</td>
-			<td>Semana que vem</td>
-			<td>1000</td>
-		</tr>
-		<tr>
-			<td>Teste 2</td>
-			<td>120.00</td>
-			<td>um ano</td>
-			<td>10</td>
-		</tr>
+		<?php foreach($produtos as $produto): ?>
+			<tr>
+				<td></td><!--Imagem!--></td>
+				<td> <?= $produto['descricao'] ?> </td>
+				<td>R$ <?= $Produto['preco'] ?> </td>
+				<td><?php  
+						for ($i=0; $i < count($_SESSION['carrinho']); $i++) { 
+							if ($_SESSION['carrinho'][$i]['id'] == $produto['idproduto']) {
+					?>	
+						<a href="./carrinho/tirarproduto/<?= $_SESSION["carrinho"][$i]["id"]?>">-</a>
+							<input min="1" type="int" name="Quantidade Produto" value="<?=$_SESSION["carrinho"][$i]["quantidade"]?>">
+						<a href="./carrinho/adicionar/<?= $_SESSION ["carrinho"][$i]["id"]?>">+</a>
+					<?php
+							}
+						}	
+					?>		
+				</td>
+				<td><a href="./carrinho/deletar<?=$produto["idProduto"];?>">Deletar</a></td>
+			</tr>
+		
+		<?php endforeach;
+			/*else{
+				echo "<h1 class="text-center">Não tem produtos no seu carrinho</h1>";
+			}*/
+		?>	
 	</TABLE>
 	
 <!--arrumar o class para rodar o css do botão e deixar masis organizado essa parte!-->
@@ -66,6 +80,6 @@
 			<input type="text" name="frete" placeholder="00000-000">
 		<input type="submit" name="frete" value="Calcular">
 	</div>
-
+<!--Falta a parte de enviar os produtos para a proxima pagina, tranqilo!-->
 </body>
 </html>
