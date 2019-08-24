@@ -5,4 +5,5 @@ function conn() {
 
     if (!$cnx) die('Deu errado a conexao!');
     return $cnx;
+    mysql_close($cnx);
 }
