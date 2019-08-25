@@ -16,7 +16,7 @@
 
 	<h1>Carrinho de Compras</h1>
 
-<!--<?php //if(!empty($produtos)>0){ ?>!-->
+<?php if(!empty($produtos)){ ?>
 	<TABLE class="table" style="width: 75%; float: left;">
 		<thead>
 			<tr>
@@ -29,30 +29,30 @@
 
 		<?php foreach($produtos as $produto): ?>
 			<tr>
-				<td><!-- Imagem !--></td>
-				<td> <?= $produto['descricao'] ?> </td>
-				<td>R$ <?= $Produto['preco'] ?> </td>
+				<td> <?= $produto['nomeproduto'] ?> </td>
+				<td>R$ <?= $produto['preco'];?> </td>
 				<td><?php  
 						for ($i = 0; $i < count($_SESSION['carrinho']); $i++) { 
-							if ($_SESSION['carrinho'][$i]['id'] == $produto['idProduto']) {
+							if ($_SESSION['carrinho'][$i]['id'] == $produto['idproduto']) {
 					?>	
-						<a href="./carrinho/tirarproduto/<?= $_SESSION["carrinho"][$i]["id"]?>">-</a>
-							<input min="1" type="int" name="Quantidade Produto" value="<?=$_SESSION["carrinho"][$i]["quantidade"]?>">
-						<a href="./carrinho/adicionar/<?= $_SESSION ["carrinho"][$i]["id"]?>">+</a>
+						<a href="./carrinho/tirarproduto/<?= $_SESSION['carrinho'][$i]['id']?>">-</a>
+							<input min="1" type="int" name="Quantidade Produto" value="<?=$_SESSION['carrinho'][$i]['quantidade']?>">
+						<a href="./carrinho/adicionar/<?= $_SESSION ['carrinho'][$i]['id']?>">+</a>
 					<?php
 							}
 						}	
 					?>		
 				</td>
-				<td><a href="./carrinho/deletar<?=$produto["idProduto"];?>">Deletar</a></td>
+				<td><a href="./carrinho/remover/<?=$produto["idproduto"];?>">Deletar</a></td>
 			</tr>
-		
 		<?php endforeach;
-                //}else{
+        $total = $produto['preco'] + $total ;        
+                }else{
+        $total = 0;        	
         ?>            
-				<!--<h5 class="text-center" style="color: black">Não tem produtos no seu carrinho</h5>!-->
+				<h5 class="text-center" style="color: black">Não tem produtos no seu carrinho</h5>
 		<?php
-                //    }
+                }
 		?>	
 	</TABLE>
 	
@@ -67,7 +67,7 @@
 
 				<h5 style="color: black">Total</h5>
 
-				<h6>R$ 666.99</h6>	
+				<h6>R$ <?= $total;?></h6>	
 				
 			</div>
 

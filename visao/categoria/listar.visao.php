@@ -10,7 +10,7 @@
 
 <body>
 	<h1>Categoria</h1>
-
+<?php if(!empty($categoria)){ ?>
 	<TABLE class="table">
 			<thead>
 				<tr>
@@ -32,9 +32,15 @@
 			$cate['idcategoria']?>">Deletar</a> </td>
 				<td> <a href="./categoria/editar/<?=$cate['idcategoria']?>">Editar</a> </td>
 			</tr>
-			<?php endforeach; ?>	
+			<?php endforeach; 
+				}else{
+			?>	
+					<h5 class="text-center" style="color: black;">Nenhuma categoria cadastrada</h5>
+			<?php
+				}			
+			?>		
 	</TABLE>
 
-	<a href="./categoria/categoria">Adicionar uma nova Categoria</a>
+	<a href="./categoria/categoria">Cadastrar uma nova Categoria</a>
 </body>
 </html>

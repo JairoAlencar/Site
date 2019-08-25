@@ -15,6 +15,7 @@
 
 	<h1>Produtos</h1>
 
+<?php if(!empty($produtos)){?>
 	<TABLE class="table">
 			<thead>
 				<tr>
@@ -40,7 +41,13 @@
 				<td> <a href="./produto/deletar/<?=$produto['idproduto']?>">Deletar</a> </td>
 				<td> <a href="./produto/editar/<?=$produto['idproduto']?>">Editar</a> </td>
 			</tr>
-			<?php endforeach; ?>
+			<?php endforeach; 
+				}else{
+			?>
+				<h5 class="text-center" style="color:black;">Nenhum produto cadastrado</h5>
+			<?php 
+				}
+			?>	
 	</TABLE>	
 
-	<a href="./produto/Adicionar">Adicionar um novo produto</a>
+	<a href="./produto/Adicionar">Cadastrar um novo produto</a>

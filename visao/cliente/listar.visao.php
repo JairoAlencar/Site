@@ -14,7 +14,7 @@
 </head>
 
 	<h1>Clientes</h1>
-
+<?php if(!empty($clientes)){ ?>
 	<TABLE class="table">
 		<thead>
 			<tr>
@@ -39,7 +39,13 @@
 			<td> <a href="./cliente/deletar/<?=$cliente['idusuario']?>">Deletar</a> </td>
 			<td> <a href="./cliente/editar/<?=$cliente['idusuario']?>">Editar</a> </td>
 		</tr>
-		<?php endforeach; ?>	
+		<?php endforeach;
+			}else{
+		?>	
+				<h5 class="text-center" style="color: black;">Nenhum cliente cadastrado</h5>
+		<?php
+			}
+		?>		
 </TABLE>
 
 <a href="./cliente/cadastro">Cadastrar um novo cliente</a>
