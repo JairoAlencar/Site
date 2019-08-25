@@ -46,9 +46,11 @@
 				<td><a href="./carrinho/remover/<?=$produto["idproduto"];?>">Deletar</a></td>
 			</tr>
 		<?php endforeach;
-        $total = $produto['preco'] + $total ;        
+        $total = $total + $produto['preco'];
+        $quantidade =  $_SESSION['quantcarrinho']; 
                 }else{
-        $total = 0;        	
+        $total = 0;
+        $quantidade = 0;        	
         ?>            
 				<h5 class="text-center" style="color: black">Não tem produtos no seu carrinho</h5>
 		<?php
@@ -60,7 +62,11 @@
 	<div class="" style="float: right; width: 23%; margin-left: 2%; background: #f1f1f1; color: #3498db; margin-bottom: 3%;">
 		<h3 style="color: black">Detalhes do pedido</h3>
 
-		<h6>Subtotal<!--colocar a quantidade de produtos!--></h6>
+		<h6>Subtotal
+			<h7>(<?php print $quantidade; ?> produtos)</h7> 
+			<h7 style = "margin-left: 3%;">R$</h7><?= $total?> 
+
+		</h6>
 		<h6>Frete</h6>
 
 			<div style="border-top: 1.4px solid gray; border-bottom: 1.4px solid gray; margin-bottom:2%;">
