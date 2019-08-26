@@ -32,7 +32,7 @@
 			<tr>
 				<td><?= $cupom['idcupom']?></td>
                                 <td><?=$cupom['nomecupom']?> </td>
-                                <td><?= $cupom['desconto']?></td>
+                                <td><?= $cupom['desconto']?>%</td>
 				<td> <a href="./cupom/ver/<?=$cupom['idcupom']?>">Ver</a> </td>
 				<td> <a href="./cupom/deletar/<?=$cupom['idcupom']?>">Deletar</a> </td>
 				<td> <a href="./cupom/editar/<?=$cupom['idcupom']?>">Editar</a> </td>

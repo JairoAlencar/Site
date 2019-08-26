@@ -13,7 +13,7 @@
 
 		<p>Id: <?=$cupom['idcupom']?> </p>
 		<p>Nome do cupom: <?=$cupom['nomecupom']?> </p>
-                <p>Desconto: <?=$cupom['desconto']?> </p>
+                <p>Desconto: <?=$cupom['desconto']?>%</p>
 
 		<a href="./Cupom/listarCupom">Voltar</a>
 
