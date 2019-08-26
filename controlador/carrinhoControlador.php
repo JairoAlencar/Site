@@ -19,8 +19,6 @@ function index(){
             $soma= $soma + $aux;
         }
         
-       
-        
         $dados["produtos"] = $produtosCarrinho;
         $dados["total"] = $soma;
         exibir("carrinho/carrinho", $dados);

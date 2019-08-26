@@ -16,7 +16,9 @@
 
 	<h1>Carrinho de Compras</h1>
 
-<?php if(!empty($produtos)){ ?>
+<?php if(!empty($produtos)){
+$total = 0; 
+?>	
 	<TABLE class="table" style="width: 75%; float: left;">
 		<thead>
 			<tr>
@@ -39,14 +41,17 @@
 							<input min="1" type="int" name="Quantidade Produto" value="<?=$_SESSION['carrinho'][$i]['quantidade']?>">
 						<a href="./carrinho/adicionar/<?= $_SESSION ['carrinho'][$i]['id']?>">+</a>
 					<?php
+							$total = $total + $produto['preco'] * $_SESSION['carrinho'][$i]['quantidade'];		
 							}
 						}	
 					?>		
 				</td>
 				<td><a href="./carrinho/remover/<?=$produto["idproduto"];?>">Deletar</a></td>
 			</tr>
-		<?php endforeach;
-        $total = $total + $produto['preco'];
+		<?php 
+
+
+		endforeach;
         $quantidade =  $_SESSION['quantcarrinho']; 
                 }else{
         $total = 0;

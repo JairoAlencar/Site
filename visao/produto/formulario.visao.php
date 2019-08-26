@@ -32,7 +32,6 @@
     
     <!--<input type="file" name="imagem" value="<?=@$produto['imagem']?>">!-->
       <br><br>
-
     Categoria:<br>  
       <select name="categoria">
 
@@ -40,10 +39,10 @@
 
         <?php foreach ($categoria as $cate):?> 
 
-          <?php if($produto['idcategoria'] == $categoria['id'] ){ ?>
-            <option value="<?= $cate['idcategoria'] ?>" select><?= $cate['descricao'] ?></option>
+          <?php if(@$produto['idcategoria'] == $cate['idcategoria'] ){ ?>
+            <option value="<?= $cate['idcategoria'] ?>" selected><?= $cate['descricao'] ?></option>
           <?php }else{ ?>
-            <option value="<?= $cate['idcategoria'] ?>" <?= $cate['descricao'] ?>></option>
+            <option value="<?= $cate['idcategoria'] ?>"> <?= $cate['descricao'] ?></option>
           <?php }?>  
         <?php endforeach;?>
 
@@ -51,15 +50,15 @@
     <br><br>
 
     Estoque minimo:<br> 
-    <input type="number" name="estoque_min" placeholder="Ex: 1" value="<?=@$produto['estoque_maximo']?>">
+    <input type="number" name="estoque_min" placeholder="Ex: 1" value="<?=@$produto['estoque_minimo']?>">
       <br><br>
 
     Estoque maximo:<br>  
-    <input type="number" name="estoque_max" placeholder="Ex: 10 " value="<?=@$produto['estoque_minimo']?>">      
+    <input type="number" name="estoque_max" placeholder="Ex: 10 " value="<?=@$produto['estoque_maximo']?>">      
       <br><br>
 
     Descrição<br>
-      <textarea name="descricao" placeholder="Descrição" value="<?=@$produto['descricao']?>"></textarea>
+      <textarea name="descricao" placeholder="Descrição" value=""><?=@$produto['descricao']?></textarea>
         <br>
     <input type="checkbox" name="" required=""> Li, aceito e concordo com as condições e os termos de uso
       <br>
