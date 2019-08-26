@@ -17,11 +17,11 @@
     }
 ?> 	
 
-	<h2>Categoria</h2>
+	<h2>Forma de Pagamento</h2>
 
-	<form method="post" action="">
+	<form method="post" action="" class="box">
 		Descrição:<br>
-		<input type="text" name="descricao" placeholder="Ex: Samsung" value="<?=@$FormaPagamento['descricao']?>">
+		<input type="text" name="descricao" placeholder="Ex: Boleto" value="<?=@$FormaPagamento['descricao']?>">
 		<br>
 		<br>
 		<input type="submit" name="enviar" value="Enviar">

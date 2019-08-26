@@ -40,9 +40,9 @@
         <?php foreach ($categoria as $cate):?> 
 
           <?php if(@$produto['idcategoria'] == $cate['idcategoria'] ){ ?>
-            <option value="<?= $cate['idcategoria'] ?>" selected><?= $cate['descricao'] ?></option>
+            <option value="<?= $cate['idcategoria'] ?>"><?= $cate['descricao'] ?></option>
           <?php }else{ ?>
-            <option value="<?= $cate['idcategoria'] ?>"> <?= $cate['descricao'] ?></option>
+            <option value="<?= $cate['idcategoria'] ?>" selected> <?= $cate['descricao'] ?></option>
           <?php }?>  
         <?php endforeach;?>
 

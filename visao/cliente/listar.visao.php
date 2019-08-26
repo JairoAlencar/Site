@@ -12,6 +12,7 @@
 	}
   </style>   
 </head>
+<body>
 
 	<h1>Clientes</h1>
 <?php if(!empty($clientes)){ ?>
@@ -49,3 +50,5 @@
 </TABLE>
 
 <a href="./cliente/cadastro">Cadastrar um novo cliente</a>
+</body>
+</html>

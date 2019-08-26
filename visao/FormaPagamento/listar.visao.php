@@ -5,12 +5,18 @@
   <meta charset="utf-8"> 
   <link rel="stylesheet" type="text/css" href="./publico/css/css.css">  
   <link rel="shoutcut icon" href="publico/imagens/icone.ico">  
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"> 
+  <style>
+  		tr:nth-child(even) {
+ 		 	background-color: #dddd;
+		}
+  	</style> 
 </head>
 
 <body>
-	<h1>Categoria</h1>
+	<h1>Forma de Pagamento</h1>
 
+<?php if(!empty($FormaPagamento)){?>
 	<TABLE class="table">
 			<thead>
 				<tr>
@@ -22,17 +28,23 @@
 				</tr>
 			</thead>
 
-			<?php foreach($FormaPagamento as $cate): ?>
+			<?php foreach($FormaPagamento as $pag): ?>
 			<tr>
-				<td><?= $cate['idFormaPagamento']?></td>
-				<td><?= $cate['descricao']?></td>
+				<td><?= $pag['idFormaPagamento']?></td>
+				<td><?= $pag['descricao']?></td>
 				<td> <a href="./FormaPagamento/ver/<?=
-			$cate['idFormaPagamento']?>">Ver</a> </td>
+			$pag['idFormaPagamento']?>">Ver</a> </td>
 				<td> <a href="./FormaPagamento/deletar/<?=
-			$cate['idFormaPagamento']?>">Deletar</a> </td>
-				<td> <a href="./FormaPagamento/editar/<?=$cate['idFormaPagamento']?>">Editar</a> </td>
+			$pag['idFormaPagamento']?>">Deletar</a> </td>
+				<td> <a href="./FormaPagamento/editar/<?=$pag['idFormaPagamento']?>">Editar</a> </td>
 			</tr>
-			<?php endforeach; ?>	
+			<?php endforeach; 
+				}else{
+			?>	
+					<h5 class="text-center" style="color: black">Nenhuma forma de pagamento adicionada</h5>
+			<?php
+				}
+			?>		
 	</TABLE>
 
 	<a href="./FormaPagamento/FormaPagamento">Adicionar uma nova forma de pagamento</a>

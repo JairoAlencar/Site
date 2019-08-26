@@ -5,12 +5,17 @@
   <meta charset="utf-8"> 
   <link rel="stylesheet" type="text/css" href="./publico/css/css.css">  
   <link rel="shoutcut icon" href="publico/imagens/icone.ico">  
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">   
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">  
+  <style>
+  		tr:nth-child(even) {
+ 		 	background-color: #dddd;
+		}
+  	</style> 
 </head>
 
 <body>
 	<h1>Cupom</h1>
-
+<?php if(!empty($cupom)){?>
 	<TABLE class="table">
 			<thead>
 				<tr>
@@ -32,7 +37,13 @@
 				<td> <a href="./cupom/deletar/<?=$cupom['idcupom']?>">Deletar</a> </td>
 				<td> <a href="./cupom/editar/<?=$cupom['idcupom']?>">Editar</a> </td>
 			</tr>
-			<?php endforeach; ?>	
+			<?php endforeach; 
+				}else{
+			?>	
+					<h5 class="text-center" style="color: black">Nenhum cupom adicionado</h5>
+			<?php
+				}
+			?>		
 	</TABLE>
 
 	<a href="./cupom/cupom">Adicionar um novo Cupom</a>
