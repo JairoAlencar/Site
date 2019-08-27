@@ -23,7 +23,7 @@
 					<th>ID</th>
 					<th>Descrição</th>
 					<th>Ver Detalhes</th>
-					<th>Deletar Categoria</th>
+					<th>Deletar Pagamento</th>
 					<th>Editar</th>
 				</tr>
 			</thead>

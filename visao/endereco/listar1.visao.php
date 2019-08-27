@@ -10,8 +10,8 @@
 
 		<h2>Detalhes do Endereço</h2>
                 
-                <p>Id endereço: <?=$endereco['idendereco']?> </p>
-		Id usuario: <?=$endereco['idusuario']?> </p>
+        <p>ID endereço: <?=$endereco['idendereco']?> </p>
+		<p>ID cliente: <?=$endereco['idusuario']?> </p>
 		<p>Logradouro: <?=$endereco['logradouro']?> </p>
 		<p>Numero: <?=$endereco['numero']?> </p>
 		<p>Bairro: <?=$endereco['bairro']?> </p>

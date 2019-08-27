@@ -1,25 +1,28 @@
 <?php
 require_once "modelo/produtoModelo.php";
+//requisição do modelo, para que possa ser feito todo o processo
 
 function carrinho(){
-	exibir("carrinho/carrinho");//só esta redirecionando para a pagina para poder fazer o layout
+	exibir("carrinho/carrinho");
+    //só vai redirecionando para a pagina para poder fazer o layout
 }
 
 function index(){
 
+//recebe todas as opcoes do carrinho para fazer todo o processo
     $_SESSION["quantcarrinho"]=0;
     if (isset($_SESSION["carrinho"])) {
-        $produtosCarrinho = array();
+        $carrinhoprod = array();
         $soma=0;
-        foreach ($_SESSION["carrinho"] as $produtoSessao) {
-            $_SESSION["quantcarrinho"]+= $produtoSessao["quantidade"];
-            $produtoBanco = pegarProdutoPorId($produtoSessao["id"]);
-            $produtosCarrinho[] = $produtoBanco; 
-            $aux= $produtoSessao["quantidade"]*$produtoBanco["preco"];
+        foreach ($_SESSION["carrinho"] as $sessaoprod) {
+            $_SESSION["quantcarrinho"]+= $sessaoprod["quantidade"];
+            $banco = pegarProdutoPorId($sessaoprod["id"]);
+            $carrinhoprod[] = $banco; 
+            $aux= $sessaoprod["quantidade"]*$banco["preco"];
             $soma= $soma + $aux;
         }
         
-        $dados["produtos"] = $produtosCarrinho;
+        $dados["produtos"] = $carrinhoprod;
         $dados["total"] = $soma;
         exibir("carrinho/carrinho", $dados);
         
@@ -30,6 +33,7 @@ function index(){
 
 function adicionar($id){
 
+//pega o produto do carrinho para adicionar no carinho e aumenta a quantidade de um produto(reaproveitamento)
     if (!isset($_SESSION["carrinho"])) {
         $_SESSION["carrinho"] = array();
     }
@@ -55,7 +59,7 @@ function adicionar($id){
 
 function remover($index){
     
-    
+//parte do deletar um produto do carrinho    
     foreach($_SESSION["carrinho"] as $key => $produto){
         
      
@@ -74,6 +78,8 @@ function remover($index){
 
 
 function tirarproduto($id){
+
+//tirar 1 produto da quantidade só funciona se tiver mais de uma quantidade do mesmo produto    
     if (!isset($_SESSION["carrinho"])) {
         $_SESSION["carrinho"] = array();
     }
@@ -87,6 +93,4 @@ function tirarproduto($id){
     }
     redirecionar("carrinho/index");   
 }
-
-
 ?>

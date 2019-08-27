@@ -14,11 +14,12 @@
 		<thead>
 			<tr>
 				<th>ID</th>
+				<th>ID Cliente</th>
 				<th>Logradouro</th>
 				<th>Numero</th>
 				<th>Bairro</th>
-                                <th>Cidade</th>
-                                <th>Cep</th>
+                <th>Cidade</th>
+                <th>Cep</th>
 				<th>Ver Detalhes</th>
 				<th>Deletar Endereco</th>
 				<th>Editar</th>
@@ -28,13 +29,13 @@
 		<?php foreach($endereco as $endereco): ?>
 		<tr>
                 
-                    <td>Id endereco: <?=$endereco['idendereco']?> </td>
-                    <td>Id usuario: <?=$endereco['idusuario']?> </td>
-                    <td>Logradouro: <?=$endereco['logradouro']?> </td>
-                    <td>Numero: <?=$endereco['numero']?> </td>
-                    <td>Bairro: <?=$endereco['bairro']?> </td>
-                    <td>Cidade: <?=$endereco['cidade']?> </td>
-                    <td>CEP: <?=$endereco['cep']?> </td>
+                    <td><?=$endereco['idendereco']?> </td>
+                    <td><?=$endereco['idusuario']?> </td>
+                    <td><?=$endereco['logradouro']?> </td>
+                    <td><?=$endereco['numero']?> </td>
+                    <td><?=$endereco['bairro']?> </td>
+                    <td><?=$endereco['cidade']?> </td>
+                    <td><?=$endereco['cep']?> </td>
 			
                         <td> <a href="./endereco/ver/<?=$endereco['idendereco']?>">Ver</a> </td>
 			<td> <a href="./endereco/deletar/<?=$endereco['idendereco']?>">Deletar</a> </td>

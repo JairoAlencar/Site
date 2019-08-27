@@ -25,7 +25,7 @@
 		<br>
                 Desconto:
                 <br>
-                <input type="number" name="desconto" placeholder="(desconto em %)" value="<?=@$cupom['desconto']?>">
+                <input type="number" name="desconto" max="100" placeholder="(desconto em %)" value="<?=@$cupom['desconto']?>">
 		<br>
 		<input type="submit" name="enviar" value="Enviar">
 		<br>

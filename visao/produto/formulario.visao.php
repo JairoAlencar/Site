@@ -50,7 +50,7 @@
     <br><br>
 
     Estoque minimo:<br> 
-    <input type="number" name="estoque_min" placeholder="Ex: 1" value="<?=@$produto['estoque_minimo']?>">
+    <input type="number" name="estoque_min" min="1" placeholder="Ex: 1" value="<?=@$produto['estoque_minimo']?>">
       <br><br>
 
     Estoque maximo:<br>  

@@ -2,6 +2,7 @@
 
 include("servico/validacaoServico.php");
 require_once "modelo/enderecoModelo.php";
+require_once "modelo/clienteModelo.php";
 
 function cadastro($idCliente){
 	if (ehpost()) {
