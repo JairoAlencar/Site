@@ -1,7 +1,7 @@
 <?php
-function  adicionarEndereco($clientes, $logradouro, $numero, $complemento, $bairro, $cidade, $cep) {
+function  adicionarEndereco($idCliente, $logradouro, $numero, $complemento, $bairro, $cidade, $cep) {
 
-	$sql  =  "INSERT INTO endereco(idendereco ,idusuario, logradouro, numero, complemento, bairro, cidade, cep) VALUES (NULL, '$clientes', '$logradouro', '$numero', '$complemento', '$bairro', '$cidade', '$cep')" ;
+	$sql  =  "INSERT INTO endereco(idendereco ,idusuario, logradouro, numero, complemento, bairro, cidade, cep) VALUES (NULL, '$idCliente', '$logradouro', '$numero', '$complemento', '$bairro', '$cidade', '$cep')" ;
 
 	$resultado  =  mysqli_query ( $cnv  = conn (), $sql );
 
@@ -43,9 +43,9 @@ function deletarEndereco($id){
 	return 'Endereco deletado com sucesso';
 }
 
-function editarEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $id){
+function editarEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $idCliente){
 
-	$sql = "UPDATE endereco SET logradouro = '$logradouro', numero = '$numero', complemento = '$complemento', bairro = '$bairro', cidade = '$cidade', cep = '$cep' where idendereco='$id'";
+	$sql = "UPDATE endereco SET logradouro = '$logradouro', numero = '$numero', complemento = '$complemento', bairro = '$bairro', cidade = '$cidade', cep = '$cep' where idusuario='$idCliente'";
 
 	$resultado  =  mysqli_query ( $cnv  = conn (), $sql );
 

@@ -2,34 +2,31 @@
 
 include("servico/validacaoServico.php");
 require_once "modelo/enderecoModelo.php";
-require_once "modelo/clienteModelo.php";
 
-function cadastro(){
+function cadastro($idCliente){
 	if (ehpost()) {
 
+            $idCliente = $idCliente;
             $logradouro = $_POST["logradouro"];
             $numero = $_POST["numero"];
             $complemento = $_POST["complemento"];
             $bairro = $_POST["bairro"];
-            $clientes = $_POST["usuario"];
             $cidade = $_POST["cidade"];
             $cep = $_POST["cep"];
 
 		$vali = validacao_endereco($logradouro, $numero, $bairro, $cidade, $cep);
 
 			if(count($vali)==0){
-				$msg = adicionarEndereco($cliente, $logradouro, $numero, $complemento, $bairro, $cidade, $cep);
-				redirecionar("endereco/listarEndereco");			
+				$msg = adicionarEndereco($idCliente, $logradouro, $numero, $complemento, $bairro, $cidade, $cep);
+				redirecionar("cliente/ver/$idCliente");			
 			}else{
 				$dados = array();
 				$dados["erros"] = $vali;
-                                $dados["usuario"] = exibirClientes();
 				exibir("endereco/cadastro", $dados);
 			}
 		
 		} else {
 			$dados = array();                    
-			$dados["usuario"] = exibirClientes();
 			exibir("endereco/cadastro", $dados);
 		}	
 		
@@ -42,7 +39,6 @@ function editar($id){
             $logradouro = $_POST["logradouro"];
             $numero = $_POST["numero"];
             $complemento = $_POST["complemento"];
-            $clientes = $_POST["usuario"];
             $bairro = $_POST["bairro"];
             $cidade = $_POST["cidade"];
             $cep = $_POST["cep"];
@@ -60,7 +56,6 @@ function editar($id){
 	}else{
 		$dados["endereco"] = pegarEnderecoPorId($id);
 		exibir("endereco/cadastro", $dados);
-		$dados["usuario"] = exibirClientes();
 	}
 }
 

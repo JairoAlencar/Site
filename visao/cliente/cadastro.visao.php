@@ -1,82 +1,72 @@
-<!DOCTYPE html> 
-<html>
-<head>
-  <title>Cadastro</title>
-  <meta charset="utf-8"> 
-  <link rel="stylesheet" type="text/css" href="./publico/css/css.css">  
-  <link rel="shoutcut icon" href="publico/imagens/icone.ico">  
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">  
-</head>
-
 <?php
-	if(ehPost()){
-		foreach ($erros as $erro){
-			echo "$erro<br>";
-		}
-	}
+if (ehPost()) {
+    foreach ($erros as $erro) {
+        echo "$erro<br>";
+    }
+}
 ?>
 
-	<form action="" method="post" class="box">
+<form action="" method="post" class="box">
 
-			<h1>Cadastro</h1>
-			Nome:<br>
-			<input type="text" name="nome" placeholder="Ex: Cletin" value="<?=@$cliente['nomeusuario']?>">
-				<br><br>
+    <h1>Cadastro</h1>
+    Nome:<br>
+    <input type="text" name="nome" placeholder="Ex: Cletin" value="<?= @$cliente['nomeusuario'] ?>">
+    <br><br>
 
-			Email:<br>
-			<input type="text" name="email" placeholder="Ex: Cleitin09@gmail.com" value="<?=@$cliente['email']?>">
-				<br><br>
+    Email:<br>
+    <input type="text" name="email" placeholder="Ex: Cleitin09@gmail.com" value="<?= @$cliente['email'] ?>">
+    <br><br>
 
-			Senha:<br>	
-			<input type="password" name="senha" placeholder="Senha" value="<?=@$cliente['senha']?>">
-				<br><br>
+    Senha:<br>	
+    <input type="password" name="senha" placeholder="Senha" value="<?= @$cliente['senha'] ?>">
+    <br><br>
 
-			CPF:<br>	
-			<input type="text" name="cpf" placeholder="Ex: 123456789" value="<?=@$cliente['cpf']?>">
-				<br><br>
+    CPF:<br>	
+    <input type="text" name="cpf" placeholder="Ex: 123456789" value="<?= @$cliente['cpf'] ?>">
+    <br><br>
 
-			Data de Nascimento:<br>	
-			<input type="date" name="nasc" value="<?=@$cliente['datadenascimento']?>">
-				<br><br>
-					
-			Sexo:
-				<br>
+    Data de Nascimento:<br>	
+    <input type="date" name="nasc" value="<?= @$cliente['datadenascimento'] ?>">
+    <br><br>
 
-				<?php 
-					if(@$cliente['sexo']=="Masculino"){
-						echo '<input type="radio" name="sexo" value="Masculino" checked="checked"> Masculino';
-							echo "<br>";
-						echo '<input type="radio" name="sexo" value="Feminino"> Feminino';
-					}else{
-						echo '<input type="radio" name="sexo" value="Masculino"> Masculino';
-							echo "<br>";
-						echo '<input type="radio" name="sexo" value="Feminino"  checked="checked"> Feminino';		
-					}
-				?>
+    Sexo:
+    <br>
 
-				<br><br>
+    <?php
+    if (@$cliente['sexo'] == "Masculino") {
+        echo '<input type="radio" name="sexo" value="Masculino" checked="checked"> Masculino';
+        echo "<br>";
+        echo '<input type="radio" name="sexo" value="Feminino"> Feminino';
+    } else {
+        echo '<input type="radio" name="sexo" value="Masculino"> Masculino';
+        echo "<br>";
+        echo '<input type="radio" name="sexo" value="Feminino"  checked="checked"> Feminino';
+    }
+    ?>
 
-			Tipo de usuario:
-				<br>
+    <br><br>
 
-				<?php 
-					if(@$cliente['tipousuario']=="Adm"){
-						echo '<input type="radio" name="tipo" value="Adm" checked="checked">Administrador';
-							echo "<br>";
-						echo '<input type="radio" name="tipo" value="User">Cliente';
-					}else{
-						echo '<input type="radio" name="tipo" value="Adm">Administrador';
-							echo "<br>";
-						echo '<input type="radio" name="tipo" value="User" checked="checked">Cliente';
-					} 
-				?>
+    Tipo de usuario:
+    <br>
 
-				
-				<br><br>
-				
-			<input type="checkbox" name="" required="">Li, aceito e concordo com as condições e os termos de uso
-				<br>
-			<input type="submit" name="vai" value="Cadastrar">	
-		</form>
-				<br>
-				<br>
+    <?php
+    if (@$cliente['tipousuario'] == "Adm") {
+        echo '<input type="radio" name="tipo" value="Adm" checked="checked">Administrador';
+        echo "<br>";
+        echo '<input type="radio" name="tipo" value="User">Cliente';
+    } else {
+        echo '<input type="radio" name="tipo" value="Adm">Administrador';
+        echo "<br>";
+        echo '<input type="radio" name="tipo" value="User" checked="checked">Cliente';
+    }
+    ?>
+
+
+    <br><br>
+
+    <input type="checkbox" name="" required="">Li, aceito e concordo com as condições e os termos de uso
+    <br>
+    <input type="submit" name="vai" value="Cadastrar">	
+</form>
+<br>
+<br>

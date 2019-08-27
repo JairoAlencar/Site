@@ -15,11 +15,7 @@
 		}
 	}
 ?>
-            <?php foreach ($clientes as $cliente): ?>
-          <option value="<?= $clientes['idusuario'] ?>" selected="selected"><?= $clientes['idusuario'] ?>
-        <?php endforeach; ?>
-	<form action="" method="post">
-
+                <form action="" method="post" class="box">
 			<h1>Cadastro</h1>
 			Logradouro:<br>
 			<input type="text" name="logradouro" value="<?=@$endereco['logradouro']?>">
@@ -43,16 +39,9 @@
 			CEP:<br>	
 			<input type="text" name="cep" value="<?=@$endereco['cep']?>">
 				<br><br>
-                                
-                               
-			    Categoria:<br>  
-      <select name="usuario">
-        <option value="default">Selecione uma categoria</option>
-        <?php foreach ($clientes as $cliente): ?>
-          <option value="<?= $clientes['idusuario'] ?>" selected="selected"><?= $clientes['idusuario'] ?></option>
-        <?php endforeach; ?>
-      </select>
-    <br><br>	
+
+                        <br><br>
+
 			<input type="checkbox" name="" required="">Li, aceito e concordo com as condições e os termos de uso
 				<br>
 			<input type="submit" name="vai" value="Cadastrar">	

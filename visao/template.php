@@ -10,6 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
      <link rel="stylesheet" type="text/css" href="./publico/css/css.css">
+       
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"> 
      <base href="<?= URL_BASE ?>"><!--Esta instrução é super importante e não deve ser mudada!-->
           
 
