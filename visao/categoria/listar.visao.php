@@ -1,15 +1,4 @@
-<!DOCTYPE html> 
-<html>
-<head>
-  <title>Categorias</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="./publico/css/css.css">  
-  <link rel="shoutcut icon" href="publico/imagens/icone.ico"> 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">  
-</head>
-
-<body>
-	<h1>Categoria</h1>
+<h1>Categoria</h1>
 <?php if(!empty($categoria)){ ?>
 	<TABLE class="table">
 			<thead>
@@ -42,5 +31,3 @@
 	</TABLE>
 
 	<a href="./categoria/categoria">Cadastrar uma nova Categoria</a>
-</body>
-</html>

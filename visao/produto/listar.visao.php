@@ -1,19 +1,4 @@
-<!DOCTYPE html> 
-<html>
-<head>
-  <title>Produtos</title> 
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="./publico/css/css.css">   
-  <link rel="shoutcut icon" href="publico/imagens/icone.ico"> 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"> 
-  <style>
-  	tr:nth-child(even) {
- 		 background-color: #dddd;
-	}
-  </style> 
-</head>
-
-	<h1>Produtos</h1>
+<h1>Produtos</h1>
 
 <?php if(!empty($produtos)){?>
 	<TABLE class="table">

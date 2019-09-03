@@ -24,11 +24,16 @@ function adicionar(){
 		$preco = $_POST["preco"];
 		$desc = $_POST["descricao"];
 		$cate = $_POST["categoria"];
-		$imagem = $_POST["imagem"];
+		/*$imagem = $_POST["imagem"];*/
+		$imagem_name = $_FILES["fileUpload"]["name"];
+		$imagem_tmp =  $_FILES["fileUpload"]["tmp_name"];
+		
 		$estoque_min = $_POST["estoque_min"];
 		$estoque_max = $_POST["estoque_max"];
 
+		$ret = uploadImagem($imagem);
 
+		echo $ret;
 		$vali = validacao_add_produto($cate, $preco, $nome, $desc, $imagem, $estoque_min, $estoque_max);
 
 		if(count($vali)==0){

@@ -108,4 +108,3 @@ CREATE TABLE IF NOT EXISTS `FormaPagamento` (
   `descricao` varchar(45) NOT NULL,
   PRIMARY KEY (`idFormaPagamento`)
 );
-

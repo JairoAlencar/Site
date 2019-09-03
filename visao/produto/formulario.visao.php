@@ -1,14 +1,4 @@
-<!DOCTYPE html> 
-<html>
-<head>
-  <title>Cadastro</title> 
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="./publico/css/css.css">   
-  <link rel="shoutcut icon" href="publico/imagens/icone.ico">  
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">  
-</head>
-
-  <h1>Adicionar produto</h1>
+<h1>Adicionar produto</h1>
     
 <?php
     if(ehPost()){
@@ -28,9 +18,9 @@
       <br><br>
 
     Imagem:<br> 
-    <input type="text" name="imagem" value="<?=@$produto['imagem']?>" placeholder="Ex: asjdnad.png">
+    <!--<input type="text" name="imagem" value="<?=@$produto['imagem']?>" placeholder="Ex: asjdnad.png">!-->
     
-    <!--<input type="file" name="imagem" value="<?=@$produto['imagem']?>">!-->
+    <input type="file" name="fileUpload" value="<?=@$produto['imagem']?>">
       <br><br>
     Categoria:<br>  
       <select name="categoria">

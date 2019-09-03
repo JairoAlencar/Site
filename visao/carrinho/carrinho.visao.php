@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Carrinho</title>
-	<meta charset="utf-8"> 
- 	<link rel="stylesheet" type="text/css" href="./publico/css/css.css">  
- 	<link rel="shoutcut icon" href="publico/imagens/icone.ico">  
-  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"> 
-  	<style>
-  		tr:nth-child(even) {
- 		 	background-color: #dddd;
-		}
-  	</style> 
-</head>
-<body>
-
-	<h1>Carrinho de Compras</h1>
+<h1>Carrinho de Compras</h1>
 
 <?php if(!empty($produtos)){
 $total = 0; 
@@ -94,5 +78,3 @@ $total = 0;
 		<input type="submit" name="frete" value="Calcular">
 	</div>
 <!--Falta a parte de enviar os produtos para a proxima pagina, tranqilo!-->
-</body>
-</html>
