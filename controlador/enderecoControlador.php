@@ -33,7 +33,7 @@ function cadastro($idCliente){
 		
 }
 
-function editar($id){
+function editar($id, $id2){
 
 	if(ehpost()){
 
@@ -48,7 +48,7 @@ function editar($id){
 		
 			if(count($vali)==0){
 				$msg = editarEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $id);
-				redirecionar("endereco/listarEndereco");
+				redirecionar("cliente/ver/$id2");
 			}else{
 				$dados = array();
 				$dados["erros"] = $vali;
@@ -70,13 +70,13 @@ function listarEndereco() {
 
 function ver($id){
 
-	$dados["endereco"] = pegarEnderecoPorId($id);
+	$dados["endereco"] = exibirEndereco($id);
 	exibir("endereco/listar1", $dados);
 }
 
-function deletar($id){
+function deletar($id, $id2){
 	$msg = deletarEndereco($id);
-	redirecionar("endereco/listarEndereco");
+        redirecionar("./endereco/ver/$id2");
 }
 
 ?>
