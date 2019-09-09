@@ -1,15 +1,44 @@
-		<h2>Detalhes do Cliente</h2>
+<!DOCTYPE html> 
+<html>
+<head>
+  <title></title> 
+  <meta charset="utf-8"> 
+  <link rel="stylesheet" type="text/css" href="./publico/css/css.css">  
+  <link rel="shoutcut icon" href="publico/imagens/icone.ico">  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">   
+</head>
 
-		<p>Id: <?=$cliente['idusuario']?> </p>
-		<p>Nome: <?=$cliente['nomeusuario']?> </p>
-		<p>Email: <?=$cliente['email']?> </p>
-		<p>Senha: <?=$cliente['senha']?> </p>
-		<p>CPF: <?=$cliente['cpf']?> </p>
-		<p>Nascimento: <?=$cliente['datadenascimento']?> </p>
-		<p>Sexo: <?=$cliente['sexo']?> </p>
-		<p>Tipo: <?=$cliente['tipousuario']?></p>
+		<h2>Detalhes do Endereço</h2>
 
-                <a href="./endereco/cadastro/<?=$cliente['idusuario']?>">Cadastre seu endereco</a>
-                <a href="./endereco/editar/<?=$cliente['idusuario']?>">Cadastre seu endereco</a>               
-                <br><br>
-		<a href="./cliente/listarCliente">Voltar</a>
+	<TABLE class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>ID Cliente</th>
+				<th>Logradouro</th>
+				<th>Numero</th>
+				<th>Bairro</th>
+                                <th>Cidade</th>
+                                <th>Cep</th>
+				<th>Deletar Endereco</th>
+				<th>Editar</th>
+			</tr>
+		</thead>
+
+		<?php foreach($endereco as $endereco): ?>
+		<tr>
+                
+                    <td><?=$endereco['idendereco']?> </td>
+                    <td><?=$endereco['idusuario']?> </td>
+                    <td><?=$endereco['logradouro']?> </td>
+                    <td><?=$endereco['numero']?> </td>
+                    <td><?=$endereco['bairro']?> </td>
+                    <td><?=$endereco['cidade']?> </td>
+                    <td><?=$endereco['cep']?> </td>
+
+			<td> <a href="./endereco/deletar/<?=$endereco['idendereco']?>/<?=$endereco['idusuario']?>">Deletar</a> </td>
+			<td> <a href="./endereco/editar/<?=$endereco['idendereco']?>/<?=$endereco['idusuario']?>">Editar</a> </td>
+		</tr>
+		<?php endforeach; ?>	
+</TABLE>
+		<a href="./cliente/ver/<?=$endereco['idusuario']?>">Voltar</a>
