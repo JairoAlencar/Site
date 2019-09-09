@@ -2,7 +2,7 @@
 
 	<p>Id: <?=$produto['idproduto']?> </p>
 	<p>Nome: <?=$produto['nomeproduto']?> </p>
-	<p>Imagem: <img src="<?=$produto['imagem']?>"> </p>
+	<p>Imagem: <?=~$produtos['imagem']?> </p>
 	<p>Preço: <?=$produto['preco']?> </p>
 	<p>Descrição: <?=$produto['descricao']?> </p>
 	<p>Categoria: <?=$produto['idcategoria']?> </p>

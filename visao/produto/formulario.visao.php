@@ -18,9 +18,9 @@
       <br><br>
 
     Imagem:<br> 
-    <!--<input type="text" name="imagem" value="<?=@$produto['imagem']?>" placeholder="Ex: asjdnad.png">!-->
+    <input type="text" name="imagem" value="<?=@$produto['imagem']?>" placeholder="Ex: asjdnad.png">
     
-    <input type="file" name="fileUpload" value="<?=@$produto['imagem']?>">
+    <!--<input type="file" name="fileUpload" value="<?=@$produto['imagem']?>">!-->
       <br><br>
     Categoria:<br>  
       <select name="categoria">
