@@ -10,9 +10,9 @@ function  adicionarEndereco($idCliente, $logradouro, $numero, $complemento, $bai
 	return 'Endereco cadastrado com sucesso!';
 }
 
-function exibirEndereco(){
+function exibirEndereco($id){
 
-	$sql = "SELECT * FROM endereco";
+	$sql = "SELECT * FROM endereco where idusuario=$id";
 	$resultado = mysqli_query(conn(), $sql);
 
 	$endereco = array();
@@ -24,7 +24,7 @@ function exibirEndereco(){
 
 function pegarEnderecoPorId($id){
 
-	$sql = "SELECT * FROM endereco WHERE idendereco = $id";
+	$sql = "SELECT * FROM endereco WHERE idusuario = $id";
 	$resultado = mysqli_query(conn(), $sql);
 
 	$endereco = mysqli_fetch_assoc($resultado);
@@ -43,10 +43,9 @@ function deletarEndereco($id){
 	return 'Endereco deletado com sucesso';
 }
 
-function editarEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $idCliente){
+function editarEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $id){
 
-	$sql = "UPDATE endereco SET logradouro = '$logradouro', numero = '$numero', complemento = '$complemento', bairro = '$bairro', cidade = '$cidade', cep = '$cep' where idusuario='$idCliente'";
-
+	$sql = "UPDATE endereco SET logradouro = '$logradouro', numero = '$numero', complemento = '$complemento', bairro = '$bairro', cidade = '$cidade', cep = '$cep' where idendereco='$id'";
 	$resultado  =  mysqli_query ( $cnv  = conn (), $sql );
 
 	if (!$resultado) {die ('Erro ao atualizar cadastro de endereco' . mysqli_error($cnv)); }
