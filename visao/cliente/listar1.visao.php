@@ -8,37 +8,18 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">   
 </head>
 
-		<h2>Detalhes do Endereço</h2>
+		<h2>Detalhes do Cliente</h2>
 
-	<TABLE class="table">
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>ID Cliente</th>
-				<th>Logradouro</th>
-				<th>Numero</th>
-				<th>Bairro</th>
-                                <th>Cidade</th>
-                                <th>Cep</th>
-				<th>Deletar Endereco</th>
-				<th>Editar</th>
-			</tr>
-		</thead>
+		<p>Id: <?=$cliente['idusuario']?> </p>
+		<p>Nome: <?=$cliente['nomeusuario']?> </p>
+		<p>Email: <?=$cliente['email']?> </p>
+		<p>Senha: <?=$cliente['senha']?> </p>
+		<p>CPF: <?=$cliente['cpf']?> </p>
+		<p>Nascimento: <?=$cliente['datadenascimento']?> </p>
+		<p>Sexo: <?=$cliente['sexo']?> </p>
+		<p>Tipo: <?=$cliente['tipousuario']?></p>
 
-		<?php foreach($endereco as $endereco): ?>
-		<tr>
-                
-                    <td><?=$endereco['idendereco']?> </td>
-                    <td><?=$endereco['idusuario']?> </td>
-                    <td><?=$endereco['logradouro']?> </td>
-                    <td><?=$endereco['numero']?> </td>
-                    <td><?=$endereco['bairro']?> </td>
-                    <td><?=$endereco['cidade']?> </td>
-                    <td><?=$endereco['cep']?> </td>
-
-			<td> <a href="./endereco/deletar/<?=$endereco['idendereco']?>/<?=$endereco['idusuario']?>">Deletar</a> </td>
-			<td> <a href="./endereco/editar/<?=$endereco['idendereco']?>/<?=$endereco['idusuario']?>">Editar</a> </td>
-		</tr>
-		<?php endforeach; ?>	
-</TABLE>
-		<a href="./cliente/ver/<?=$endereco['idusuario']?>">Voltar</a>
+                <button><a href="./endereco/cadastro/<?=$cliente['idusuario']?>">Cadastrar endereco</a></button>
+                <button><a href="./endereco/ver/<?=$cliente['idusuario']?>">Ver endereco</a></button>  
+                <br><br>
+		<a href="./cliente/listarCliente">Voltar</a>
