@@ -24,7 +24,7 @@ function exibirEndereco($id){
 
 function pegarEnderecoPorId($id){
 
-	$sql = "SELECT * FROM endereco WHERE idusuario = $id";
+	$sql = "SELECT * FROM endereco WHERE idendereco = $id";
 	$resultado = mysqli_query(conn(), $sql);
 
 	$endereco = mysqli_fetch_assoc($resultado);
