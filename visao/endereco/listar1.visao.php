@@ -17,6 +17,7 @@
 				<th>ID Cliente</th>
 				<th>Logradouro</th>
 				<th>Numero</th>
+				<th>Complemento</th>                                
 				<th>Bairro</th>
                                 <th>Cidade</th>
                                 <th>Cep</th>
@@ -32,6 +33,7 @@
                     <td><?=$endereco['idusuario']?> </td>
                     <td><?=$endereco['logradouro']?> </td>
                     <td><?=$endereco['numero']?> </td>
+                    <td><?=$endereco['complemento']?> </td>
                     <td><?=$endereco['bairro']?> </td>
                     <td><?=$endereco['cidade']?> </td>
                     <td><?=$endereco['cep']?> </td>
