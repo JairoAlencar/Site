@@ -41,4 +41,3 @@
 		</tr>
 		<?php endforeach; ?>	
 </TABLE>
-		<a href="./cliente/ver/<?=$endereco['idusuario']?>">Voltar</a>
