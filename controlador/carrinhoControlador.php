@@ -97,6 +97,10 @@ function remover($index){
     //redirecionar para a função principal  
 }
 
+function apagartudo(){
+    unset($_SESSION["carrinho"]);
+    redirecionar("carrinho/index");
+}
 
 function tirarproduto($id){
 

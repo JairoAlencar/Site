@@ -71,10 +71,14 @@ $total = 0;
 		<h6 style="float: left; color: black; font-size: 80%;">Possui algum cupom? utilize-o na próxima etapa</h6>
 		
 	</div>	
-
+            
 	<div style="float: left; color: black;">
 		<h5>Calculu o frete e prazo</h5>
 			<input type="text" name="frete" placeholder="00000-000">
 		<input type="submit" name="frete" value="Calcular">
 	</div>
+<br>
+        <div>
+            <a href="./carrinho/apagartudo"  style="margin-left: 10%;">Apagar pedido</a>
+        </div> 
 <!--Falta a parte de enviar os produtos para a proxima pagina, tranqilo!-->
