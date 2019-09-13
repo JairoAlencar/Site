@@ -82,6 +82,8 @@ function listarProdutos(){
 
         $produto = array();
 
+		
+		$dados["produtos"] = pegarCategoria();
 		$dados["produtos"] = exibirProduto();
 		exibir("produto/listar", $dados);
 }

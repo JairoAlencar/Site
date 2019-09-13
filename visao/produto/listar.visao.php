@@ -18,7 +18,7 @@
 			<?php foreach($produtos as $produto): ?>
 			<tr>
 				<td><?= $produto['idproduto']?></td>
-				<td><?= $produto['idcategoria']?></td>
+				<td><?= $categoria['categoria.descricao']?></td>
 				<td><?= $produto['nomeproduto']?></td>
 				<td><?= $produto['preco']; echo",00";?></td>
 				<td> <a href="./produto/ver/<?=$produto['idproduto']?>">Ver</a> </td>

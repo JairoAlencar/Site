@@ -25,6 +25,13 @@ function exibirCategoria(){
 	return $categoria;
 }
 
+function pegarCategoria(){
+	$sql = "SELECT * FROM categoria	INNER JOIN produtos ON categoria.idcategoria = produtos.idcategoria";
+	$resultado = mysqli_query(conn(), $sql);
+	$categoria = mysqli_fetch_assoc($resultado);
+	return $categoria;
+}
+
 function pegarCategoriaPorId($id){
 
 	$sql = "SELECT * FROM categoria WHERE idcategoria = $id";
