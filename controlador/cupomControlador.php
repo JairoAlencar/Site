@@ -3,6 +3,7 @@
 include("servico/validacaoServico.php");
 require_once "modelo/cupomModelo.php";
 
+/** Adm */
 function cupom() {
 
 	if (ehpost()) {
@@ -22,7 +23,7 @@ function cupom() {
 	}
 	exibir("cupom/adicionarCupom");
 }
-
+/** Adm */
 function editar($id){
 
 	if(ehpost()){
@@ -46,7 +47,7 @@ function editar($id){
 		exibir("cupom/adicionarCupom", $dados);
 	}
 }
-
+/** Adm */
 function listarCupom() {
 
 	$dados = array();
@@ -54,13 +55,14 @@ function listarCupom() {
 	$dados["cupom"] = exibirCupom();
 	exibir("cupom/listar", $dados);
 }
-
+/** Adm */
 function ver($id){
 
 	$dados["cupom"] = pegarCupomPorId($id);
 	exibir("cupom/listar1", $dados);
 }
 
+/** Adm */
 function deletar($id){
 
 	$msg = deletarCupom($id);

@@ -31,7 +31,7 @@ function acessoPegarPapelDoUsuario() {
 }
 
 function acessoPegarUsuarioLogado() {
-    if (acessoUsuarioEstaLogado()) {
+    if (acessoUsuarioEwstaLogado()) {
         return $_SESSION["acesso"]["email"];
     }   
 }

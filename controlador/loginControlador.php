@@ -1,7 +1,5 @@
 <?php
-
-require_once "modelo/usuarioModelo.php";
-
+require_once "modelo/clienteModelo.php";
 /** anon */
 function index() {
     if (ehPost()) {
@@ -10,19 +8,17 @@ function index() {
         
         if (acessoLogar($usuario)) {
             alert("bem vindo" . $login);
-            redirecionar("usuario");
+            redirecionar("");
         } else {
             alert("usuario ou senha invalidos!");
         }
     }
     exibir("login/index");
 }
-
 /** anon */
 function logout() {
     acessoDeslogar();
     alert("deslogado com sucesso!");
-    redirecionar("usuario");
+    redirecionar("cliente");
 }
-
 ?>
