@@ -17,10 +17,8 @@
     <input type="money" name="preco" placeholder="Ex: 100.00" value="<?=@$produto['preco']?>">
       <br><br>
 
-    Imagem:<br> 
-    <input type="text" name="imagem" value="<?=@$produto['imagem']?>" placeholder="Ex: asjdnad.png">
-    
-    <!--<input type="file" name="fileUpload" value="<?=@$produto['imagem']?>">!-->
+    Imagem:<br>   
+    <input type="file" name="imagem" value="<?=@$produto['imagem']?>">
       <br><br>
     Categoria:<br>  
       <select name="categoria">
@@ -46,6 +44,10 @@
     Estoque maximo:<br>  
     <input type="number" name="estoque_max" placeholder="Ex: 10 " value="<?=@$produto['estoque_maximo']?>">      
       <br><br>
+
+    Quantidade:<br>
+    <input type="number" name="quant_estoque" placeholder="Ex: 10" value="<?=@$produto['quant_estoque']?>">  
+    <br><br>
 
     Descrição<br>
       <textarea name="descricao" placeholder="Descrição" value=""><?=@$produto['descricao']?></textarea>

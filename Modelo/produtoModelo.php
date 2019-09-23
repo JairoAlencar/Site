@@ -13,9 +13,9 @@ function buscar_prod($buscar){
 	return $produto;
 }
 
-function adicionarProduto($cate, $preco, $nome, $desc, $imagem, $estoque_min, $estoque_max){
+function adicionarProduto($cate, $preco, $nome, $desc, $imagem, $estoque_min, $estoque_max, $quant_estoque){
 
-	$sql = "INSERT INTO produtos (idproduto, idcategoria, preco, nomeproduto, descricao, imagem, estoque_minimo, estoque_maximo) VALUES (null, '$cate', '$preco', '$nome', '$desc', '$imagem', '$estoque_min', '$estoque_max')";
+	$sql = "INSERT INTO produtos (idproduto, categoria, preco, nomeproduto, descricao, imagem, estoque_minimo, estoque_maximo, quant_estoque) VALUES (null, '$cate', '$preco', '$nome', '$desc', '$imagem', '$estoque_min', '$estoque_max', '$quant_estoque')";
 
 	$resultado = mysqli_query($cnv = conn(), $sql);
 
@@ -40,7 +40,8 @@ function exibirProduto(){
 }
 
 function pegarProdutoPorId($id){
-	$sql = "SELECT * FROM produtos WHERE idproduto = $id";
+	$sql = "SELECT * FROM produtos WHERE idproduto = $id" 
+		   /*."INNER JOIN categoria ON produto.idCategoria=categoria.idCategoria"*/;
 	$resultado = mysqli_query(conn(), $sql);
 
 	$produto = mysqli_fetch_assoc($resultado);

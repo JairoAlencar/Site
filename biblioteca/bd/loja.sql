@@ -3,108 +3,97 @@ CREATE DATABASE loja;
 USE loja;
 
 
-DROP TABLE IF EXISTS `categoria`;
-CREATE TABLE IF NOT EXISTS `categoria` (
-  `idcategoria` int(11) NOT NULL AUTO_INCREMENT,
-  `descricao` varchar(50) NOT NULL,
-  PRIMARY KEY (`idcategoria`)
+CREATE TABLE IF NOT EXISTS usuario(
+    idusuario INT(11) NOT NULL AUTO_INCREMENT, 
+    nomeusuario VARCHAR(60) NOT NULL,
+    email VARCHAR(40) NOT NULL,
+    senha VARCHAR(25) NOT NULL,   
+    cpf BIGINT(15) NOT NULL,
+    datadenascimento VARCHAR(10) NOT NULL,
+    sexo VARCHAR(10) NOT NULL,
+    tipousuario VARCHAR(5) NOT NULL,
+    PRIMARY KEY(idusuario)
 );
 
-
-DROP TABLE IF EXISTS `cupom`;
-CREATE TABLE IF NOT EXISTS `cupom` (
-  `idcupom` int(11) NOT NULL AUTO_INCREMENT,
-  `nomecupom` varchar(60) NOT NULL,
-  `desconto` int(11) NOT NULL,
-  PRIMARY KEY (`idcupom`)
+CREATE TABLE IF NOT EXISTS categoria(
+    idcategoria BIGINT(11) NOT NULL AUTO_INCREMENT,
+    descricao VARCHAR(30) NOT NULL,
+    PRIMARY KEY(idcategoria)
 );
 
-
-DROP TABLE IF EXISTS `endereco`;
-CREATE TABLE IF NOT EXISTS `endereco` (
-  `idendereco` int(11) NOT NULL AUTO_INCREMENT,
-  `idusuario` int(11) NOT NULL,
-  `logradouro` varchar(60) NOT NULL,
-  `numero` varchar(7) NOT NULL,
-  `complemento` varchar(60) DEFAULT NULL,
-  `bairro` varchar(60) NOT NULL,
-  `cidade` varchar(60) NOT NULL,
-  `cep` varchar(60) NOT NULL,
-  PRIMARY KEY (`idendereco`),
-  KEY `idusuario` (`idusuario`)
+CREATE TABLE IF NOT EXISTS cupom(
+    idcupom INT(8) NOT NULL AUTO_INCREMENT,
+    nomecupom VARCHAR(20) NOT NULL,
+    desconto INT(4) NOT NULL,
+    PRIMARY KEY(idCupom)
 );
 
-DROP TABLE IF EXISTS `estoque`;
-CREATE TABLE IF NOT EXISTS `estoque` (
-  `idestoque` int(11) NOT NULL AUTO_INCREMENT,
-  `id_produto` int(11) NOT NULL,
-  `qtde` int(11) NOT NULL,
-  PRIMARY KEY (`idestoque`),
-  KEY `id_produto` (`id_produto`)
+CREATE TABLE IF NOT EXISTS log_produto(
+    Id_Log BIGINT(11) NOT NULL AUTO_INCREMENT,
+    tabela VARCHAR(45) NOT NULL,
+    usuario VARCHAR(45) NOT NULL,
+    data_hora DATETIME NOT NULL,
+    acao VARCHAR(45) NOT NULL
+    dados VARCHAR(1000) NOT NULL,
+    PRIMARY KEY(ID_Log)
 );
 
-DROP TABLE IF EXISTS `log_produto`;
-CREATE TABLE IF NOT EXISTS `log_produto` (
-  `ID_LOG` int(11) NOT NULL AUTO_INCREMENT,
-  `TABELA` varchar(45) NOT NULL,
-  `USUARIO` varchar(45) NOT NULL,
-  `DATA_HORA` datetime NOT NULL,
-  `ACAO` varchar(45) NOT NULL,
-  `DADOS` varchar(1000) NOT NULL,
-  PRIMARY KEY (`ID_LOG`)
+CREATE TABLE IF NOT EXISTS produtos(
+    idproduto BIGINT(11) NOT NULL AUTO_INCREMENT,
+    categoria BIGINT(11) NOT NULL,
+    preco DOUBLE NOT NULL,
+    nomeproduto VARCHAR(30) NOT NULL,
+    descricao VARCHAR(800) NOT NULL,
+    imagem VARCHAR(200) NOT NULL,
+    estoque_minimo BIGINT(11) NOT NULL,
+    estoque_maximo BIGINT(11) NOT NULL,
+    quant_estoque INT NOT NULL,
+    PRIMARY KEY(idproduto),
+    FOREIGN KEY(categoria) REFERENCES categoria(idcategoria) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-DROP TABLE IF EXISTS `pedido`;
-CREATE TABLE IF NOT EXISTS `pedido` (
-  `idpedido` int(11) NOT NULL AUTO_INCREMENT,
-  `idusuario` int(11) NOT NULL,
-  `idendereco` int(11) NOT NULL,
-  `datacompra` date NOT NULL,
-  PRIMARY KEY (`idpedido`),
-  KEY `idusuario` (`idusuario`),
-  KEY `idendereco` (`idendereco`)
+CREATE TABLE IF NOT EXISTS endereco(
+    idendereco INT(11) NOT NULL AUTO_INCREMENT,
+    idusuario INT(11) NOT NULL,
+    logradouro VARCHAR(50) NOT NULL,
+    numero VARCHAR(7) NOT NULL,
+    complemento VARCHAR(20),
+    bairro VARCHAR(30) NOT NULL,
+    cidade VARCHAR(30) NOT NULL,
+    cep VARCHAR(9) NOT NULL,
+    PRIMARY KEY(idEndereco),
+    FOREIGN KEY(idusuario) REFERENCES usuario(idusuario) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-DROP TABLE IF EXISTS `pedido_produto`;
-CREATE TABLE IF NOT EXISTS `pedido_produto` (
-  `idproduto` int(11) NOT NULL,
-  `idpedido` int(11) NOT NULL,
-  `quantidade` int(11) NOT NULL,
-  PRIMARY KEY (`quantidade`),
-  KEY `idproduto` (`idproduto`),
-  KEY `idpedido` (`idpedido`)
+CREATE TABLE IF NOT EXISTS FormaPagamento(
+    idFormaPagamento INT NOT NULL AUTO_INCREMENT,
+    descricao VARCHAR(45) NOT NULL,
+    PRIMARY KEY(idFormaPagamento)
 );
 
-DROP TABLE IF EXISTS `produtos`;
-CREATE TABLE IF NOT EXISTS `produtos` (
-  `idproduto` int(11) NOT NULL AUTO_INCREMENT,
-  `idcategoria` int(11) NOT NULL,
-  `preco` double NOT NULL,
-  `nomeproduto` varchar(30) NOT NULL,
-  `descricao` varchar(60) NOT NULL,
-  `imagem` varchar(60) NOT NULL,
-  `estoque_minimo` int(11) DEFAULT NULL,
-  `estoque_maximo` int(11) DEFAULT NULL,
-  PRIMARY KEY (`idproduto`),
-  FOREIGN KEY(idcategoria) REFERENCES categoria(idcategoria) ON UPDATE CASCADE ON DELETE CASCADE
+CREATE TABLE IF NOT EXISTS  pedido (
+    idPedido BIGINT(11) NOT NULL AUTO_INCREMENT,
+    idusuario BIGINT(11) NOT NULL,
+    idFormaPagamento INT NOT NULL,
+    dataCompra DATE NOT NULL,
+    PRIMARY KEY(idPedido),
+    FOREIGN KEY(idusuario) REFERENCES usuario(idusuario) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(idFormaPagamento) REFERENCES FormaPagamento(idFormaPagamento) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-DROP TABLE IF EXISTS `usuario`;
-CREATE TABLE IF NOT EXISTS `usuario` (
-  `idusuario` int(11) NOT NULL AUTO_INCREMENT,
-  `nomeusuario` varchar(60) NOT NULL,
-  `email` varchar(60) NOT NULL,
-  `senha` varchar(60) NOT NULL,
-  `cpf` varchar(60) NOT NULL,
-  `datadenascimento` varchar(10) NOT NULL,
-  `sexo` varchar(60) NOT NULL,
-  `tipousuario` varchar(5) NOT NULL,
-  PRIMARY KEY (`idusuario`)
+CREATE TABLE IF NOT EXISTS pedido_produto(
+    idPedido BIGINT(11) NOT NULL,
+    idProduto BIGINT(11) NOT NULL,
+    quantidade INT(5) NOT NULL,
+    PRIMARY KEY(idProduto, idPedido),
+    FOREIGN KEY(idProduto) REFERENCES produto(idProduto) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(idPedido) REFERENCES pedido(idPedido) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-DROP TABLE IF EXISTS `FormaPagamento`;
-CREATE TABLE IF NOT EXISTS `FormaPagamento` (
-  `idFormaPagamento` int(11) NOT NULL AUTO_INCREMENT,
-  `descricao` varchar(45) NOT NULL,
-  PRIMARY KEY (`idFormaPagamento`)
+CREATE TABLE IF NOT EXISTS estoque(
+    idEstoque BIGINT(11) NOT NULL AUTO_INCREMENT,
+    idProduto BIGINT(11) NOT NULL,
+    quantidade INT(8) NOT NULL,
+    PRIMARY KEY(idEstoque),
+    FOREIGN KEY(idProduto) REFERENCES produto(idProduto) ON DELETE CASCADE ON UPDATE CASCADE
 );

@@ -4,8 +4,9 @@
 	<TABLE class="table">
 			<thead>
 				<tr>
+					<th>Imagem</th>
 					<th>ID</th>
-					<th>ID Categoria</th>					
+					<th>Categoria</th>					
 					<th>Nome</th>
 					<th>Valor</th>
 					<th>Ver Detalhes</th>
@@ -17,8 +18,9 @@
 
 			<?php foreach($produtos as $produto): ?>
 			<tr>
+				<td><img src="<?= $produto['imagem']?>" style="height: 200px; width: 200px;"></td>
 				<td><?= $produto['idproduto']?></td>
-				<td><?= $categoria['categoria.descricao']?></td>
+				<td></td>
 				<td><?= $produto['nomeproduto']?></td>
 				<td><?= $produto['preco']; echo",00";?></td>
 				<td> <a href="./produto/ver/<?=$produto['idproduto']?>">Ver</a> </td>

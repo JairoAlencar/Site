@@ -24,21 +24,19 @@ function adicionar(){
 		$preco = $_POST["preco"];
 		$desc = $_POST["descricao"];
 		$cate = $_POST["categoria"];
-		$imagem = $_POST["imagem"];
-		/*$imagem_name = $_FILES["fileUpload"]["name"];
-		$imagem_tmp =  $_FILES["fileUpload"]["tmp_name"];*/
+		$imagem_temp_name = $_FILES["imagem"]["tmp_name"];
+		$name_imagem = $_FILES["imagem"]["name"];
 		$estoque_min = $_POST["estoque_min"];
 		$estoque_max = $_POST["estoque_max"];
+		$quant_estoque = $_POST["quant_estoque"];
 
-		/*$ret = uploadImagem($imagem);
-
-		echo $ret;*/
-		$vali = validacao_add_produto($cate, $preco, $nome, $desc, $imagem, $estoque_min, $estoque_max);
+		$imagem = uploadImagem($imagem_temp_name, $name_imagem);
+		$vali = validacao_add_produto($cate, $preco, $nome, $desc, $imagem, $estoque_min, $estoque_max, $quant_estoque);
 
 		if(count($vali)==0){
             
             
-			$msg = adicionarProduto($cate, $preco, $nome, $desc, $imagem, $estoque_min, $estoque_max);
+			$msg = adicionarProduto($cate, $preco, $nome, $desc, $imagem, $estoque_min, $estoque_max, $quant_estoque);
 			redirecionar("produto/listarProdutos");
 		}else{
 			$dados = array();
