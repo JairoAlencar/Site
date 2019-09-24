@@ -3,6 +3,7 @@
 include("servico/validacaoServico.php");
 require_once "modelo/FormaPagamentoModelo.php";
 
+/** Adm */
 function FormaPagamento() {
 
 	if (ehpost()) {
@@ -22,6 +23,7 @@ function FormaPagamento() {
 	exibir("FormaPagamento/adicionarFormaPagamento");
 }
 
+/** Adm */
 function editar($id){
 
 	if(ehpost()){
@@ -45,6 +47,7 @@ function editar($id){
 	}
 }
 
+/** Adm */
 function listarFormaPagamento() {
 
 	$dados = array();
@@ -53,11 +56,13 @@ function listarFormaPagamento() {
 	exibir("FormaPagamento/listar", $dados);
 }
 
+/** Adm */
 function ver($id){
 	$dados["FormaPagamento"] = pegarFormaPagamentoPorId($id);
 	exibir("FormaPagamento/listar1", $dados);
 }
 
+/** Adm */
 function deletar($id){
 
 	$msg = deletarFormaPagamento($id);

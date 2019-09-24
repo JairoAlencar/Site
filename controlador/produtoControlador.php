@@ -1,10 +1,11 @@
-<?php
+w<?php
 
 include("servico/validacaoServico.php");
 include("servico/uploadServico.php");
 require_once "modelo/produtoModelo.php";
 require_once "modelo/categoriaModelo.php";
 
+/**anon*/
 function buscar(){
 	if (ehpost()){
 		$busca = $_POST["busca"];
@@ -17,6 +18,7 @@ function buscar(){
 	}
 }
 
+/** Adm */
 function adicionar(){
 	
 	if (ehpost()){
@@ -54,6 +56,7 @@ function adicionar(){
 	
 }
 
+/** Adm */
 function editar($id){
 
 	if(ehpost()){
@@ -76,6 +79,7 @@ function editar($id){
 	}
 }
 
+/** Adm */
 function listarProdutos(){
 
         $produto = array();
@@ -86,12 +90,14 @@ function listarProdutos(){
 		exibir("produto/listar", $dados);
 }
 
+/** Adm */ /** User */
 function ver($idproduto){
 
 	$dados["produto"] = pegarProdutoPorId($idproduto);
 	exibir("produto/listar1", $dados);
 }
 
+/** Adm */
 function deletar($id){
 	$msg = deletarProduto($id);
 	redirecionar("produto/listarProdutos");

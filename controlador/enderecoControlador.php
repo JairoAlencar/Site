@@ -4,6 +4,7 @@ include("servico/validacaoServico.php");
 require_once "modelo/enderecoModelo.php";
 require_once "modelo/clienteModelo.php";
 
+/** anon */
 function cadastro($idCliente){
 	if (ehpost()) {
 
@@ -33,6 +34,7 @@ function cadastro($idCliente){
 		
 }
 
+/** anon */
 function editar($id, $id2){
 
 	if(ehpost()){
@@ -60,6 +62,7 @@ function editar($id, $id2){
 	}
 }
 
+/** anon */
 function listarEndereco() {
 
 	$dados = array();
@@ -68,12 +71,14 @@ function listarEndereco() {
 	exibir("endereco/listar", $dados);
 }
 
+/** anon */
 function ver($id){
 
 	$dados["endereco"] = exibirEndereco($id);
 	exibir("endereco/listar1", $dados);
 }
 
+/** anon */
 function deletar($id, $id2){
 	$msg = deletarEndereco($id);
         redirecionar("./endereco/ver/$id2");

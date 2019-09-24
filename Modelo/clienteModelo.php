@@ -10,7 +10,7 @@ function  adicionarCliente($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo) {
 	return 'Cliente cadastrado com sucesso!';
 }
 
-/** Adm */
+
 function exibirClientes(){
 
 	$sql = "SELECT * FROM usuario";
@@ -31,7 +31,7 @@ function pegarClientePorId($id){
 	$cliente = mysqli_fetch_assoc($resultado);
 	return $cliente;
 }
-/** Adm */
+
 function deletarCliente($id){
 
 	$sql = "DELETE FROM usuario WHERE idusuario = $id";
@@ -43,7 +43,7 @@ function deletarCliente($id){
 
 	return 'Cliente deletado com sucesso';
 }
-/** Adm */
+
 function editarCliente($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo, $id){
 
 	$sql = "UPDATE usuario SET nomeusuario = '$nome', email = '$email', senha = '$senha', cpf = '$cpf', datadenascimento = '$nasc', sexo = '$sexo', tipousuario = '$tipo' WHERE idusuario = $id";

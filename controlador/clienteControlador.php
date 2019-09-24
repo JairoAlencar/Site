@@ -3,6 +3,7 @@
 include("servico/validacaoServico.php");
 require_once "modelo/clienteModelo.php";
 
+/** anon */
 function cadastro(){
 	if (ehpost()) {
 
@@ -33,6 +34,7 @@ function cadastro(){
 		
 }
 
+/** anon */
 function editar($id){
 
 	if(ehpost()){
@@ -63,6 +65,7 @@ function editar($id){
 	}
 }
 
+/** Adm */
 function listarCliente() {
 
 	$dados = array();
@@ -71,12 +74,14 @@ function listarCliente() {
 	exibir("cliente/listar", $dados);
 }
 
+/**anon*/
 function ver($idCliente){
 
 	$dados["cliente"] = pegarClientePorId($idCliente);
 	exibir("cliente/listar1", $dados);
 }
 
+/** Adm */
 function deletar($id){
 	$msg = deletarCliente($id);
 	redirecionar("cliente/listarCliente");

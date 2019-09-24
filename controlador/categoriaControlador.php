@@ -3,6 +3,7 @@
 include("servico/validacaoServico.php");
 require_once "modelo/categoriaModelo.php";
 
+/** Adm */
 function categoria() {
 
 	if (ehpost()) {
@@ -22,6 +23,7 @@ function categoria() {
 	exibir("categoria/adicionarCate");
 }
 
+/** Adm */
 function editar($id){
 
 	if(ehpost()){
@@ -45,6 +47,7 @@ function editar($id){
 	}
 }
 
+/** Adm */
 function listarCategoria() {
 
 	$dados = array();
@@ -53,12 +56,14 @@ function listarCategoria() {
 	exibir("categoria/listar", $dados);
 }
 
+/** Adm */
 function ver($id){
 
 	$dados["categoria"] = pegarCategoriaPorId($id);
 	exibir("categoria/listar1", $dados);
 }
 
+/** Adm */
 function deletar($id){
 
 	$msg = deletarCategoria($id);
