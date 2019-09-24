@@ -1,5 +1,6 @@
 <?php
 require_once "modelo/produtoModelo.php";
+include("servico/correiosServico.php");
 //requisição do modelo do produto, para que possa ser feito todo o processo
 //$_SESSION é um array associativo de sessão disponivel no script
 
@@ -123,6 +124,10 @@ function tirarproduto($id){
 function frete(){
     $cep_destino = $_POST['frete'];
 
-    $frete = CalculoFrete($cep_destino);
+    
+    $dados = array();
+    $dados['valor_frete'] = calcular_frete($cep_destino);
+
+    exibir('carrinho/carrinho', $dados);
 }
 ?>

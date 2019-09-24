@@ -65,7 +65,8 @@ function editar($id){
 	}
 }
 
-/** Adm */
+
+/** anon */
 function listarCliente() {
 
 	$dados = array();
