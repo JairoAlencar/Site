@@ -79,10 +79,11 @@ $total = 0;
             
 	<div style="float: left; color: black;">
 		<h5>Calculu o frete e prazo</h5>
-		<form action="" method="POST">
+		<form action="carrinho/frete" method="POST">
 				<input type="text" name="frete" placeholder="00000-000">
 			<input type="submit" name="vai_frete" value="Calcular">
 		</form>
+		<?php echo $dados['valor_frete']; ?>
 	</div>
 <br> 
 <!--Falta a parte de enviar os produtos para a proxima pagina, tranqilo!-->

@@ -28,10 +28,6 @@
             require('info.php');
         }      
 ?> 
-
-<?php   
-  //require('slots.php');
-?>
 <main class = "container"  id = "content">
             <?php
             require  $viewFilePath ;

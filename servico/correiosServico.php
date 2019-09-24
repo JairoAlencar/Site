@@ -1,13 +1,14 @@
 <?php
 
-function calcular_frete($cep_origem,
-    $cep_destino,
-    $peso, // em quilogramas
-    $valor, // valor de serviço adicionais
-    $tipo_do_frete, // Se é PAC ou Sedex
-    $altura = 6,
-    $largura = 20,
-    $comprimento = 20){
+function calcular_frete($cep_destino){
+
+$cep_origem = 18214558;
+$peso = 2;
+$valor = 100;
+$tipo_do_frete = '41106'; // Sedex: 40010 | Pac: 41106
+$altura = 6; //cm
+$largura = 20; //cm
+$comprimento = 20; //cm
 
 
     $url = "http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx?";
@@ -31,10 +32,6 @@ function calcular_frete($cep_origem,
     //Pac: 41106
 
     $xml = simplexml_load_file($url);
-
-    echo "<pre>";
-    var_dump($xml);
-
     return $xml->cServico;
 
 }
