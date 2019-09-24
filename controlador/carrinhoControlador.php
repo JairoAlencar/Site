@@ -119,4 +119,10 @@ function tirarproduto($id){
     redirecionar("carrinho/index");  
     //redirecionar para a função principal 
 }
+
+function frete(){
+    $cep_destino = $_POST['frete'];
+
+    $frete = CalculoFrete($cep_destino);
+}
 ?>

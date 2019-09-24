@@ -36,7 +36,12 @@ $total = 0;
 
 
 		endforeach;
-        $quantidade =  $_SESSION['quantcarrinho']; 
+        $quantidade =  $_SESSION['quantcarrinho'];
+        ?> 
+        <div>
+            <a href="./carrinho/apagartudo"  style="margin-left: 10%;">Apagar pedido</a>
+        </div>
+        <?php
                 }else{
         $total = 0;
         $quantidade = 0;        	
@@ -74,11 +79,10 @@ $total = 0;
             
 	<div style="float: left; color: black;">
 		<h5>Calculu o frete e prazo</h5>
-			<input type="text" name="frete" placeholder="00000-000">
-		<input type="submit" name="frete" value="Calcular">
+		<form action="" method="POST">
+				<input type="text" name="frete" placeholder="00000-000">
+			<input type="submit" name="vai_frete" value="Calcular">
+		</form>
 	</div>
-<br>
-        <div>
-            <a href="./carrinho/apagartudo"  style="margin-left: 10%;">Apagar pedido</a>
-        </div> 
+<br> 
 <!--Falta a parte de enviar os produtos para a proxima pagina, tranqilo!-->
