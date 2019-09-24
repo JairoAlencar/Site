@@ -1,4 +1,4 @@
-w<?php
+<?php
 
 include("servico/validacaoServico.php");
 include("servico/uploadServico.php");
@@ -90,7 +90,7 @@ function listarProdutos(){
 		exibir("produto/listar", $dados);
 }
 
-/** Adm */ /** User */
+/** anon */
 function ver($idproduto){
 
 	$dados["produto"] = pegarProdutoPorId($idproduto);
