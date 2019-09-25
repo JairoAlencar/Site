@@ -14,8 +14,10 @@
 
     <?php
         include_once 'app.php';
-        $usuario = acessoPegarPapelDoUsuario();
-        if ($_SESSION["acesso"]["tipousuario"]=="Adm"){
+        
+        if (empty($_SESSION['acesso']['tipousuario'])){}
+        
+        elseif ($_SESSION['acesso']['tipousuario']=="Adm"){
           echo '<div class="icons-btn">'; 
           echo '<a class="icons-user" href="./cliente/listarCliente"><i class="fas fa-user"></i></a>';  
           echo '<a class="icons-car" href="./produto/listarProdutos"><i class="fas fa-mobile-alt"></i></a>'; 
@@ -24,6 +26,7 @@
           echo '<a class="icons-pay" href="./FormaPagamento/listarFormaPagamento"><i class="fab fa-cc-amazon-pay"></i></a>'; 
           echo '</div>';
         }
-        else{}
+        
+        elseif ($_SESSION['acesso']['tipousuario']=="User"){}
      ?>
 </div>
