@@ -1,15 +1,15 @@
-<h2>Acesse o sistema</h2>
+<div  style="text-align: center;">
+	<h2>Acesse o sistema</h2>
 
-<form method="POST" action="">
+<form method="POST" action="" class="box">
+    <label for="login">Email:</label>
+    <input id="login" class="form-control" type="text" name="email" style="width: 70%; height: 10%;">
 
-
-    <label for="login">email:</label>
-    <input id="login" class="form-control" type="text" name="email">
-
-    <label for="passwd">senha:</label>
-    <input id="passwd" class="form-control" type="password" name="senha">
+    <label for="passwd">Senha:</label>
+    <input id="passwd" class="form-control" type="password" name="senha" style="width: 70%; height: 10%;">
     <br>
-    <button type="submit" class="btn btn-primary">Login</button> 
+    <input type="submit" lass="btn btn-primary" name="vai" value="Login">
 </form>
 <br>
-    <a href="./cliente/cadastro/?tipocadastro=user"><button class="btn btn-primary">Cadastrar-se</button></a>
+    <a href="./cliente/cadastro/?tipocadastro=user">Cadastrar-se</a>
+</div>    

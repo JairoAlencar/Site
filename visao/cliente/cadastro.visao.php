@@ -76,6 +76,6 @@ if (ehPost()) {
 </form>
 
 
-<button><a href="./admin">Deseja se cadastrar como admin?</a></button>
+<a href="./admin">Deseja se cadastrar como admin?</a>
 <br>
 <br>
