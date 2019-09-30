@@ -83,7 +83,7 @@ $total = 0;
 				<input type="text" name="frete" placeholder="00000-000">
 			<input type="submit" name="vai_frete" value="Calcular">
 		</form>
-		<?php echo $dados['valor_frete']; ?>
+		<?php echo $valor_frete; ?>
 	</div>
 <br> 
 <!--Falta a parte de enviar os produtos para a proxima pagina, tranqilo!-->

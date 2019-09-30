@@ -32,6 +32,10 @@ function index(){
         //dados de todos os produtos no carrinho
         $dados["total"] = $soma;
         //dados do valor total de todos os produtos no carrinho
+        $dados["valor_frete"] = frete;
+
+//DE ALGUMA FORMA BOTAR ESSA BOSTA AQUI(FRETE)
+
         exibir("carrinho/carrinho", $dados);
         //enviara todos os dados das funções requisitadas para a pagina principal, conforme seja requisitada
         
@@ -128,6 +132,6 @@ function frete(){
     $dados = array();
     $dados['valor_frete'] = calcular_frete($cep_destino);
 
-    exibir('carrinho/carrinho', $dados);
+    redirecionar('carrinho/carrinho', $dados);
 }
 ?>

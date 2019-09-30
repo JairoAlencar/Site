@@ -32,12 +32,6 @@
   if (($_SERVER['PHP_SELF'] != '/site/index.php/cliente/adicionar') && ($_SERVER['PHP_SELF'] != '/site/index.php/login/')) {
             require('info.php');
         }      
-
-$URL_ATUAL= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-if($URL_ATUAL=="http://localhost/site/produto/" || $URL_ATUAL== "http://localhost/site/"){
-    require "visao/produto/produtos.visao.php";
-    echo "<br>";
-} 
 ?>
 
 <main class = "container"  id = "content">

@@ -255,6 +255,7 @@ a{
 
 .fileira{
   padding: 40px 0;
+  width: 100%;
 }
 
 .produtos{
@@ -276,14 +277,14 @@ a{
   cursor: pointer;
   height: 250px;
 
-  border:solid;
+  border:solid gray 2px;
 }
 
 .foto-p{
   width: 200px !important;
-  margin-left: 35px;
-  margin-right: auto;
-  margin-top: 100px;
+  margin-left: 3%;
+  margin-top: 3%;
+  float: left;
 }
 
 .foto{
@@ -305,7 +306,7 @@ a{
 }
 
 .info a{
-	font-size: 10px;
+	font-size: 25px;
 }
 
 .itens p{

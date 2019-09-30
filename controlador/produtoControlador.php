@@ -87,14 +87,14 @@ function listarProdutos(){
 		
 		$dados["produtos"] = pegarCategoria();
 		$dados["produtos"] = exibirProduto();
-		exibir("produto/produtos" , $dados);
+		exibir("produto/listar" , $dados);
 }
 
 /** anon */
 function ver($idproduto){
 
 	$dados["produto"] = pegarProdutoPorId($idproduto);
-	exibir("produto/produtos", $dados);
+	exibir("produto/listar1", $dados);
 }
 
 /** Adm */
