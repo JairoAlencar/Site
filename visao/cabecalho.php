@@ -15,7 +15,10 @@
     <?php
         include_once 'app.php';
         
-        if (empty($_SESSION['acesso']['tipousuario'])){}
+        if (empty($_SESSION['acesso']['tipousuario'])){
+            echo '<a class="icons-user" href="./login/logout"><i class="fas fa-sign-out-alt"></i></a>';
+            echo '<a class="icons-user" href="./login"><i class="fas fa-user"></i></a>';
+        }
         
         elseif ($_SESSION['acesso']['tipousuario']=="Adm"){
           echo '<div class="icons-btn">'; 
@@ -27,6 +30,9 @@
           echo '</div>';
         }
         
-        elseif ($_SESSION['acesso']['tipousuario']=="User"){}
+        elseif ($_SESSION['acesso']['tipousuario']=="User"){
+            echo '<a class="icons-user" href="./login/logout"><i class="fas fa-sign-out-alt"></i></a>';
+            echo '<a class="icons-user" href="./cliente/ver/"><i class="fas fa-user"></i></a>';
+        }
      ?>
 </div>

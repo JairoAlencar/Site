@@ -75,7 +75,7 @@ function listarCliente() {
 	exibir("cliente/listar", $dados);
 }
 
-/**anon*/
+/** admin,user */
 function ver($idCliente){
 
 	$dados["cliente"] = pegarClientePorId($idCliente);

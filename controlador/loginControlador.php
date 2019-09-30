@@ -19,6 +19,6 @@ function index() {
 function logout() {
     acessoDeslogar();
     alert("deslogado com sucesso!");
-    redirecionar("cliente");
+    redirecionar("./");
 }
 ?>

@@ -8,7 +8,8 @@
 
     <label for="passwd">senha:</label>
     <input id="passwd" class="form-control" type="password" name="senha">
-
-    <button type="submit" class="btn btn-primary">vai login</button>
-
+    <br>
+    <button type="submit" class="btn btn-primary">Login</button> 
 </form>
+<br>
+    <a href="./cliente/cadastro/?tipocadastro=user"><button class="btn btn-primary">Cadastrar-se</button></a>

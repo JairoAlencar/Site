@@ -50,14 +50,20 @@ if (ehPost()) {
     <br>
 
     <?php
-    if (@$cliente['tipousuario'] == "Adm") {
-        echo '<input type="radio" name="tipo" value="Adm" checked="checked">Administrador';
-        echo "<br>";
-        echo '<input type="radio" name="tipo" value="User">Cliente';
-    } else {
-        echo '<input type="radio" name="tipo" value="Adm">Administrador';
-        echo "<br>";
+    $senha = $_GET['tipocadastro'];
+    if ($senha != "jairoesamuel"){
         echo '<input type="radio" name="tipo" value="User" checked="checked">Cliente';
+    }
+    else{
+        if (@$cliente['tipousuario'] == "Adm") {
+            echo '<input type="radio" name="tipo" value="Adm" checked="checked">Administrador';
+            echo "<br>";
+            echo '<input type="radio" name="tipo" value="User">Cliente';
+        } else {
+            echo '<input type="radio" name="tipo" value="Adm">Administrador';
+            echo "<br>";
+            echo '<input type="radio" name="tipo" value="User" checked="checked">Cliente';
+        }    
     }
     ?>
 
@@ -68,5 +74,8 @@ if (ehPost()) {
     <br>
     <input type="submit" name="vai" value="Cadastrar">	
 </form>
+
+
+<button><a href="./admin">Deseja se cadastrar como admin?</a></button>
 <br>
 <br>
