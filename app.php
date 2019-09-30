@@ -14,6 +14,7 @@ define('ACESSO', true);
 function acessoLogar($usuario) {
     if(!empty($usuario)) { //se o usuario não for vazio, logo existe o usuário na base com as credenciais
         $_SESSION["acesso"] = array( //cria a sessao acesso com os dados do usuario
+            "idusuario" => $usuario["idusuario"],
             "email" => $usuario["email"], 
             "tipousuario" => $usuario["tipousuario"]
         );
@@ -42,6 +43,12 @@ function acessoPegarPapelDoUsuario() {
 function acessoPegarUsuarioLogado() {
     if (acessoUsuarioEstaLogado()) {
         return $_SESSION["acesso"]["email"];
+    }   
+}
+
+function acessoPegarIDUsuarioLogado() {
+    if (acessoUsuarioEstaLogado()) {
+        return $_SESSION["acesso"]["idusuario"];
     }   
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
