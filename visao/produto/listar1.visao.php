@@ -15,7 +15,7 @@
     	<br>
     	<div align="center">
     		<h5><a href="./carrinho/adicionar/<?=$produto['idproduto']?>">Adicionar ao carrinho</a></h5>
-    		<h5><a href="./produto/listarProdutos">Voltar</a></h5>
+    		<h5><a href="">Voltar</a></h5>
     	</div>
     	
     </div>

@@ -1,7 +1,9 @@
 <h1>Carrinho de Compras</h1>
 
 <?php if(!empty($produtos)){
-$total = 0; 
+$total = 0;
+$valor_frete = 0;
+$prazo_frete = 0;  
 ?>	
 	<TABLE class="table" style="width: 75%; float: left;">
 		<thead>
@@ -37,14 +39,9 @@ $total = 0;
 
 		endforeach;
         $quantidade =  $_SESSION['quantcarrinho'];
-        ?> 
-        <div>
-            <a href="./carrinho/apagartudo"  style="margin-left: 10%;">Apagar pedido</a>
-        </div>
-        <?php
                 }else{
         $total = 0;
-        $quantidade = 0;        	
+        $quantidade = 0;     	
         ?>            
 				<h5 class="text-center" style="color: black">Não tem produtos no seu carrinho</h5>
 		<?php
@@ -56,18 +53,26 @@ $total = 0;
 	<div class="" style="float: right; width: 23%; margin-left: 2%; background: #f1f1f1; color: #3498db; margin-bottom: 3%;">
 		<h3 style="color: black">Detalhes do pedido</h3>
 
-		<h6>Subtotal
-			<h7>(<?php print $quantidade; ?> produtos)</h7> 
-			<h7 style = "margin-left: 3%;">R$</h7><?= $total?> 
-
+		<h6>Subtotal:
+			<h7>(<?php print $quantidade; ?> produtos)</h7>
 		</h6>
-		<h6>Frete</h6>
 
+		<h6> Valor produtos:	 
+			<h7 style = "margin-left: 3%;">R$ <?= $total?></h7> 
+		</h6>
+
+		<h6>Frete:
+				<h7> R$ <?php print $valor_frete;?></h7>	
+		</h6>
+
+		<h6>Prazo entrega:
+			<h7><?php print $prazo_frete;?> Dias</h7>
+		</h6>
 			<div style="border-top: 1.4px solid gray; border-bottom: 1.4px solid gray; margin-bottom:2%;">
 
 				<h5 style="color: black">Total</h5>
 
-				<h6>R$ <?= $total;?></h6>	
+				<h6>R$ <?= $total+$valor_frete;?></h6>	
 				
 			</div>
 
@@ -79,11 +84,21 @@ $total = 0;
             
 	<div style="float: left; color: black;">
 		<h5>Calculu o frete e prazo</h5>
-		<form action="carrinho/frete" method="POST">
+		<form action="carrinho/index" method="POST">
 				<input type="text" name="frete" placeholder="00000-000">
 			<input type="submit" name="vai_frete" value="Calcular">
 		</form>
-		<?php echo $valor_frete; ?>
 	</div>
 <br> 
+
+<?php
+if(!empty($produtos)){
+?>        
+        <div>
+            <a href="./carrinho/apagartudo"  style="margin-left: 10%;">Apagar pedido</a>
+        </div> 
+        
+<?php
+}
+?> 
 <!--Falta a parte de enviar os produtos para a proxima pagina, tranqilo!-->

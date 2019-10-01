@@ -15,6 +15,7 @@ function index(){
 
 //recebe todas as opcoes do carrinho para fazer todo o processo
     $_SESSION["quantcarrinho"]=0;
+    $cep_destino = $_POST['frete'];
     //contagem de quantidade de produtos
 
     if (isset($_SESSION["carrinho"])) {
@@ -34,9 +35,10 @@ function index(){
         //dados de todos os produtos no carrinho
         $dados["total"] = $soma;
         //dados do valor total de todos os produtos no carrinho
-        $dados["valor_frete"] = frete;
 
-//DE ALGUMA FORMA BOTAR ESSA BOSTA AQUI(FRETE)
+        $frete = calcular_frete($cep_destino);
+        $dados["valor_frete"] = $frete->Valor;
+        $dados["prazo_frete"] = $frete->PrazoEntrega; 
 
         exibir("carrinho/carrinho", $dados);
         //enviara todos os dados das funções requisitadas para a pagina principal, conforme seja requisitada
@@ -131,12 +133,9 @@ function tirarproduto($id){
 
 /** Adm, User */
 function frete(){
-    $cep_destino = $_POST['frete'];
-
     
-    $dados = array();
-    $dados['valor_frete'] = calcular_frete($cep_destino);
+    $frete = calcular_frete($cep_destino);
 
-    redirecionar('carrinho/carrinho', $dados);
+    redirecionar('carrinho/index');
 }
 ?>

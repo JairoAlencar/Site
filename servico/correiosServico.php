@@ -2,10 +2,10 @@
 
 function calcular_frete($cep_destino){
 
-$cep_origem = 18214558;
+$cep_origem = 18202000;
 $peso = 2;
 $valor = 100;
-$tipo_do_frete = '41106'; // Sedex: 40010 | Pac: 41106
+$tipo_do_frete = 41106; // Sedex: 40010 | Pac: 41106
 $altura = 6; //cm
 $largura = 20; //cm
 $comprimento = 20; //cm
@@ -32,6 +32,8 @@ $comprimento = 20; //cm
     //Pac: 41106
 
     $xml = simplexml_load_file($url);
-    return $xml->cServico;
 
+
+    //echo $xml;
+    return $xml->cServico;
 }
