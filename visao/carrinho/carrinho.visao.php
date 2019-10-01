@@ -2,8 +2,6 @@
 
 <?php if(!empty($produtos)){
 $total = 0;
-$valor_frete = 0;
-$prazo_frete = 0;  
 ?>	
 	<TABLE class="table" style="width: 75%; float: left;">
 		<thead>
@@ -41,7 +39,7 @@ $prazo_frete = 0;
         $quantidade =  $_SESSION['quantcarrinho'];
                 }else{
         $total = 0;
-        $quantidade = 0;     	
+        $quantidade = 0;    	
         ?>            
 				<h5 class="text-center" style="color: black">Não tem produtos no seu carrinho</h5>
 		<?php
@@ -76,6 +74,7 @@ $prazo_frete = 0;
 				
 			</div>
 
+		<a type="submit" href="./pedido/visualizar"></a>	
 		<input type="submit" name="comprar" value=" Continuar">
 		<!--Provavelmente esse botão ira mandar para a forma de pagamento!-->
 		<h6 style="float: left; color: black; font-size: 80%;">Possui algum cupom? utilize-o na próxima etapa</h6>
@@ -85,7 +84,7 @@ $prazo_frete = 0;
 	<div style="float: left; color: black;">
 		<h5>Calculu o frete e prazo</h5>
 		<form action="carrinho/index" method="POST">
-				<input type="text" name="frete" placeholder="00000-000">
+				<input type="text" name="frete" placeholder="00000000">
 			<input type="submit" name="vai_frete" value="Calcular">
 		</form>
 	</div>

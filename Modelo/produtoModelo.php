@@ -42,8 +42,8 @@ function exibirProduto(){
 function pegarProdutoPorId($id){
 	$sql = "SELECT * FROM produtos WHERE idproduto = $id" 
 		   /*."INNER JOIN categoria ON produto.idCategoria=categoria.idCategoria"*/;
-	$resultado = mysqli_query(conn(), $sql);
 
+	$resultado = mysqli_query(conn(), $sql);
 	$produto = mysqli_fetch_assoc($resultado);
 	return $produto;
 }

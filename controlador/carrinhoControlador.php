@@ -5,17 +5,16 @@ include("servico/correiosServico.php");
 //$_SESSION é um array associativo de sessão disponivel no script
 
 /** Adm, User */
-function carrinho(){
-	exibir("carrinho/carrinho");
-    //só vai redirecionando para a pagina para poder fazer o layout
-}
-
-/** Adm, User */
 function index(){
-
 //recebe todas as opcoes do carrinho para fazer todo o processo
     $_SESSION["quantcarrinho"]=0;
-    $cep_destino = $_POST['frete'];
+
+    $dados["valor_frete"] = 0;
+    $dados["prazo_frete"] = 0;  
+
+
+    
+
     //contagem de quantidade de produtos
 
     if (isset($_SESSION["carrinho"])) {
@@ -34,19 +33,21 @@ function index(){
         $dados["produtos"] = $carrinhoprod;
         //dados de todos os produtos no carrinho
         $dados["total"] = $soma;
-        //dados do valor total de todos os produtos no carrinho
+        //dados do valor total de todos os produtos no carrinho      
+        //enviara todos os dados das funções requisitadas para a pagina principal, conforme seja requisitada
+        
+    }
 
+    if(ehPost()) {
+        $cep_destino = $_POST['frete'];    
         $frete = calcular_frete($cep_destino);
         $dados["valor_frete"] = $frete->Valor;
         $dados["prazo_frete"] = $frete->PrazoEntrega; 
-
-        exibir("carrinho/carrinho", $dados);
-        //enviara todos os dados das funções requisitadas para a pagina principal, conforme seja requisitada
-        
-    } else {
-        exibir("carrinho/carrinho");
-        //se o carrinho estiver vazio vai apenas exibir a pagina, sem nenhum produto
     }
+
+    //$dados["totalComFrete"] = $valor_frete+$total;
+
+    exibir("carrinho/carrinho", $dados);
 }
 
 /** Adm, User */

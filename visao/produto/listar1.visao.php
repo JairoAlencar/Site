@@ -22,7 +22,7 @@
 
 	<div style="width: 100%; float: right; margin-bottom: 3%;">
 		<nav class="navbar bg-dark navbar-dark">
-        	<a class="navbar-brand" href="#">Descrição ></a>
+        	<a class="navbar-brand" href="./produto/ver/<?=$produto['idproduto']?>">Descrição</a>
         		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar2">
           			<span class="navbar-toggler-icon"></span>
        			 </button>

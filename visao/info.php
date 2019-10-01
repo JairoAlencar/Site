@@ -10,9 +10,9 @@
 	    </div>
 
 	    <div class="opição">
-	      <a href="./carrinho/carrinho"><i class="fas fa-shopping-cart"></i></a>
+	      <a href="./carrinho/index"><i class="fas fa-shopping-cart"></i></a>
 	      
-	      <div class="desc"><a href="./carrinho/carrinho">Carrinho de Compras</a></div>
+	      <div class="desc"><a href="./carrinho/index">Carrinho de Compras</a></div>
 	    </div>
 
 	  	<!--
