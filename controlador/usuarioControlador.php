@@ -27,7 +27,7 @@ function deletar($id) {
     redirecionar("usuario/index");
 }
 
-/** anon */
+/** Adm, User */
 function editar($id) {
     if (ehPost()) {
         $nome = $_POST["nome"];
@@ -40,7 +40,7 @@ function editar($id) {
     }
 }
 
-/** anon */
+/** Adm, User */
 function visualizar($id) {
     $dados["usuario"] = pegarUsuarioPorId($id);
     exibir("usuario/visualizar", $dados);

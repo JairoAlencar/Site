@@ -33,6 +33,6 @@
 		?>		
 </TABLE>
 
-<a href="./cliente/cadastro">Cadastrar um novo cliente</a>
+<a href="./cliente/cadastro/?tipocadastro=user">Cadastrar um novo cliente</a>
 </body>
 </html>

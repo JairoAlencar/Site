@@ -4,11 +4,13 @@ include("servico/correiosServico.php");
 //requisição do modelo do produto, para que possa ser feito todo o processo
 //$_SESSION é um array associativo de sessão disponivel no script
 
+/** Adm, User */
 function carrinho(){
 	exibir("carrinho/carrinho");
     //só vai redirecionando para a pagina para poder fazer o layout
 }
 
+/** Adm, User */
 function index(){
 
 //recebe todas as opcoes do carrinho para fazer todo o processo
@@ -45,6 +47,7 @@ function index(){
     }
 }
 
+/** Adm, User */
 function adicionar($id){
 
 //pega o produto do listar produto para adicionar no carinho e aumenta a quantidade de um produto(reaproveitamento)
@@ -78,7 +81,7 @@ function adicionar($id){
     //redirecionar para a função principal   
 }
 
-
+/** Adm, User */
 function remover($index){
     
 //parte do deletar um produto do carrinho    
@@ -102,6 +105,7 @@ function remover($index){
     //redirecionar para a função principal  
 }
 
+/** Adm, User */
 function apagartudo(){
     unset($_SESSION["carrinho"]);
     redirecionar("carrinho/index");
@@ -125,6 +129,7 @@ function tirarproduto($id){
     //redirecionar para a função principal 
 }
 
+/** Adm, User */
 function frete(){
     $cep_destino = $_POST['frete'];
 

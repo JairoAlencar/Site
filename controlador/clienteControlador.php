@@ -21,7 +21,7 @@ function cadastro(){
 
 			if(count($vali)==0){
 				$msg = adicionarCliente($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo);
-				redirecionar("./");			
+				redirecionar("./login");			
 			}else{
 				$dados = array();
 				$dados["erros"] = $vali;
@@ -34,7 +34,7 @@ function cadastro(){
 		
 }
 
-/** Admin, User */
+/** Adm, User */
 function editar($id){
 
 	if(ehpost()){
@@ -67,7 +67,7 @@ function editar($id){
 }
 
 
-/** Admin */
+/** Adm */
 function listarCliente() {
 
 	$dados = array();
@@ -76,7 +76,7 @@ function listarCliente() {
 	exibir("cliente/listar", $dados);
 }
 
-/** Admin,User */
+/** Adm,User */
 function ver($idCliente){
 
 	$dados["cliente"] = pegarClientePorId($idCliente);

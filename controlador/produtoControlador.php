@@ -5,7 +5,7 @@ include("servico/uploadServico.php");
 require_once "modelo/produtoModelo.php";
 require_once "modelo/categoriaModelo.php";
 
-/**anon*/
+/** anon */
 function buscar(){
 	if (ehpost()){
 		$busca = $_POST["busca"];
