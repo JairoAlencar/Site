@@ -39,8 +39,9 @@ function index(){
     }
 
     if(ehPost()) {
-        $cep_destino = $_POST['frete'];    
-        $frete = calcular_frete($cep_destino);
+        $cep_destino = $_POST['frete']; 
+        $tipo_do_frete = $_POST['tipo_do_frete'];  
+        $frete = calcular_frete($cep_destino, $tipo_do_frete);
         $dados["valor_frete"] = $frete->Valor;
         $dados["prazo_frete"] = $frete->PrazoEntrega; 
     }
@@ -132,11 +133,13 @@ function tirarproduto($id){
     //redirecionar para a função principal 
 }
 
-/** Adm, User */
+/** Adm, User 
 function frete(){
     
     $frete = calcular_frete($cep_destino);
+    $
 
     redirecionar('carrinho/index');
 }
+*/
 ?>

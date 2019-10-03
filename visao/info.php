@@ -1,7 +1,7 @@
 <div class="fixo">
 	    <div class="opição">
 	      <i class="fas fa-map-marker-alt"></i>
-	      <div class="desc"><a>IFSP-Câmpus Itapetininga</a></div>
+	      <div class="desc"><a style="font-size:16px">IFSP-Câmpus Itapetininga</a></div>
 	    </div>
 
 	    <div class="opição">

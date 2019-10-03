@@ -51,8 +51,8 @@ $total = 0;
 	<div class="" style="float: right; width: 23%; margin-left: 2%; background: #f1f1f1; color: #3498db; margin-bottom: 3%;">
 		<h3 style="color: black">Detalhes do pedido</h3>
 
-		<h6>Subtotal:
-			<h7>(<?php print $quantidade; ?> produtos)</h7>
+		<h6>Quantidade:
+			<h7><?php print $quantidade; ?> produtos</h7>
 		</h6>
 
 		<h6> Valor produtos:	 
@@ -64,7 +64,20 @@ $total = 0;
 		</h6>
 
 		<h6>Prazo entrega:
-			<h7><?php print $prazo_frete;?> Dias</h7>
+			<h7><?php
+					if($prazo_frete==1){
+						print $prazo_frete;
+				?>
+					Dia
+				<?php			
+					}else{
+						print $prazo_frete;
+				?>
+					Dias
+				<?php		
+					}
+				 
+				?></h7>
 		</h6>
 			<div style="border-top: 1.4px solid gray; border-bottom: 1.4px solid gray; margin-bottom:2%;">
 
@@ -83,8 +96,12 @@ $total = 0;
             
 	<div style="float: left; color: black;">
 		<h5>Calculu o frete e prazo</h5>
-		<form action="carrinho/index" method="POST">
-				<input type="text" name="frete" placeholder="00000000">
+		<form action="carrinho/index" method="POST" class="box">
+				<input type="text" name="frete" placeholder="00000000" style="margin-top: -10%;">	
+					<br>
+				<input type="radio" name="tipo_do_frete" value="41106" checked="checked">Pac
+				<input type="radio" name="tipo_do_frete" value="40010">Sedex
+					<br>
 			<input type="submit" name="vai_frete" value="Calcular">
 		</form>
 	</div>
