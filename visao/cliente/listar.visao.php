@@ -24,7 +24,7 @@
 			<td> <a href="./cliente/ver/<?=
 			$cliente['idusuario']?>">Ver</a> </td>
 			<td> <a href="./cliente/deletar/<?=$cliente['idusuario']?>">Deletar</a> </td>
-			<td> <a href="./cliente/editar/<?=$cliente['idusuario']?>">Editar</a> </td>
+			<td> <a href="./cliente/cadastro/?id=<?=$cliente['idusuario']?>&tipocadastro=user">Editar</a> </td>
 		</tr>
 		<?php endforeach;
 			}else{
