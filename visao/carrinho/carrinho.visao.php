@@ -42,7 +42,7 @@ $total = 0;
         $total = 0;
         $quantidade = 0;    	
         ?>            
-				<h5 class="text-center" style="color: black">Não tem produtos no seu carrinho</h5>
+				<h5 class="text-center" style="color: black">Nenhum produto no seu carrinho</h5>
 		<?php
                 }
 		?>	
