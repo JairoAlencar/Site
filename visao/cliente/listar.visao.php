@@ -24,8 +24,15 @@
 			<td> <a href="./cliente/ver/<?=
 			$cliente['idusuario']?>">Ver</a> </td>
 			<td> <a href="./cliente/deletar/<?=$cliente['idusuario']?>">Deletar</a> </td>
-			<td> <a href="./cliente/cadastro/?id=<?=$cliente['idusuario']?>&tipocadastro=user">Editar</a> </td>
-		</tr>
+			<?php
+                        require_once ("app.php");
+
+//                        $id = $_SESSION['acesso']['idusuario'];
+                        $id = $cliente['idusuario'];
+                        $id2 = $_SESSION['acesso']['tipousuario'];
+                        echo "<td> <a href='./cliente/editar/$id/?tipocadastro=$id2'>Editar</a> </td>";
+                        ?>
+                </tr>
 		<?php endforeach;
 			}else{
 		?>	

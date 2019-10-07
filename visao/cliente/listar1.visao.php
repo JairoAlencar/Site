@@ -24,11 +24,18 @@
 
                 echo '<button><a href="./endereco/cadastro/'.$idusuario.'">Cadastrar endereco</a></button>';
                 echo '<button><a href="./endereco/ver/'.$idusuario.'">Ver endereco</a></button>'; 
+                //-------------------------------------------------------------------------------------------
+                //editar
+                require_once ("app.php");
+                $id = $_SESSION['acesso']['idusuario'];
+                $id2 = $_SESSION['acesso']['tipousuario'];
+                echo "<button><a href='./cliente/editar/$id/?tipocadastro=$id2'>Editar Usuario</a> </td></button>";  
+                //-------------------------------------------------------------------------------------------
                 echo '<br><br>';
 		echo '<a href="./cliente/listarCliente">Voltar</a>';
     }
     else{
-        echo'<meta http-equiv="refresh" content=1;url="./">';;
+        echo'<meta http-equiv="refresh" content=1;url="./">';
     }
 
                 

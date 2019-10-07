@@ -35,8 +35,11 @@ function cadastro(){
 }
 
 /** Adm, User */
-function editar($id){
-
+function editar($id, $id2){
+    require_once 'app.php';
+$x = $_SESSION["acesso"]["idusuario"];
+$acess = $_SESSION["acesso"]["tipousuario"];
+    if ($id == $x || $acess == "Adm" ){
 	if(ehpost()){
 
 		$nome = $_POST["nome"];
@@ -51,8 +54,8 @@ function editar($id){
 		
 			if(count($vali)==0){
 				$msg = editarCliente($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo, $id);
-                                alert("Cadastro efetuado com sucesso!");
-				redirecionar("cliente/listarCliente");
+                                alert("Edição efetuada com sucesso!");
+				redirecionar("");
 			}else{
 				$dados = array();
 				$dados["erros"] = $vali;
@@ -63,7 +66,10 @@ function editar($id){
 
 		$dados["cliente"] = pegarClientePorId($id);
 		exibir("cliente/cadastro", $dados);
-	}
+        }
+    
+    }
+    else {echo'<meta http-equiv="refresh" content=1;url="">';}
 }
 
 

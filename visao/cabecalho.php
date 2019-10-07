@@ -37,7 +37,7 @@
         elseif ($_SESSION['acesso']['tipousuario']=="User"){
             $idusuario = $_SESSION['acesso']['idusuario'];
         ?>    
-            <a class="icons-user" href="./cliente/ver/'.$idusuario.'"><i class="fas fa-user" style="margin-top: 80%; font-size: 180%; margin-bottom: 100%; margin-left: 650%;"></i></a>
+            <?php echo '<a class="icons-user" href="./cliente/ver/'.$idusuario.'"><i class="fas fa-user" style="margin-top: 80%; font-size: 180%; margin-bottom: 100%; margin-left: 650%;"></i></a>';?>
             <a class="icons-user" href="./login/logout"><i class="fas fa-sign-out-alt" style="margin-top: 80%; font-size: 180%; margin-bottom: 100%;"></i></a>
       <?php      
         }
