@@ -5,7 +5,7 @@ $total = 0;
 ?>	
 	<TABLE class="table" style="width: 75%; float: left;">
 		<thead>
-			<tr>
+			<tr><th></th>
 				<th>Produto</th>
 				<th>Preço</th>
 				<th>Quantidade</th>
@@ -15,6 +15,7 @@ $total = 0;
 
 		<?php foreach($produtos as $produto): ?>
 			<tr>
+				<td><img src="<?= $produto['imagem']?>" style="height: 150px; width: 150px;"></td>
 				<td> <?= $produto['nomeproduto'] ?> </td>
 				<td>R$ <?= $produto['preco'];?> </td>
 				<td><?php  

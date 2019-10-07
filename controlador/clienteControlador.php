@@ -1,6 +1,7 @@
 <?php
 
 include("servico/validacaoServico.php");
+include("servico/emailServico.php");
 require_once "modelo/clienteModelo.php";
 
 /** anon */
@@ -95,4 +96,20 @@ function deletar($id){
 	redirecionar("cliente/listarCliente");
 }
 
+function email() {
+
+	if(isset($_POST['submit'])){
+
+	    $nome = $_POST["nome"];
+		$email = $_POST["email"];
+		$senha = $_POST["senha"];
+		$cpf = $_POST["cpf"];
+		$nasc = $_POST["nasc"];
+		$sexo = $_POST["sexo"];
+
+	    enviar_email($nome, $email);    
+
+	}
+	exibir("cliente/listarCliente");
+}
 ?>
