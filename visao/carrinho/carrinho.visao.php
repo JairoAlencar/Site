@@ -43,7 +43,6 @@ $total = 0;
         $quantidade = 0;    	
         ?>            
 				<h5 class="text-center" style="color: black">Nenhum produto no seu carrinho</h5>
-				<!--vaindsoanosndakdnakdns!-->
 		<?php
                 }
 		?>	
