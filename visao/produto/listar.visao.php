@@ -20,7 +20,7 @@
 			<tr>
 				<td><img src="<?= $produto['imagem']?>" style="height: 150px; width: 150px;"></td>
 				<td><?= $produto['idproduto']?></td>
-				<td></td>
+				<td><?= $produto['descricao']?></td>
 				<td><?= $produto['nomeproduto']?></td>
 				<td><?= $produto['preco']; echo",00";?></td>
 				<td> <a href="./produto/ver/<?=$produto['idproduto']?>">Ver</a> </td>

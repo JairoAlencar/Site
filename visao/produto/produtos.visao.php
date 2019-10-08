@@ -3,13 +3,14 @@
 	<div class="produtos">
 	        <h1>Produtos</h1>
 	        <div class="border"></div>
+	     		   
+					 <h1>Arrumar essa parte da categoria</h1>  
 
-	     		    <h1>Arrumar essa parte da categoria</h1>  
-
+<div class="slides owl-carousel">
 <?php
 if(!empty($produtos)){
 ?>
-	<div class="slides owl-carousel">
+	
 <?php
 	foreach ($produtos as $produto):
 ?>

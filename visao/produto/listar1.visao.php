@@ -11,7 +11,7 @@
     	<h2 style="color: #00b5cc;"><?= $produto['nomeproduto']?></h2>  
     	<h5 style="color:black;">Valor:  R$ <spam style="color:gray;"><?= $produto['preco']?></spam></h5>
     	<h5 style="color:black;">Quantidade em estoque: <spam style="color:gray;"><?= $produto['quant_estoque']?></spam></h5>
-    	<h5 style="color:black;">Categoria: <spam style="color:gray;"></spam></h5>
+    	<h5 style="color:black;">Categoria: <spam style="color:gray;"><?= $produto['nomeCate']?></spam></h5>
     	<br>
     	<div align="center">
     		<h5><a href="./carrinho/adicionar/<?=$produto['idproduto']?>">Adicionar ao carrinho</a></h5>

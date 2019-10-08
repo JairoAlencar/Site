@@ -29,7 +29,7 @@ function adicionarProduto($cate, $preco, $nome, $desc, $imagem, $estoque_min, $e
 
 function exibirProduto(){
 
-	$sql = "SELECT * FROM produtos";	
+	$sql = "SELECT * FROM produtos INNER JOIN categoria ON produtos.categoria=categoria.idcategoria";	
 	$resultado = mysqli_query(conn(), $sql);
 
 	$produto = array();
@@ -40,8 +40,7 @@ function exibirProduto(){
 }
 
 function pegarProdutoPorId($id){
-	$sql = "SELECT * FROM produtos WHERE idproduto = $id" 
-		   /*."INNER JOIN categoria ON produto.idCategoria=categoria.idCategoria"*/;
+	$sql = "SELECT produtos.idproduto, produtos.preco, produtos.nomeproduto, produtos.descricao, produtos.imagem, produtos.estoque_minimo, produtos.estoque_maximo, produtos.quant_estoque, categoria.descricao AS nomeCate  FROM produtos INNER JOIN categoria ON produtos.categoria = categoria.idcategoria WHERE idproduto = $id ";
 
 	$resultado = mysqli_query(conn(), $sql);
 	$produto = mysqli_fetch_assoc($resultado);
