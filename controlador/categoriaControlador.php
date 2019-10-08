@@ -16,7 +16,7 @@ function categoria() {
 					redirecionar("categoria/listarcategoria");
 			}else{
 				$dados = array();
-				$dados["erros"] = $vali;
+				$dados["erros"] = $vali; 
 				exibir("categoria/adicionarCate", $dados);
 			}	
 	}

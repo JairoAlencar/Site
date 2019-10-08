@@ -20,7 +20,7 @@ if(!empty($produtos)){
 	            	<div class="foto"> 
 	               		 <img class="foto-p" src="<?= $produto['imagem']?>" alt="">
 	              	</div>
-	            	<a href="./produto/ver/<?=$produto['idproduto']?>"><span><?= $produto['nomeproduto']?></span></a>
+	            	<a href="./produto/ver/<?=$produto['idproduto']?>"><p><?= $produto['nomeproduto']?></p></a>
 	            </div>
 		            <p style="color:black; text-align: center;" style="float: right;">
 		              R$ <?= $produto['preco']; echo",00";?>
