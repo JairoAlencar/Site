@@ -1,5 +1,5 @@
 <div  style="text-align: center;">
-	<h2>Acesse o sistema</h2>
+	<h2>Login</h2>
 
 <form method="POST" action="" class="box">
     <label for="login">Email:</label>
