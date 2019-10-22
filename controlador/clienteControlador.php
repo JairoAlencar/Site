@@ -96,6 +96,10 @@ function deletar($id){
 	redirecionar("cliente/listarCliente");
 }
 
+function teste(){
+	exibir("cliente/teste");
+}
+
 function email() {
 
 	if(isset($_POST['submit'])){
