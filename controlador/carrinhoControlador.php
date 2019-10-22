@@ -133,13 +133,8 @@ function tirarproduto($id){
     //redirecionar para a função principal 
 }
 
-/** Adm, User 
-function frete(){
-    
-    $frete = calcular_frete($cep_destino);
-    $
-
-    redirecionar('carrinho/index');
+function pedido(){
+    exibir("pedido/pedido");
+    //só para desenvolver o finalizar pedido
 }
-*/
 ?>
