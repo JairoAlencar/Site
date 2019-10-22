@@ -88,8 +88,7 @@ $total = 0;
 				
 			</div>
 
-		<a type="submit" href="./pedido/visualizar"></a>	
-		<input type="submit" name="comprar" value=" Continuar">
+		<a type="submit" href="./carrinho/pedido"><input type="submit" name="comprar" value=" Continuar"></a>	
 		<!--Provavelmente esse botão ira mandar para a forma de pagamento!-->
 		<h6 style="float: left; color: black; font-size: 80%;">Possui algum cupom? utilize-o na próxima etapa</h6>
 		
