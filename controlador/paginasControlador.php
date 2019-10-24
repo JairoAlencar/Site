@@ -6,8 +6,7 @@ require_once "modelo/categoriaModelo.php";
 
 /** anon */
 function index() {
-    $produto = array();
-		
+        $produto = array();
 	$dados["produtos"] = pegarCategoria();
 	$dados["produtos"] = exibirProduto();
     exibir("produto/produtos", $dados);

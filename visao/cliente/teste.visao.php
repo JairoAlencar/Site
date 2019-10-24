@@ -48,6 +48,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 				        <span aria-hidden="true">&laquo;</span>
 				      </a>
 				    </li>
+                                    
 				    <?php 
 				    for($i=0;$i<$num_paginas;$i++){
 				    $estilo = "";
@@ -64,6 +65,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 				  </ul>
 				</nav>
   				<?php } ?>
+
   			</div>
   		</div>
   	</div>
