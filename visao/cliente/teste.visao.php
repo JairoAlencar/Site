@@ -8,12 +8,12 @@ $itens_por_pagina = 2;
 $pagina = intval($_GET['pagina']);
 
 // puxar produtos do banco
-$execute = $cnx -> query("SELECT idusuario FROM usuario LIMIT $pagina, $itens_por_pagina") or die($cnx->error);
-$cliente = $execute->fetch_assoc();
+$execute = $cnx -> query("SELECT * FROM produtos LIMIT $pagina, $itens_por_pagina") or die($cnx->error);
+$produto = $execute->fetch_assoc();
 $num = $execute->num_rows;
 
 // pega a quantidade total de objetos no banco de dados
-$num_total = $cnx->query("select idusuario from usuario") -> num_rows;
+$num_total = $cnx->query("select * from produtos") -> num_rows;
 
 // definir numero de páginas
 $num_paginas = ceil($num_total/$itens_por_pagina);
@@ -27,15 +27,17 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 				<table class="table table-bordered table-hover">
 					<thead>
 						<tr>
+                                                        <td>ID</td>
 							<td>Nome</td>
 						</tr>
 					</thead>
 					<tbody>
 						<?php do{ ?>
 						<tr>
-							<td><?php echo $cliente['idusuario']; ?></td>
+                                                        <td><?php echo $produto['idproduto']; ?></td>
+							<td><?php echo $produto['nomeproduto']; ?></td>
 						</tr>
-						<?php } while($cliente = $execute->fetch_assoc()); ?>
+						<?php } while($produto = $execute->fetch_assoc()); ?>
 					</tbody>
 				</table>
 
