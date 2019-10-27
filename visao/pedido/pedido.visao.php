@@ -36,6 +36,16 @@ echo "Ordem de formularios: Endereço usuario, frete(data de entrega e valor), f
 
 <div class="resumo_fim" style="float: right;">
 	<h4><i class="fas fa-box-open"></i> Resumo</h4>
+		<h6>Produto:
+			<h7>valor do produto</h7>	
+		</h6>
+		<h6>Frete:
+			<h7>valor frete</h7>
+		</h6>
+	<br>	
+		<h6>Valor à pagar:
+			<h7>valor final</h7>
+		</h6>
 
 </div>
 
