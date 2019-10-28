@@ -1,6 +1,11 @@
 <?php
-function exixir(){
+require_once "modelo/FormaPagamentoModelo.php";
 
-        exibir("pedido/pedido");
+function listarFormaPagamento() {
+
+	$dados = array();
+	$dados["FormaPagamento"] = exibirFormaPagamento();
+
+	exibir("pedido/pedido", $dados);
 }
 ?>

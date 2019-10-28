@@ -13,9 +13,16 @@
 	<div name="form pag">
 		<h4><i class="fab fa-amazon-pay"></i> Forma de pagamento</h4>
 
-			<form action="" method="" class="box">
-				
-			</form>
+			<?php 
+				if(is_array($FormaPagamento)){
+					foreach($FormaPagamento as $pag){
+			?>
+						<input type="radio" name="forma" value="<?=$pag['descricao']?>">
+			<?php
+					}
+				} 	
+			?>
+
 	</div>
 
 	<div name="cupom">

@@ -181,6 +181,4 @@ function buscar_cupom($total){
         exibir("pedido/pedido", $dados);
     }
 }
-
-
 ?>
