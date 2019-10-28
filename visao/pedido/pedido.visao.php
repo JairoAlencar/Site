@@ -46,11 +46,10 @@
 		</h6>
 		<h6>Frete:
 			<h7>valor frete</h7>
-		</h6>
-	<br>	
-		<h6>Valor à pagar:
+		</h6>	
+		<h5 style="border-top: 1.4px solid; border-bottom: 1.4px solid;">Valor à pagar:
 			<h7>R$ <?=$valor?></h7>
-		</h6>
+		</h5>
 
 </div>
 

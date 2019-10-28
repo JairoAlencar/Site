@@ -49,7 +49,7 @@ $total = 0;
 	</TABLE>
 	
 <!--arrumar o class para rodar o css do botão e deixar masis organizado essa parte!-->
-	<div class="" style="float: right; width: 23%; margin-left: 2%; background: #f1f1f1; color: #3498db; margin-bottom: 3%;">
+	<div class="" style="float: right; width: 23%; margin-left: 2%; margin-bottom: 3%;">
 		<h3 style="color: black">Detalhes do pedido</h3>
 
 		<h6>Quantidade:
@@ -88,7 +88,9 @@ $total = 0;
 				
 			</div>
 
-		<a type="submit" href="./carrinho/pedido"><input type="submit" name="comprar" value=" Continuar"></a>	
+		<div class="box">
+			<a type="submit" href="./carrinho/pedido" style="height: 0px; width: 0px; margin-top: -25%; text-decoration: none;"><input type="submit" name="comprar" value=" Continuar" style="padding: 10px 10px 10px 10px"></a>
+		</div>	
 		<!--Provavelmente esse botão ira mandar para a forma de pagamento!-->
 		<h6 style="float: left; color: black; font-size: 80%;">Possui algum cupom? utilize-o na próxima etapa</h6>
 		
