@@ -47,13 +47,14 @@
 		<h6>Frete:
 			<h7>valor frete</h7>
 		</h6>	
-		<h5 style="border-top: 1.4px solid; border-bottom: 1.4px solid;">Valor à pagar:
-			<h7>R$ <?=$valor?></h7>
-		</h5>
 
-</div>
+		<div style="border-top: 1.4px solid; border-bottom: 1.4px solid;">
+			<h6 style="margin-top: 4%;">Valor à pagar:
+				<h7>R$ <?=$valor?></h7>
+			</h6>
+		</div>
 
-
-<div style="clear: left;" class="box">
-	<button><i class="fas fa-box"></i> Finalizar pedido</button>
+		<div style="clear: left;" class="box">
+			<button><i class="fas fa-box"></i> Finalizar pedido</button>
+		</div>
 </div>
