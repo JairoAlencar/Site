@@ -3,6 +3,15 @@
 	<div name="end entreg">
 		<h4><i class="fas fa-home"></i> Endereço de entrega</h4>	
 
+		<?php
+			if(is_array($endereco)){
+				foreach($endereco as $ende){
+		?>
+					<input type="radio" name="endereco" value="<?=$ende['logradouro'], $ende['numero'], $ende['complemento'], $ende['bairro'], $ende['cep'] , $ende['cidade']?>">
+		<?php			
+				}
+			}
+		?>
 	</div>
 
 	<div name="frete">
