@@ -20,3 +20,9 @@ function mapa (){
 	exibir("paginas/mapa");
 }
 
+function paginacao($id=0) {
+        $produto = array();
+	$dados["produtos"] = pegarCategoria();
+	$dados["produtos"] = exibirProduto();
+    exibir("produto/produtos", $dados);
+}

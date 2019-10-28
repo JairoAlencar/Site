@@ -1,15 +1,16 @@
 <?php
-//SÓ PRECISA VER COMO PASSAR O NUMERO DA PAGINA PARA A VARIAVEL $PAGINA...
-//OBS: A PAGINA INICIAL =0
 $cnx =new mysqli("localhost", "root", "", "Loja");
+$count=0;
+
 // definir o numero de itens por pagina
-$itens_por_pagina = 1;
-$pagina = intval($_GET['pagina']);
+$itens_por_pagina = 10;
+        $uri_parts = explode('/', $_SERVER['REQUEST_URI'], 5);
+        $pag = $uri_parts[4];
 // pegar a pagina atual
-//$pagina = intval($_GET['pagina']);
+$pagina = $pag;
 
 // puxar produtos do banco
-$execute = $cnx -> query("SELECT * FROM produtos LIMIT $pagina, $itens_por_pagina") or die($cnx->error);
+$execute = $cnx -> query("SELECT * FROM produtos ORDER BY idproduto LIMIT $pagina, $itens_por_pagina") or die($cnx->error);
 $produto = $execute->fetch_assoc();
 $num = $execute->num_rows;
 
@@ -19,6 +20,7 @@ $num_total = $cnx->query("select * from produtos") -> num_rows;
 // definir numero de páginas
 $num_paginas = ceil($num_total/$itens_por_pagina);
 ?>
+
 <div class="fileira" name="fileira1">
   	<div class="container-fluid">
             <div class="col-lg-12"> 
@@ -28,7 +30,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
                         </div>
   				<?php if($num > 0){ ?>
 					<tbody>
-						<?php do{ ?>
+						<?php do{ $count++;?>
                 <div class="col-lg-4">                           
 		<div class="itens">
 			<div class="itens">
@@ -47,29 +49,33 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 	        </div>
 		</div>
                 </div>
-                                         
+                                                        <?php $idx = $produto['idproduto']; ?>                  
 						<?php } while($produto = $execute->fetch_assoc()); ?>
 					</tbody>        
                                 
                              <div class="col-lg-12">
-				<nav>
+			<nav>
 				  <ul class="pagination">
 				    <li>
-				      <a href="./?pagina=0" aria-label="Previous">
+                                        <?php 
+                                        $pagina = intval($pag);
+                                        if($pagina==0){}
+                                        elseif ($pagina>0){?>
+                                        <a href="" onclick="window.history.go(-1); return false;" aria-label="Previous">
 				        <span aria-hidden="true">&laquo;</span>
+                                        <?php } ?>
 				      </a>
 				    </li>
-                                    
 				    <?php 
 				    for($i=0;$i<$num_paginas;$i++){
 				    $estilo = "";
 				    if($pagina == $i)
 				    	$estilo = "class=\"active\"";
 				    ?>
-				    <li <?php echo $estilo; ?> ><a href="./<?php echo $i; ?>"><?php echo $i+1; ?></a></li>
+                                    <!--<li <?php //echo $estilo; ?> ><a href="cliente/teste/?pagina=<?php //echo $i-($idx-$media)?>"><?php //echo $i; ?></a></li>
 					<?php } ?>
-				    <li>
-				      <a href="./<?php echo $num_paginas-1; ?>" aria-label="Next">
+				    <li>-->
+                                      <a href="paginas/paginacao/<?php if ($idx>1){echo ($idx-1);} else{$idx;}?>" aria-label="Next">
 				        <span aria-hidden="true">&raquo;</span>
 				      </a>
 				    </li>
@@ -81,21 +87,3 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
   		</div>
         </div>
 </div>
-
-	<script type="text/javascript">
-	  $(".owl-carousel").owlCarousel({
-	    margin:5,
-	    responsiveClass:true,
-	    responsive:{
-	      0:{
-	        items:1
-	      },
-	      680:{
-	        items:2
-	      },
-	      960:{
-	        items:3
-	      }
-	    }
-	  });
-	</script>
