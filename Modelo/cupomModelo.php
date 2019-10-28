@@ -57,4 +57,13 @@ function editarCupom($nomecupom, $desconto, $id){
 	return 'Edição de cupom atualizado com sucesso!';	
 }
 
+function busca_cupom($cupom){
+
+	$sql = "SELECT * FROM cupom WHERE nomecupom = '$cupom'";
+	$resultado = mysqli_query(conn(), $sql);
+
+	$desconto = mysqli_fetch_assoc($resultado);
+
+	return $desconto["desconto"];
+}
 ?>

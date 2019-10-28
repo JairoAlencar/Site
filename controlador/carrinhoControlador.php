@@ -1,5 +1,7 @@
 <?php
 require_once "modelo/produtoModelo.php";
+require_once "modelo/cupomModelo.php";
+
 include("servico/correiosServico.php");
 //requisição do modelo do produto, para que possa ser feito todo o processo
 //$_SESSION é um array associativo de sessão disponivel no script
@@ -134,7 +136,51 @@ function tirarproduto($id){
 }
 
 function pedido(){
-    exibir("pedido/pedido");
-    //só para desenvolver o finalizar pedido
+    $soma = 0;
+    $desconto = 0;
+    $valor = 0;
+
+    if (isset($_SESSION["carrinho"])) {
+        $carrinhoprod = array();
+        $soma = 0;
+        $desconto = 0;
+        $valor = 0;
+
+        foreach ($_SESSION["carrinho"] as $sessaoprod) {
+            $_SESSION["quantcarrinho"]+= $sessaoprod["quantidade"];
+            $banco = pegarProdutoPorId($sessaoprod["id"]);
+            $carrinhoprod[] = $banco; 
+            $aux= $sessaoprod["quantidade"]*$banco["preco"];
+            $soma= $soma + $aux;
+        }
+        
+        $dados["produtos"] = $carrinhoprod;
+        $dados["total"] = $soma;
+        $dados["desconto"] = $desconto;
+        $dados["valor"] = $soma;
+        
+    }else{
+        $dados["total"] = $soma;
+        $dados["desconto"] = $desconto;
+        $dados["valor"] = $soma;
+    }
+
+        
+
+    exibir("pedido/pedido", $dados);
 }
+
+function buscar_cupom($total){
+    if(ehPost()){
+        $cupom = $_POST["nome_cupom"];
+
+        $desconto = busca_cupom($cupom);
+        $dados["desconto"] = $desconto;
+        $dados["total"] = $total;
+        $dados["valor"] = $total-($total*$desconto/100);
+        exibir("pedido/pedido", $dados);
+    }
+}
+
+
 ?>

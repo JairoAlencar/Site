@@ -15,10 +15,10 @@
 	      <div class="desc"><a href="./carrinho/index">Carrinho de Compras</a></div>
 	    </div>
 
-	  	<!--
-	  	<div class="opição">
-	  		<i class="far fa-arrow-alt-circle-up"></i>
-	  		<div class="desc"><a href="#logo">Topo</a></div>	
-	  	</div> 
-	  	!-->   
+	    <div class="opição">
+	      <a href="./carrinho/pedido"><i class="fas fa-boxes"></i></a>
+	      
+	      <div class="desc"><a href="./carrinho/pedido">Finalizar pedido</a></div>
+	    </div>
+ 
   </div>
