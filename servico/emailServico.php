@@ -1,7 +1,7 @@
 <?php
 function enviar_email($email, $nome){
 	 
-	 	$to = $email;
+            $to = $email;
 	    $subject = "Confimação de cadastro para $nome";
 	    $header = "IFTech: Confimação de cadastro";
 	    $message = "Ola $nome. Seu cadastro foi efetuado com sucesso, agora podera aproveitar todas as ofertas de nosso site.";

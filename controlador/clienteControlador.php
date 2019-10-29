@@ -21,6 +21,7 @@ function cadastro(){
 		$vali = validacao_cadastro($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo);
 
 			if(count($vali)==0){
+                                //enviar_email($email, $nome);
 				$msg = adicionarCliente($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo);
 				redirecionar("./login");			
 			}else{
@@ -104,7 +105,7 @@ function email() {
 
 	if(isset($_POST['submit'])){
 
-	    $nome = $_POST["nome"];
+                $nome = $_POST["nome"];
 		$email = $_POST["email"];
 		$senha = $_POST["senha"];
 		$cpf = $_POST["cpf"];
