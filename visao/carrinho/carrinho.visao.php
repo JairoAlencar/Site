@@ -118,5 +118,4 @@ if(!empty($produtos)){
         
 <?php
 }
-?> 
-<!--Falta a parte de enviar os produtos para a proxima pagina, tranqilo!-->
+?>

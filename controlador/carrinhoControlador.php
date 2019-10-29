@@ -1,6 +1,8 @@
 <?php
 require_once "modelo/produtoModelo.php";
 require_once "modelo/cupomModelo.php";
+require_once "modelo/FormaPagamentoModelo.php";
+require_once "modelo/enderecoModelo.php";
 
 include("servico/correiosServico.php");
 //requisição do modelo do produto, para que possa ser feito todo o processo
@@ -136,6 +138,7 @@ function tirarproduto($id){
 }
 
 function pedido(){
+    $_SESSION["quantcarrinho"]=0;
     $soma = 0;
     $desconto = 0;
     $valor = 0;
@@ -158,11 +161,15 @@ function pedido(){
         $dados["total"] = $soma;
         $dados["desconto"] = $desconto;
         $dados["valor"] = $soma;
+        $dados["FormaPagamento"] = exibirFormaPagamento();
+        //$dados["endereco"] = exibirEndereco();
         
     }else{
         $dados["total"] = $soma;
         $dados["desconto"] = $desconto;
         $dados["valor"] = $soma;
+        $dados["FormaPagamento"] = exibirFormaPagamento();
+        //$dados["endereco"] = exibirEndereco();
     }
 
         
@@ -171,13 +178,51 @@ function pedido(){
 }
 
 function buscar_cupom($total){
+    $_SESSION["quantcarrinho"]=0;
+    $soma = 0;
+    $desconto = 0;
+    $valor = 0;
+    
     if(ehPost()){
         $cupom = $_POST["nome_cupom"];
+
+        if (isset($_SESSION["carrinho"])) {
+            $carrinhoprod = array();
+            $soma = 0;
+            $desconto = 0;
+            $valor = 0;
+
+            foreach ($_SESSION["carrinho"] as $sessaoprod) {
+                $_SESSION["quantcarrinho"]+= $sessaoprod["quantidade"];
+                $banco = pegarProdutoPorId($sessaoprod["id"]);
+                $carrinhoprod[] = $banco; 
+                $aux= $sessaoprod["quantidade"]*$banco["preco"];
+                $soma= $soma + $aux;
+            }
+            
+            $dados["produtos"] = $carrinhoprod;
+            $dados["total"] = $soma;
+            $dados["desconto"] = $desconto;
+            $dados["valor"] = $soma;
+            $dados["desconto"] = $desconto;
+            $dados["valor"] = $total-($total*$desconto/100);
+            $dados["FormaPagamento"] = exibirFormaPagamento();
+            //$dados["endereco"] = exibirEndereco();
+            
+        }else{
+            $dados["total"] = $soma;
+            $dados["desconto"] = $desconto;
+            $dados["valor"] = $soma;
+            $dados["desconto"] = $desconto;
+            $dados["valor"] = $total-($total*$desconto/100);
+            $dados["FormaPagamento"] = exibirFormaPagamento();
+        }
 
         $desconto = busca_cupom($cupom);
         $dados["desconto"] = $desconto;
         $dados["total"] = $total;
         $dados["valor"] = $total-($total*$desconto/100);
+        $dados["FormaPagamento"] = exibirFormaPagamento();
         exibir("pedido/pedido", $dados);
     }
 }

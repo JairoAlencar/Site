@@ -1,5 +1,5 @@
 <?php
-require_once "modelo/FormaPagamentoModelo.php";
+/*require_once "modelo/FormaPagamentoModelo.php";
 require_once "modelo/enderecoModelo.php".
 require_once "modelo/clienteModelo.php";
 
@@ -17,5 +17,5 @@ function listarEndereco() {
 
 	$dados["endereco"] = exibirEndereco();
 	exibir("pedido/pedido", $dados);
-}
+}*/
 ?>

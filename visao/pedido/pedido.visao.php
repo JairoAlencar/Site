@@ -1,5 +1,29 @@
 <br>
 <div style="float: left; width: 60%;">
+	<div name="produtos">
+		<h4><i class="fas fa-cart-plus"></i>Produtos</h4>
+
+		<?php
+		if (!empty($produtos)) {
+			if(is_array($produtos)){
+				foreach($produtos as $produto) {
+		?>
+					<tr>
+						<td><img src="<?= $produto['imagem']?>" style="height: 100px; width: 100px; margin: 0 0 3% 5%;"></td>
+						<td> <strong><?= $produto['nomeproduto'] ?></strong> </td>
+					</tr>
+		<?php
+				}
+			}
+		}else{
+		?>
+			<h5 style="margin:5% 0 5% 7%;"><i class="far fa-meh"></i> Nenhum produto no seu carrinho</h5>
+		<?php
+		}	
+
+		?>	
+	</div>
+
 	<div name="end entreg">
 		<h4><i class="fas fa-home"></i> Endereço de entrega</h4>	
 
@@ -26,7 +50,7 @@
 				if(is_array($FormaPagamento)){
 					foreach($FormaPagamento as $pag){
 			?>
-						<input type="radio" name="forma" value="<?=$pag['descricao']?>">
+						<input type="radio" name="forma" value="pagamento" style="margin:3% 0 3% 2%;"><?=$pag['descricao']?>  
 			<?php
 					}
 				} 	
