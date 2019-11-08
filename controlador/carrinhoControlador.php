@@ -16,8 +16,7 @@ function index(){
     $dados["valor_frete"] = 0;
     $dados["prazo_frete"] = 0;  
 
-
-    
+   
 
     //contagem de quantidade de produtos
 
@@ -31,29 +30,24 @@ function index(){
             $banco = pegarProdutoPorId($sessaoprod["id"]);
             $carrinhoprod[] = $banco; 
             $aux= $sessaoprod["quantidade"]*$banco["preco"];
-            $soma= $soma + $aux;
-        }
+            $soma= $soma + $aux;}
         
         $dados["produtos"] = $carrinhoprod;
         //dados de todos os produtos no carrinho
-        $dados["total"] = $soma;
+        $dados["total"] = $soma;}
         //dados do valor total de todos os produtos no carrinho      
         //enviara todos os dados das funções requisitadas para a pagina principal, conforme seja requisitada
-        
-    }
 
     if(ehPost()) {
         $cep_destino = $_POST['frete']; 
         $tipo_do_frete = $_POST['tipo_do_frete'];  
         $frete = calcular_frete($cep_destino, $tipo_do_frete);
         $dados["valor_frete"] = $frete->Valor;
-        $dados["prazo_frete"] = $frete->PrazoEntrega; 
-    }
+        $dados["prazo_frete"] = $frete->PrazoEntrega;}
 
     //$dados["totalComFrete"] = $valor_frete+$total;
 
-    exibir("carrinho/carrinho", $dados);
-}
+    exibir("carrinho/carrinho", $dados);}
 
 /** Adm, User */
 function adicionar($id){
@@ -138,6 +132,7 @@ function tirarproduto($id){
 }
 
 function pedido(){
+    $id = $_SESSION["acesso"]["idusuario"];
     $_SESSION["quantcarrinho"]=0;
     $soma = 0;
     $desconto = 0;
@@ -162,14 +157,14 @@ function pedido(){
         $dados["desconto"] = $desconto;
         $dados["valor"] = $soma;
         $dados["FormaPagamento"] = exibirFormaPagamento();
-        //$dados["endereco"] = exibirEndereco();
+        $dados["endereco"] = exibirEndereco($id);
         
     }else{
         $dados["total"] = $soma;
         $dados["desconto"] = $desconto;
         $dados["valor"] = $soma;
         $dados["FormaPagamento"] = exibirFormaPagamento();
-        //$dados["endereco"] = exibirEndereco();
+        $dados["endereco"] = exibirEndereco($id);
     }
 
         
@@ -178,6 +173,7 @@ function pedido(){
 }
 
 function buscar_cupom($total){
+    $id = $_SESSION["acesso"]["idusuario"];
     $_SESSION["quantcarrinho"]=0;
     $soma = 0;
     $desconto = 0;
@@ -207,6 +203,7 @@ function buscar_cupom($total){
             $dados["desconto"] = $desconto;
             $dados["valor"] = $total-($total*$desconto/100);
             $dados["FormaPagamento"] = exibirFormaPagamento();
+            $dados["endereco"] = exibirEndereco($id);
             //$msg = adicionarVenda($idProduto, $idUsuario, $FormaPagamento, $data);
             
         }else{
@@ -226,4 +223,3 @@ function buscar_cupom($total){
         exibir("pedido/pedido", $dados);
     }
 }
-?>
