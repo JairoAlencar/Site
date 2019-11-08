@@ -17,7 +17,7 @@
 			}
 		}else{
 		?>
-			<h5 style="margin:5% 0 5% 7%;"><i class="far fa-meh"></i> Nenhum produto no seu carrinho</h5>
+			<h6 style="margin:5% 0 5% 7%;"><i class="far fa-meh"></i> Nenhum produto no seu carrinho</h6>
 		<?php
 		}	
 
@@ -32,17 +32,24 @@
 				foreach($endereco as $ende){
                                     if ($_SESSION["acesso"]["idusuario"] == $ende['idusuario']){
 		?>
-					<input type="radio" name="endereco" value="<?=$ende['logradouro'], $ende['numero'], $ende['complemento'], $ende['bairro'], $ende['cep'] , $ende['cidade']?>"> <?php echo $ende['logradouro'];?>
+					<input type="radio" name="endereco" style="margin:3% 0 0 2%;"> <?php echo "Rua: ", $ende['logradouro'], ", Número: ", $ende['numero'], ", Complemento: ", $ende['complemento'], ", Bairro: ", $ende['bairro'], ", CEP: ", $ende['cep'], ", Cidade: ", $ende['cidade'];?><br>
 		<?php               
                                     }else{ echo "É necessario ter um endereço cadastrado"; }
 				}
                         }else{}
 		?>
+		<br>
 	</div>
 
 	<div name="frete">
 		<h4><i class="fas fa-truck"></i> Prazo frete</h4>	
 
+		<form action="carrinho/index" method="POST" class="box">
+				<input type="radio" name="tipo_do_frete" value="41106" checked="checked">Pac
+				<input type="radio" name="tipo_do_frete" value="40010">Sedex
+					<br>
+			<input type="submit" name="vai_frete" value="Calcular">
+		</form>
 	</div>
 
 	<div name="form pag">
