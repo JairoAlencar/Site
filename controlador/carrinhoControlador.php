@@ -207,7 +207,7 @@ function buscar_cupom($total){
             $dados["desconto"] = $desconto;
             $dados["valor"] = $total-($total*$desconto/100);
             $dados["FormaPagamento"] = exibirFormaPagamento();
-            //$dados["endereco"] = exibirEndereco();
+            //$msg = adicionarVenda($idProduto, $idUsuario, $FormaPagamento, $data);
             
         }else{
             $dados["total"] = $soma;
