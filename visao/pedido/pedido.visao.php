@@ -30,11 +30,13 @@
 		<?php
 			if(is_array($endereco)){
 				foreach($endereco as $ende){
+                                    if ($_SESSION["acesso"]["idusuario"] == $ende['idusuario']){
 		?>
-					<input type="radio" name="endereco" value="<?=$ende['logradouro'], $ende['numero'], $ende['complemento'], $ende['bairro'], $ende['cep'] , $ende['cidade']?>">
-		<?php			
+					<input type="radio" name="endereco" value="<?=$ende['logradouro'], $ende['numero'], $ende['complemento'], $ende['bairro'], $ende['cep'] , $ende['cidade']?>"> <?php echo $ende['logradouro'];?>
+		<?php               
+                                    }else{ echo "É necessario ter um endereço cadastrado"; }
 				}
-			}
+                        }else{}
 		?>
 	</div>
 
