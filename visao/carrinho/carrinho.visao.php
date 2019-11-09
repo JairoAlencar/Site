@@ -97,14 +97,14 @@ $total = 0;
 	</div>	
             
 	<div style="float: left; color: black;">
-		<h5>Calculu o frete e prazo</h5>
+		<h5>Consultar frete e prazo</h5>
 		<form action="carrinho/index" method="POST" class="box">
 				<input type="text" name="frete" placeholder="00000000" style="margin-top: -10%;">	
 					<br>
 				<input type="radio" name="tipo_do_frete" value="41106" checked="checked">Pac
 				<input type="radio" name="tipo_do_frete" value="40010">Sedex
 					<br>
-			<input type="submit" name="vai_frete" value="Calcular">
+			<input type="submit" name="vai_frete" value="Consultar">
 		</form>
 	</div>
 <br> 
