@@ -103,4 +103,20 @@ function deletar($id){
 	redirecionar("produto/listarProdutos");
 }
 
+function total(){
+	$dados = array();
+	$quantTotal = 0;
+	$valTotal = 0;
+
+	$produto = exibirProduto();
+
+	$quantTotal = $quantTotal + $produto["quantidade"];
+	$valoTotal = $valTotal + $produto["preco"];
+	
+	$dados["numeroProdutosCadastrados"] = $quantTotal;
+	$dados["valorTotalProdutosCadastrados"] = $valTotal;
+
+	exibir("produto/totalProdutos", $dados);
+}
+
 ?>
