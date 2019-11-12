@@ -3,7 +3,7 @@ include("servico/validacaoServico.php");
 include("servico/uploadServico.php");
 require_once "modelo/produtoModelo.php";
 require_once "modelo/categoriaModelo.php";
-
+$idx = 0;
 /** anon */
 function index() {
         $produto = array();

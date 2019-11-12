@@ -1,27 +1,22 @@
 <?php
-    echo '<script>';
-    echo 'function myFunction(mensagem) {
-  document.getElementById("demo").innerHTML = mensagem;
-  var variaveljs = "Eu sou uma variável JavaScript."';
-    $variavelphp = "<script>document.write(mensagem)</script>";
-    echo '}';
-    echo '</script>';
 $cnx =new mysqli("localhost", "root", "", "Loja");
 $count=0;
-$id2 = $variavelphp;
-   echo $id2;
-
+if (!isset($_POST['pgn'])){
+    $pgn = 0;
+}
+else{
+$pgn = $_POST['pgn'];
+$pgnx = $_SESSION['pgn'];
+$_SESSION['pgn'] = $pgnx;
+}
 // definir o numero de itens por pagina
-$itens_por_pagina = 10;
-        //$uri_parts = explode('/', $_SERVER['REQUEST_URI'], 4);
-        //$pag = $uri_parts[2];
+$itens_por_pagina = 1;
 // pegar a pagina atual
-if (!isset($idx)){
+if (!isset($pgn)){
     $pagina = 0;
 }
 else{
-$pagina = $idx;}
-
+$pagina = $pgn;}
 // puxar produtos do banco
 $execute = $cnx -> query("SELECT * FROM produtos ORDER BY idproduto LIMIT $pagina, $itens_por_pagina") or die($cnx->error);
 $produto = $execute->fetch_assoc();
@@ -32,6 +27,7 @@ $num_total = $cnx->query("select * from produtos") -> num_rows;
 
 // definir numero de páginas
 $num_paginas = ceil($num_total/$itens_por_pagina);
+print $pgnx;
 ?>
 <div class="fileira" name="fileira1">
   	<div class="container-fluid">
@@ -42,7 +38,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
                         </div>
   				<?php if($num > 0){ ?>
 					<tbody>
-						<?php do{ $count++;?>
+						<?php do{ $count++; echo $pgn;?>
                 <div class="col-lg-4">                           
 		<div class="itens">
 			<div class="itens">
@@ -62,7 +58,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 		</div>
                 </div>
                                                         <?php $idx = $produto['idproduto']; ?>                  
-						<?php } while($produto = $execute->fetch_assoc()); ?>
+						<?php } while($produto = $execute->fetch_assoc()); echo $idx; ?>
 					</tbody>        
                                 
                              <div class="col-lg-12">
@@ -74,10 +70,10 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
                                             $pagina = 0;
                                         }
                                         else{
-                                        $pagina = intval($idx);}
+                                        $pagina = intval($pgn);}
                                         if($pagina==0){}
                                         elseif ($pagina>0){?>
-                                        <a href="" onclick="window.history.go(-1); return false;" aria-label="Previous">
+                                        <a href="" onclick="window.history.go(-1); event.preventDefault(); return false;" aria-label="Previous">
 				        <span aria-hidden="true">&laquo;</span>
                                         <?php } ?>
 				      </a>
@@ -85,16 +81,14 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 				    <?php 
 				    for($i=0;$i<$num_paginas;$i++){
 				    $estilo = "";
-				    if($pagina == $i)
-				    	$estilo = "class=\"active\"";
-				    ?>
-                                    <!--<li <?php //echo $estilo; ?> ><a href="cliente/teste/?pagina=<?php //echo $i-($idx-$media)?>"><?php //echo $i; ?></a></li>
-					<?php } ?>
-				    <li>-->
-                                    <script>
-                                        var mensagem = "<?php echo $idx;?>";
-                                    </script>
-                                    <?php echo '<a href="" id="demo" aria-label="Next" onclick="myFunction(mensagem);">'; ?>
+				    if($pagina == $i){
+                                    $estilo = "class=\"active\"";}
+                                    } ?>
+
+                                    <form action="" method="post">
+                                    <?php echo '<input type="hidden" name="pgn" value="'.$idx.'">'; ?>
+                                    <input type="submit" name="x" value="<?php $idx ?>"/>
+                                    </form>
 				        <span aria-hidden="true">&raquo;</span>
 				      </a>
 				    </li>
