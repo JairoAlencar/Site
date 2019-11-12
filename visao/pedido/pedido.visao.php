@@ -34,7 +34,7 @@
 				foreach($endereco as $ende){
                     if ($_SESSION["acesso"]["idusuario"] == $ende['idusuario']){
 		?>
-						<input type="radio" name="endereco" style="margin:3% 0 0 2%;" value="<?= $ende['idendero']?>"> <?php echo "Rua: ", $ende['logradouro'], ". Número: ", $ende['numero'], ". Complemento: ", $ende['complemento'], ". Bairro: ", $ende['bairro'], ". CEP: ", $ende['cep'], ". Cidade: ", $ende['cidade'], ".";?><br>
+						<input type="radio" name="endereco" style="margin:3% 0 0 2%;" value="<?= $ende['idendereco']?>"> <?php echo "Rua: ", $ende['logradouro'], ". Número: ", $ende['numero'], ". Complemento: ", $ende['complemento'], ". Bairro: ", $ende['bairro'], ". CEP: ", $ende['cep'], ". Cidade: ", $ende['cidade'], ".";?><br>
 		<?php
                     }else{ echo "É necessario ter um endereço cadastrado"; }
 				}
@@ -42,7 +42,7 @@
 		?>
 		<br>
 		
-		<!--pegar o id do endereço do value pra pegar o cep no banco!-->
+		<!--pegar o id do endereço do value pra pegar o cep no banco, chamar isso pela função PEGARENDERECOPORID ai dentro desse array pegar o cep para que possa ser calculado o frete(resumindo: nn entende muito bem)!-->
 
 		<h4><i class="fas fa-truck"></i>Frete</h4>
 
