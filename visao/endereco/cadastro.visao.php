@@ -27,7 +27,7 @@
 				<br><br>
 
 			CEP:<br>	
-			<input type="text" name="cep" placeholder="Ex: 12841-666" value="<?=@$endereco['cep']?>">
+			<input type="text" name="cep" placeholder="Ex: 12841666" value="<?=@$endereco['cep']?>">
 				<br><br>
 
                         <br><br>

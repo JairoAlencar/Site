@@ -1,12 +1,14 @@
 <?php
 
 function conn() {
-	/*$local = "biblioteca/manipulação/local.csv";
-	$servidor = "biblioteca/manipulação/serv.csv";
+	$arquivo = "biblioteca/manipulacao/local.csv";
+	//$arquivo = "biblioteca/manipulacao/serv.csv";
+
+	/*Se estiver hospedado comento o local, se estiver no local comenta o hospedado*/
 
 	$file = fopen($arquivo, 'r');
 		$linha = fgets($file);
-			$conexao = explode(',', $linha);
+			$conexao = explode(';', $linha);
 				$server = $conexao[0];
 				$usuario = $conexao[1];
 				$senha = $conexao[2];
@@ -15,10 +17,13 @@ function conn() {
 	fclose($file);		
 
 	$cnx = mysqli_connect($server, $usuario, $senha, $database);
-	*/
-    $cnx = mysqli_connect("localhost", "root", "", "Loja");
+	
+	
+    /*$cnx = mysqli_connect("localhost", "root", "", "Loja");*/
 
     if (!$cnx) die('Deu errado a conexao!');
     return $cnx;
     mysql_close($cnx);
 }
+
+?>

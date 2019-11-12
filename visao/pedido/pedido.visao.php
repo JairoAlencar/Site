@@ -24,31 +24,32 @@
 		?>	
 	</div>
 
-	<div name="end entreg">
+	<div name="frete">
 		<h4><i class="fas fa-home"></i> Endereço de entrega</h4>	
+
+		<form action="carrinho/frete" method="POST" class="box" style="padding: 0 0 0 0;">
 
 		<?php
 			if(is_array($endereco)){
 				foreach($endereco as $ende){
-                                    if ($_SESSION["acesso"]["idusuario"] == $ende['idusuario']){
+                    if ($_SESSION["acesso"]["idusuario"] == $ende['idusuario']){
 		?>
-					<input type="radio" name="endereco" style="margin:3% 0 0 2%;"> <?php echo "Rua: ", $ende['logradouro'], ". Número: ", $ende['numero'], ". Complemento: ", $ende['complemento'], ". Bairro: ", $ende['bairro'], ". CEP: ", $ende['cep'], ". Cidade: ", $ende['cidade'], ".";?><br>
-		<?php               
-                                    }else{ echo "É necessario ter um endereço cadastrado"; }
+						<input type="radio" name="endereco" style="margin:3% 0 0 2%;" value="<?= $ende['idendero']?>"> <?php echo "Rua: ", $ende['logradouro'], ". Número: ", $ende['numero'], ". Complemento: ", $ende['complemento'], ". Bairro: ", $ende['bairro'], ". CEP: ", $ende['cep'], ". Cidade: ", $ende['cidade'], ".";?><br>
+		<?php
+                    }else{ echo "É necessario ter um endereço cadastrado"; }
 				}
                         }else{}
 		?>
 		<br>
-	</div>
+		
+		<!--pegar o id do endereço do value pra pegar o cep no banco!-->
 
-	<div name="frete">
-		<h4><i class="fas fa-truck"></i> Prazo frete</h4>	
+		<h4><i class="fas fa-truck"></i>Frete</h4>
 
-		<form action="carrinho/index" method="POST" class="box" style="padding: 0 0 0 0;">
 				<input type="radio" name="tipo_do_frete" value="41106" checked="checked" style="margin:3% 0 3% 2%;">Pac
 				<input type="radio" name="tipo_do_frete" value="40010" style="margin:3% 0 3% 2%;">Sedex
 					<br>
-			<!--<input type="submit" name="vai_frete" value="Calcular">!-->
+			<input type="submit" name="vai_frete" value="Calcular">
 		</form>
 	</div>
 
@@ -86,9 +87,13 @@
 		<h6>Desconto do cupom:
 			<h7> <?=$desconto?>%</h7>
 		</h6>
-		<h6>Frete:
+		<h6>Valor frete:
 			<h7>valor frete</h7>
 		</h6>	
+
+		<h6>Prazo frete:
+			<h7><!--<?php print $prazo_frete; ?>!--></h7>
+		</h6>
 
 		<div style="border-top: 1.4px solid; border-bottom: 1.4px solid;">
 			<h6 style="margin-top: 4%;">Valor à pagar:
