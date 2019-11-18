@@ -38,3 +38,5 @@
 	</TABLE>	
 
 	<a href="./produto/Adicionar">Cadastrar um novo produto</a>
+		<br>
+	<a href="./produto/total">Ver estoque</a>

@@ -112,7 +112,7 @@ function total(){
 
 	$quantTotal = $quantTotal + $produto["quantidade"];
 	$valoTotal = $valTotal + $produto["preco"];
-	
+	/*Não entendi oq esssa função esta fazendo aqui, mas ela precisa ser usada para fazer a contagem de produtos e suas quantidades colocando em uma tabela para o controle de quantidade em estoque*/
 	$dados["numeroProdutosCadastrados"] = $quantTotal;
 	$dados["valorTotalProdutosCadastrados"] = $valTotal;
 
