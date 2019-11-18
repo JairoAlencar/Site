@@ -34,7 +34,7 @@
 				foreach($endereco as $ende){
                     if ($_SESSION["acesso"]["idusuario"] == $ende['idusuario']){
 		?>
-						<input type="radio" name="endereco" style="margin:3% 0 0 2%;" value="<?= $ende['idendereco']?>"> <?php echo "Rua: ", $ende['logradouro'], ". Número: ", $ende['numero'], ". Complemento: ", $ende['complemento'], ". Bairro: ", $ende['bairro'], ". CEP: ", $ende['cep'], ". Cidade: ", $ende['cidade'], ".";?><br>
+						<input type="radio" name="frete" style="margin:3% 0 0 2%;" value="<?= $ende['cep']?>"> <?php echo "Rua: ", $ende['logradouro'], ". Número: ", $ende['numero'], ". Complemento: ", $ende['complemento'], ". Bairro: ", $ende['bairro'], ". CEP: ", $ende['cep'], ". Cidade: ", $ende['cidade'], ".";?><br>
 		<?php
                     }else{ echo "É necessario ter um endereço cadastrado"; }
 				}
@@ -87,8 +87,16 @@
 		<h6>Desconto do cupom:
 			<h7> <?=$desconto?>%</h7>
 		</h6>
-		<h6>Valor frete:
-			<h7>valor frete</h7>
+		<h6>Valor Frete:
+				<h7> R$ <?php 
+                                        if (!isset($valor_frete)){
+                                        $valor_frete=0;
+                                        Print $valor_frete;
+                                        }
+                                        else{
+                                        print $valor_frete;}
+                                        ?>
+                                </h7>	
 		</h6>	
 
 		<h6>Prazo frete:
@@ -97,7 +105,7 @@
 
 		<div style="border-top: 1.4px solid; border-bottom: 1.4px solid;">
 			<h6 style="margin-top: 4%;">Valor à pagar:
-				<h7>R$ <?=$valor?></h7>
+				<h7>R$ <?=$valor+$valor_frete?></h7>
 			</h6>
 		</div>
 

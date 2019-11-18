@@ -228,7 +228,7 @@ function buscar_cupom($total, $frete, $tipo_do_frete){
     }
 }
 
-function frete($frete, $tipo_do_frete){
+function frete(){
     $id = $_SESSION["acesso"]["idusuario"];
     $_SESSION["quantcarrinho"]=0;
     $soma = 0;
@@ -270,8 +270,7 @@ function frete($frete, $tipo_do_frete){
             $dados["FormaPagamento"] = exibirFormaPagamento();
             $dados["endereco"] = exibirEndereco($id);
         }    
-    }      
-
+    }    
     exibir("pedido/pedido", $dados);
 }
 

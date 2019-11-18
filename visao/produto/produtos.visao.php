@@ -1,16 +1,23 @@
 <?php
 $cnx =new mysqli("localhost", "root", "", "Loja");
 $count=0;
+$x = 0;
+//-------------------------------------------------------------------
+if (isset($_SESSION['pgn_anterior']))
+{   
+     $pgn_anterior = $_SESSION['pgn_anterior'];
+     echo $pgn_anterior;
+}
+
+//-------------------------------------------------------------------
 if (!isset($_POST['pgn'])){
     $pgn = 0;
 }
 else{
 $pgn = $_POST['pgn'];
-$pgnx = $_SESSION['pgn'];
-$_SESSION['pgn'] = $pgnx;
 }
 // definir o numero de itens por pagina
-$itens_por_pagina = 1;
+$itens_por_pagina = 2;
 // pegar a pagina atual
 if (!isset($pgn)){
     $pagina = 0;
@@ -27,7 +34,7 @@ $num_total = $cnx->query("select * from produtos") -> num_rows;
 
 // definir numero de páginas
 $num_paginas = ceil($num_total/$itens_por_pagina);
-print $pgnx;
+
 ?>
 <div class="fileira" name="fileira1">
   	<div class="container-fluid">
@@ -38,7 +45,7 @@ print $pgnx;
                         </div>
   				<?php if($num > 0){ ?>
 					<tbody>
-						<?php do{ $count++; echo $pgn;?>
+                                                <?php do{ $count++; if($count == 1){$x = $produto['idproduto'];}?>
                 <div class="col-lg-4">                           
 		<div class="itens">
 			<div class="itens">
@@ -57,10 +64,16 @@ print $pgnx;
 	        </div>
 		</div>
                 </div>
-                                                        <?php $idx = $produto['idproduto']; ?>                  
-						<?php } while($produto = $execute->fetch_assoc()); echo $idx; ?>
+                                        
+                                                        <?php 
+                                                            $idx = $produto['idproduto'];
+                                                            echo 'x'.$idx.'x';
+                                                            $_SESSION['pgn_anterior'] = $x;
+                                                            echo 'y'.$x.'y';
+                                                        ?>                  
+						<?php } while($produto = $execute->fetch_assoc()); print $x; print $idx;?>
 					</tbody>        
-                                
+     
                              <div class="col-lg-12">
 			<nav>
 				  <ul class="pagination">
@@ -73,8 +86,10 @@ print $pgnx;
                                         $pagina = intval($pgn);}
                                         if($pagina==0){}
                                         elseif ($pagina>0){?>
-                                        <a href="" onclick="window.history.go(-1); event.preventDefault(); return false;" aria-label="Previous">
-				        <span aria-hidden="true">&laquo;</span>
+                                            <form action="" method="post">
+                                                <?php echo '<input type="hidden" name="pgn" value="'.($pgn_anterior).'">'; ?>
+                                                <input type="submit" name="vai" value="<<">	
+                                            </form>
                                         <?php } ?>
 				      </a>
 				    </li>
@@ -84,12 +99,10 @@ print $pgnx;
 				    if($pagina == $i){
                                     $estilo = "class=\"active\"";}
                                     } ?>
-
                                     <form action="" method="post">
                                     <?php echo '<input type="hidden" name="pgn" value="'.$idx.'">'; ?>
-                                    <input type="submit" name="x" value="<?php $idx ?>"/>
+                                        <input type="submit" name="vai" value=">>">	
                                     </form>
-				        <span aria-hidden="true">&raquo;</span>
 				      </a>
 				    </li>
 				  </ul>
