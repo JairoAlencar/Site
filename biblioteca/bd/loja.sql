@@ -74,6 +74,8 @@ CREATE TABLE IF NOT EXISTS FormaPagamento(
 CREATE TABLE IF NOT EXISTS  pedido (
     idPedido BIGINT(11) NOT NULL AUTO_INCREMENT,
     idusuario BIGINT(11) NOT NULL,
+    idendereco BIGINT(11) NOT NULL,
+    tipo_frete VARCHAR(10) NOT NULL, 
     idFormaPagamento INT NOT NULL,
     dataCompra DATE NOT NULL,
     PRIMARY KEY(idPedido),

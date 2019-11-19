@@ -16,6 +16,7 @@ function index(){
     $dados["valor_frete"] = 0;
     $dados["prazo_frete"] = 0;  
 
+
    
 
     //contagem de quantidade de produtos
@@ -132,6 +133,7 @@ function tirarproduto($id){
 }
 
 function pedido(){
+    print_r($_SESSION['valor_frete']);
     $id = $_SESSION["acesso"]["idusuario"];
     $_SESSION["quantcarrinho"]=0;
     $soma = 0;
@@ -170,27 +172,21 @@ function pedido(){
     exibir("pedido/pedido", $dados);
 }
 
-function buscar_cupom($total, $frete, $tipo_do_frete){
+function buscar_cupom($total){
     $id = $_SESSION["acesso"]["idusuario"];
     $_SESSION["quantcarrinho"]=0;
     $soma = 0;
     $desconto = 0;
     $valor = 0;
-    
     if(ehPost()){
-        $cupom = $_POST["nome_cupom"];
-        $cep_destino = $_POST['frete']; 
-        $tipo_do_frete = $_POST['tipo_do_frete'];  
-        $frete = calcular_frete($cep_destino, $tipo_do_frete);
-        $dados["valor_frete"] = $frete->Valor;
-        $dados["prazo_frete"] = $frete->PrazoEntrega;
+        $cupom = $_POST["nome_cupom"];  
+
 
         if (isset($_SESSION["carrinho"])) {
             $carrinhoprod = array();
             $soma = 0;
             $desconto = 0;
             $valor = 0;
-
             foreach ($_SESSION["carrinho"] as $sessaoprod) {
                 $_SESSION["quantcarrinho"]+= $sessaoprod["quantidade"];
                 $banco = pegarProdutoPorId($sessaoprod["id"]);
@@ -239,9 +235,8 @@ function frete(){
         $cep_destino = $_POST['frete']; 
         $tipo_do_frete = $_POST['tipo_do_frete'];  
         $frete = calcular_frete($cep_destino, $tipo_do_frete);
-        $dados["valor_frete"] = $frete->Valor;
-        $dados["prazo_frete"] = $frete->PrazoEntrega;
-
+        $valor_frete = $frete->Valor;
+        $prazo_entrega = $frete->PrazoEntrega;
         if (isset($_SESSION["carrinho"])) {
             $carrinhoprod = array();
             $soma = 0;
@@ -260,6 +255,8 @@ function frete(){
             $dados["total"] = $soma;
             $dados["desconto"] = $desconto;
             $dados["valor"] = $soma;
+            $_SESSION["valor_frete"] = $valor_frete;
+            $_SESSION["prazo_frete"] = $prazo_entrega;
             $dados["FormaPagamento"] = exibirFormaPagamento();
             $dados["endereco"] = exibirEndereco($id);
             
@@ -267,10 +264,14 @@ function frete(){
             $dados["total"] = $soma;
             $dados["desconto"] = $desconto;
             $dados["valor"] = $soma;
+            $_SESSION['valor_frete'] = $valor_frete;
+            $_SESSION['prazo_frete'] = $prazo_entrega;
+            print_r($_SESSION['valor_frete']);
+            die();
             $dados["FormaPagamento"] = exibirFormaPagamento();
             $dados["endereco"] = exibirEndereco($id);
         }    
-    }    
+    }
     exibir("pedido/pedido", $dados);
 }
 

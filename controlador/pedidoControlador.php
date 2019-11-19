@@ -1,21 +1,17 @@
 <?php
-/*require_once "modelo/FormaPagamentoModelo.php";
-require_once "modelo/enderecoModelo.php".
-require_once "modelo/clienteModelo.php";
+require_once "modelo/pedidoModelo.php";
 
-function listarFormaPagamento() {
 
-	$dados = array();
-	$dados["FormaPagamento"] = exibirFormaPagamento();
+function SalvarNoBanco() {
+	if(ehPost()){
+		//idusuario, idendereco, tipo_frete, idFormaPagamento, dataCompra
 
-	exibir("pedido/pedido", $dados);
+		$idusuario = $_POST[''];
+		$idendereco = $_POST[''];
+		$tipo_frete = $_POST[''];
+		$idFormaPagamento = $_POST[''];
+		$dataCompra;
+	}
 }
 
-function listarEndereco() {
-
-	$dados = array();
-
-	$dados["endereco"] = exibirEndereco();
-	exibir("pedido/pedido", $dados);
-}*/
 ?>
