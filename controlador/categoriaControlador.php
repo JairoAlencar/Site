@@ -53,7 +53,7 @@ function listarCategoria() {
 	$dados = array();
 
 	$dados["categoria"] = exibirCategoria();
-	exibir("categoria/listar", $dados);
+	exibir("categoria/listar2", $dados);
 }
 
 /** Adm */

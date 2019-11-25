@@ -3,15 +3,13 @@ $cnx =new mysqli("localhost", "root", "", "Loja");
 $count=0;
 $x = 0;
 //-------------------------------------------------------------------
-if (isset($_SESSION['pgn_anterior']))
-{   
-     $pgn_anterior = $_SESSION['pgn_anterior'];
-     echo $pgn_anterior;
-}
-
 //-------------------------------------------------------------------
-if (!isset($_POST['pgn'])){
-    $pgn = 0;
+if (!isset($_POST['pgn']) && !isset($_POST['aaa'])){
+    $aaa=0;
+    $pgn=0;
+}
+elseif (!isset($_POST['pgn']) && $_POST['aaa']==1){
+    $aaa =1;
 }
 else{
 $pgn = $_POST['pgn'];
@@ -19,11 +17,17 @@ $pgn = $_POST['pgn'];
 // definir o numero de itens por pagina
 $itens_por_pagina = 2;
 // pegar a pagina atual
-if (!isset($pgn)){
+if (!isset($pgn) && !isset($aaa)){
     $pagina = 0;
 }
+elseif (!isset($pgn) && $aaa==1){
+    echo "<script>history.go(-1)</script>";
+    $pagina = $_SESSION['return'];
+}
 else{
-$pagina = $pgn;}
+$pagina = $pgn;
+}
+print $_SESSION['return'];
 // puxar produtos do banco
 $execute = $cnx -> query("SELECT * FROM produtos ORDER BY idproduto LIMIT $pagina, $itens_por_pagina") or die($cnx->error);
 $produto = $execute->fetch_assoc();
@@ -31,7 +35,7 @@ $num = $execute->num_rows;
 
 // pega a quantidade total de objetos no banco de dados
 $num_total = $cnx->query("select * from produtos") -> num_rows;
-
+print $num_total;
 // definir numero de páginas
 $num_paginas = ceil($num_total/$itens_por_pagina);
 
@@ -65,15 +69,12 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 		</div>
                 </div>
                                         
-                                                        <?php 
+                                                        <?php                                                       
                                                             $idx = $produto['idproduto'];
-                                                            echo 'x'.$idx.'x';
-                                                            $_SESSION['pgn_anterior'] = $x;
-                                                            echo 'y'.$x.'y';
+                                                            $_SESSION['return'] = $x;
                                                         ?>                  
-						<?php } while($produto = $execute->fetch_assoc()); print $x; print $idx;?>
+						<?php } while($produto = $execute->fetch_assoc());?>
 					</tbody>        
-     
                              <div class="col-lg-12">
 			<nav>
 				  <ul class="pagination">
@@ -87,7 +88,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
                                         if($pagina==0){}
                                         elseif ($pagina>0){?>
                                             <form action="" method="post">
-                                                <?php echo '<input type="hidden" name="pgn" value="'.($pgn_anterior).'">'; ?>
+                                                <?php echo '<input type="hidden" name="pgn" value="'.$_SESSION['return'].'">'; ?>
                                                 <input type="submit" name="vai" value="<<">	
                                             </form>
                                         <?php } ?>

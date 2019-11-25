@@ -81,7 +81,7 @@ function listarCliente() {
 	$dados = array();
 
 	$dados["clientes"] = exibirClientes();
-	exibir("cliente/listar", $dados);
+	exibir("cliente/listar2", $dados);
 }
 
 /** Adm,User */

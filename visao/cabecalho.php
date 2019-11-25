@@ -24,11 +24,11 @@
         elseif ($_SESSION['acesso']['tipousuario']=="Adm"){
         ?>  
           <div class="icons-btn"> 
-            <a class="icons-user" href="./cliente/listarCliente"><i class="fas fa-user" style="font-size: 180%;"></i></a>
-            <a class="icons-car" href="./produto/listarProdutos"><i class="fas fa-mobile-alt" style="font-size: 180%;"></i></a> 
-            <a class="icons-box" href="./categoria/listarCategoria"><i class="fas fa-archive" style="font-size: 180%;"></i></a>
-            <a class="icons-cupom" href="./cupom/listarCupom"><i class="far fa-clipboard" style="font-size: 180%;"></i></a>
-            <a class="icons-pay" href="./FormaPagamento/listarFormaPagamento"><i class="fab fa-cc-amazon-pay" style="font-size: 180%;"></i></a>
+            <a class="icons-user" href="./cliente/listarCliente/?cod=0"><i class="fas fa-user" style="font-size: 180%;"></i></a>
+            <a class="icons-car" href="./produto/listarProdutos/?cod=0"><i class="fas fa-mobile-alt" style="font-size: 180%;"></i></a> 
+            <a class="icons-box" href="./categoria/listarCategoria/?cod=0"><i class="fas fa-archive" style="font-size: 180%;"></i></a>
+            <a class="icons-cupom" href="./cupom/listarCupom/?cod=0"><i class="far fa-clipboard" style="font-size: 180%;"></i></a>
+            <a class="icons-pay" href="./FormaPagamento/listarFormaPagamento/?cod=0"><i class="fab fa-cc-amazon-pay" style="font-size: 180%;"></i></a>
             <a class="icons-user" href="./login/logout"><i class="fas fa-sign-out-alt" style="font-size: 180%;"></i></a>
           </div>
         <?php  

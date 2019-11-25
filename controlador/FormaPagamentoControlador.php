@@ -53,7 +53,7 @@ function listarFormaPagamento() {
 	$dados = array();
 
 	$dados["FormaPagamento"] = exibirFormaPagamento();
-	exibir("FormaPagamento/listar", $dados);
+	exibir("FormaPagamento/listar2", $dados);
 }
 
 /** Adm */

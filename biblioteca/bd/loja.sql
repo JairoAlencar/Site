@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS log_produto(
     tabela VARCHAR(45) NOT NULL,
     usuario VARCHAR(45) NOT NULL,
     data_hora DATETIME NOT NULL,
-    acao VARCHAR(45) NOT NULL
+    acao VARCHAR(45) NOT NULL,
     dados VARCHAR(1000) NOT NULL,
     PRIMARY KEY(ID_Log)
 );
