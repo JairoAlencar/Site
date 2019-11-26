@@ -13,7 +13,7 @@ function FormaPagamento() {
 		
 			if (count($vali)==0){
 					$msg = adicionarFormaPagamento($desc);
-					redirecionar("FormaPagamento/listarFormaPagamento");
+					redirecionar("FormaPagamento/listarFormaPagamento/?cod=0");
 			}else{
 				$dados = array();
 				$dados["erros"] = $vali;
@@ -34,7 +34,7 @@ function editar($id){
 
 			if(count($vali)==0){
 					$msg = editarFormaPagamento($desc, $id);
-					redirecionar("FormaPagamento/listarFormaPagamento");
+					redirecionar("FormaPagamento/listarFormaPagamento/?cod=0");
 			}else{
 				$dados = array();
 				$dados["erros"] = $vali;
@@ -66,7 +66,7 @@ function ver($id){
 function deletar($id){
 
 	$msg = deletarFormaPagamento($id);
-	redirecionar("FormaPagamento/listarFormaPagamento");
+	redirecionar("FormaPagamento/listarFormaPagamento/?cod=0");
 }
 
 ?>

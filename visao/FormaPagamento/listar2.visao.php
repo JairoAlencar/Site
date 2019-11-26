@@ -50,7 +50,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
                                                         <td> <a href="./FormaPagamento/deletar/<?= $FormaPagamento['idFormaPagamento']?>">Deletar</a> </td>
                                                         <td> <a href="./FormaPagamento/editar/<?= $FormaPagamento['idFormaPagamento']?>">Editar</a> </td>
                                                 </tr>
-                                                <?php } while($cliente = $execute->fetch_assoc());   ?>
+                                                <?php } while($FormaPagamento = $execute->fetch_assoc());   ?>
 					</tbody>
 				</table>
 

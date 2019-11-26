@@ -1,7 +1,7 @@
 <?php
 
 function buscar_prod($buscar){
-	$sql = "SELECT * FROM produtos WHERE nomeproduto LIKE '%$buscar%'";
+	$sql = "SELECT * FROM produtos WHERE (nomeproduto LIKE '%$buscar%' OR categoria LIKE '%$buscar%' OR descricao LIKE '%$buscar%')";
 
 		$resultado = mysqli_query(conn(), $sql);
 

@@ -39,7 +39,7 @@ function adicionar(){
             
             
 			$msg = adicionarProduto($cate, $preco, $nome, $desc, $imagem, $estoque_min, $estoque_max, $quant_estoque);
-			redirecionar("produto/listarProdutos");
+			redirecionar("produto/listarProdutos/?cod=0");
 		}else{
 			$dados = array();
 			$dados["erros"] = $vali;
@@ -70,7 +70,7 @@ function editar($id){
 		$estoque_max = $_POST["estoque_max"];
 
 		editarProduto($preco, $nome, $desc, $imagem, $estoque_min, $estoque_max, $id);
-		redirecionar("produto/listarProdutos");
+		redirecionar("produto/listarProdutos/?cod=0");
 	}else{
 
 		$dados["produto"] = pegarProdutoPorId($id);
@@ -100,7 +100,7 @@ function ver($idproduto){
 /** Adm */
 function deletar($id){
 	$msg = deletarProduto($id);
-	redirecionar("produto/listarProdutos");
+	redirecionar("produto/listarProdutos/?cod=0");
 }
 
 function total(){

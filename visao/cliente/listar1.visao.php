@@ -23,7 +23,7 @@
 		echo "<p>Tipo: ".$tipo."</p>";
 
                 echo '<a href="./endereco/cadastro/'.$idusuario.'">Cadastrar endereco</a>';
-                echo '<a href="./endereco/ver/'.$idusuario.'">  Ver endereco</a>'; 
+                echo '<a href="./endereco/ver/'.$idusuario.'/?cod=0">  Ver endereco</a>'; 
                 //-------------------------------------------------------------------------------------------
                 //editar
                 require_once ("app.php");

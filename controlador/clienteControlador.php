@@ -94,7 +94,7 @@ function ver($idCliente){
 /** Adm */
 function deletar($id){
 	$msg = deletarCliente($id);
-	redirecionar("cliente/listarCliente");
+	redirecionar("cliente/listarCliente/?cod=0");
 }
 
 function teste(){
@@ -115,6 +115,6 @@ function email() {
 	    enviar_email($nome, $email);    
 
 	}
-	exibir("cliente/listarCliente");
+	exibir("cliente/listarCliente/?cod=0");
 }
 ?>

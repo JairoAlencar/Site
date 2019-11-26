@@ -3,6 +3,19 @@
 include("servico/validacaoServico.php");
 require_once "modelo/cupomModelo.php";
 
+/** anon */
+function buscar(){
+	if (ehpost()){
+		$busca = $_POST["busca"];
+	 
+	 	$cupom = array();
+
+		$dados["cupom"] = buscar_cupons($busca);
+		exibir("cupom/listar", $dados);
+		
+	}
+}
+
 /** Adm */
 function cupom() {
 
@@ -14,7 +27,7 @@ function cupom() {
 		
 			if (count($vali)==0){
 					$msg = adicionarCupom($nomecupom, $desconto);
-					redirecionar("cupom/listarCupom");
+					redirecionar("cupom/listarCupom/?cod=0");
 			}else{
 				$dados = array();
 				$dados["erros"] = $vali;
@@ -35,7 +48,7 @@ function editar($id){
 
 			if(count($vali)==0){
 					$msg = editarCupom($nomecupom, $desconto, $id);
-					redirecionar("cupom/listarcupom");
+					redirecionar("cupom/listarcupom/?cod=0");
 			}else{
 				$dados = array();
 				$dados["erros"] = $vali;
@@ -53,7 +66,7 @@ function listarCupom() {
 	$dados = array();
 
 	$dados["cupom"] = exibirCupom();
-	exibir("cupom/listar", $dados);
+	exibir("cupom/listar2", $dados);
 }
 /** Adm */
 function ver($id){
@@ -66,7 +79,7 @@ function ver($id){
 function deletar($id){
 
 	$msg = deletarCupom($id);
-	redirecionar("cupom/listarCupom");
+	redirecionar("cupom/listarCupom/?cod=0");
 }
 
 ?>

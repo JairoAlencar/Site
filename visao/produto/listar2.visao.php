@@ -6,7 +6,7 @@ $pagina = intval($_GET['cod']);
 $execute = $cnx -> query("SELECT * FROM produtos ORDER BY idproduto LIMIT $pagina, $itens_por_pagina") or die($cnx->error);
 $produto = $execute->fetch_assoc();
 $num = $execute->num_rows;
-$num_total = $cnx->query("select * from produtos") -> num_rows;
+$num_total = $cnx->query("select idproduto from produtos") -> num_rows;
 $num_paginas = ceil($num_total/$itens_por_pagina);
 ?>
 
@@ -15,10 +15,12 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
             <div class="col-lg-12">
                 <div class="row">
                         <div class="col-lg-12">
-                            <form class="search-box" action="./produto/buscar/" method="POST">
-                                <input class="search-txt" type="text" name="busca" placeholder="Pesquisa"> 
-                                <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
-                            </form>    
+                            <center>
+                                <form action="./produto/buscar/" method="POST">
+                                    <input type="text" name="busca" placeholder="Pesquisa"> 
+                                    <i class="fas fa-search"></i>
+                                </form>
+                            </center>    
                         </div>
                         <br><br>
   			<div class="col-lg-12">
@@ -50,7 +52,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
                                                     <?php $idx = $produto['idproduto']; ?>
                                                     <td><img src="<?= $produto['imagem']?>" style="height: 150px; width: 150px;"></td>
                                                     <td><?= $produto['idproduto']?></td>
-                                                    <td><?= $produto['descricao']?></td>
+                                                    <td><?= $produto['categoria']?></td>
                                                     <td><?= $produto['nomeproduto']?></td>
                                                     <td><?= $produto['preco']; echo",00";?></td>
                                                     <td> <a href="./produto/ver/<?=$produto['idproduto']?>">Ver</a> </td>
@@ -58,7 +60,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
                                                     <td> <a href="./produto/deletar/<?=$produto['idproduto']?>">Deletar</a> </td>
                                                     <td> <a href="./produto/editar/<?=$produto['idproduto']?>">Editar</a> </td>
                                                 </tr>
-                                                <?php } while($cliente = $execute->fetch_assoc());   ?>
+                                                <?php } while($produto = $execute->fetch_assoc());?>
 					</tbody>
 				</table>
 

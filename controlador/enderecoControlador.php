@@ -68,14 +68,14 @@ function listarEndereco() {
 	$dados = array();
 
 	$dados["endereco"] = exibirEndereco();
-	exibir("endereco/listar", $dados);
+	exibir("endereco/listar1", $dados);
 }
 
 /** Adm, User */
 function ver($id){
 
 	$dados["endereco"] = exibirEndereco($id);
-	exibir("endereco/listar1", $dados);
+	exibir("endereco/listar2", $dados);
 }
 
 /** Adm, User */

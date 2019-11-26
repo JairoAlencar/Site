@@ -85,14 +85,22 @@
 			<h7>R$ <?=$total?></h7>	
 		</h6>
 		<h6>Desconto do cupom:
-			<h7> <?=$desconto?>%</h7>
+				<h7> R$ <?php 
+                      		if (isset($_SESSION['desconto'])){
+                                 echo($_SESSION['desconto']);
+                                }else{
+                                    echo "0";
+                                }
+                        ?>
+                %</h7>
 		</h6>
 		<h6>Valor Frete:
 				<h7> R$ <?php 
                       		if (isset($_SESSION['valor_frete'])){
-                                 echo($_SESSION['valor_frete']);
-                                //Print $valor_frete;
-                            }
+                                    echo ($_SESSION['valor_frete']);
+                                }else{
+                                    echo "0,00";
+                                }
                         ?>
                 </h7>	
 		</h6>	
@@ -101,7 +109,6 @@
 			<h7><?php 
 					if(isset($_SESSION['prazo_frete'])){
 						echo $_SESSION['prazo_frete'];
-						//print $valor_frete;
 					}
 				?>
 				dias

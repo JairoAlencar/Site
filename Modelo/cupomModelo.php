@@ -1,5 +1,18 @@
 <?php
 
+function buscar_cupons($buscar){
+	$sql = "SELECT * FROM cupom WHERE (nomecupom LIKE '%$buscar%' OR desconto LIKE '%$buscar%')";
+
+		$resultado = mysqli_query(conn(), $sql);
+
+		$cupom = array();
+			while($linha = mysqli_fetch_assoc($resultado)){
+				$cupom[] = $linha;
+			}
+
+	return $cupom;
+}
+
 function adicionarCupom($nomecupom, $desconto){
 
 	$sql = "INSERT INTO cupom (idcupom, nomecupom, desconto) VALUES (NULL, '$nomecupom', '$desconto')";

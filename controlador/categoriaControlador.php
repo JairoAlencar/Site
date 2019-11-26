@@ -13,7 +13,7 @@ function categoria() {
 		
 			if (count($vali)==0){
 					$msg = adicionarCategoria($desc);
-					redirecionar("categoria/listarcategoria");
+					redirecionar("categoria/listarcategoria/?cod=0");
 			}else{
 				$dados = array();
 				$dados["erros"] = $vali; 
@@ -34,7 +34,7 @@ function editar($id){
 
 			if(count($vali)==0){
 					$msg = editarCategoria($desc, $id);
-					redirecionar("categoria/listarcategoria");
+					redirecionar("categoria/listarcategoria/?cod=0");
 			}else{
 				$dados = array();
 				$dados["erros"] = $vali;
@@ -67,7 +67,7 @@ function ver($id){
 function deletar($id){
 
 	$msg = deletarCategoria($id);
-	redirecionar("categoria/listarCategoria");
+	redirecionar("categoria/listarCategoria/?cod=0");
 }
 
 ?>

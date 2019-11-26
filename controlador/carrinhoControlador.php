@@ -133,7 +133,6 @@ function tirarproduto($id){
 }
 
 function pedido(){
-    print_r($_SESSION['valor_frete']);
     $id = $_SESSION["acesso"]["idusuario"];
     $_SESSION["quantcarrinho"]=0;
     $soma = 0;
@@ -174,6 +173,7 @@ function pedido(){
 
 function buscar_cupom($total){
     $id = $_SESSION["acesso"]["idusuario"];
+    $_SESSION['prazo_frete'] = $_SESSION['prazo_frete'];
     $_SESSION["quantcarrinho"]=0;
     $soma = 0;
     $desconto = 0;
@@ -216,6 +216,7 @@ function buscar_cupom($total){
         }
 
         $desconto = busca_cupom($cupom);
+        $_SESSION['desconto'] = $desconto;
         $dados["desconto"] = $desconto;
         $dados["total"] = $total;
         $dados["valor"] = $total-($total*$desconto/100);
@@ -255,8 +256,6 @@ function frete(){
             $dados["total"] = $soma;
             $dados["desconto"] = $desconto;
             $dados["valor"] = $soma;
-            $_SESSION["valor_frete"] = $valor_frete;
-            $_SESSION["prazo_frete"] = $prazo_entrega;
             $dados["FormaPagamento"] = exibirFormaPagamento();
             $dados["endereco"] = exibirEndereco($id);
             
@@ -264,13 +263,11 @@ function frete(){
             $dados["total"] = $soma;
             $dados["desconto"] = $desconto;
             $dados["valor"] = $soma;
-            $_SESSION['valor_frete'] = $valor_frete;
-            $_SESSION['prazo_frete'] = $prazo_entrega;
-            print_r($_SESSION['valor_frete']);
-            die();
             $dados["FormaPagamento"] = exibirFormaPagamento();
             $dados["endereco"] = exibirEndereco($id);
-        }    
+        }
+            $_SESSION['valor_frete'] = $valor_frete;
+            $_SESSION['prazo_frete'] = $prazo_entrega;
     }
     exibir("pedido/pedido", $dados);
 }
