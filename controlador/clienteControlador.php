@@ -1,6 +1,9 @@
 <?php
 
 include("servico/validacaoServico.php");
+include("servico/class.phpmailer.php");
+include("servico/class.pop3.php");
+include("servico/class.smtp.php");
 include("servico/emailServico.php");
 require_once "modelo/clienteModelo.php";
 
@@ -18,12 +21,19 @@ function cadastro(){
 		
 
 
-		$vali = validacao_cadastro($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo);
-
-			if(count($vali)==0){
-                                //enviar_email($email, $nome);
+		//$vali = validacao_cadastro($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo);
+                $vali = 0;
+			if($vali==0){
 				$msg = adicionarCliente($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo);
-				redirecionar("./login");			
+                                if ($_SESSION["acesso"]["tipousuario"] == "Adm"){
+                                exibir("cliente/listar2");
+                                $cod = 0;
+                                }
+                                else{
+                                exibir("login/index");    
+                                }
+                                enviar_email($email, $nome);
+							
 			}else{
 				$dados = array();
 				$dados["erros"] = $vali;
@@ -98,6 +108,10 @@ function deletar($id){
 }
 
 function teste(){
+    $email = "frangoshowoficial@gmail.com";
+$nome = "a";
+        enviar_email();
+        die();
 	exibir("cliente/teste");
 }
 

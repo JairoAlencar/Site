@@ -12,10 +12,6 @@ function index() {
     exibir("produto/produtos", $dados);
 }
 
-function sobre(){
-	exibir("paginas/sobre");
-}
-
 function mapa (){
 	exibir("paginas/mapa");
 }

@@ -2,7 +2,12 @@
 $cnx = conn();
 
 $itens_por_pagina = 10;
+if (!isset($_GET['cod'])){
+    $pagina = 0;
+}
+else{
 $pagina = intval($_GET['cod']);
+}
 $execute = $cnx -> query("SELECT * FROM usuario ORDER BY idusuario LIMIT $pagina, $itens_por_pagina") or die($cnx->error);
 $cliente = $execute->fetch_assoc();
 $num = $execute->num_rows;
@@ -69,7 +74,13 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 				  <ul class="pagination">
 				    <li>
                                         <?php 
-                                        $pagina = intval($_GET['cod']);
+$itens_por_pagina = 10;
+if (!isset($_GET['cod'])){
+    $pagina = 0;
+}
+else{
+$pagina = intval($_GET['cod']);
+}
                                         if($pagina==0){}
                                         elseif ($pagina>0){?>
                                         <a href="" onclick="window.history.go(-1); return false;" aria-label="Previous">
@@ -95,8 +106,9 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 				  </ul>
 				</nav>
   				<?php } ?>
+                                <?php $id2 = $_SESSION['acesso']['tipousuario']; ?>
                 </div>
-                                <a href="./cliente/cadastro/">Cadastrar um novo cliente</a>
+                                <a href="./cliente/cadastro/?tipocadastro=user">Cadastrar um novo cliente</a>
             </div>
   	</div>
     </div>

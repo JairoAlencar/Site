@@ -23,5 +23,4 @@ function assinalarCampo($valorA, $valorB) {
         return 'selected';
     }
 }
-
 ?>
