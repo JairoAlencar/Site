@@ -1,5 +1,9 @@
 <br>
 <div style="float: left; width: 60%;">
+
+<!--<form action="pedido/addPedido" method="POST">!-->
+	<!--O erro do "chama 404 pode ser isso aqui"!-->	
+
 	<div name="produtos">
 		<h4><i class="fas fa-cart-plus"></i>Produtos</h4>
 
@@ -122,6 +126,7 @@
 		</div>
 
 		<div style="clear: left;" class="box">
-			<button><i class="fas fa-box"></i> Finalizar pedido</button>
+			<input type="submit" name="efetuar" value="Finalizar pedido">
 		</div>
+<!-- </form> !-->		
 </div>

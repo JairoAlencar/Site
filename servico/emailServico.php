@@ -28,8 +28,8 @@ $mail->FromName = $nome;
 
 $mail->addAddress($email); // email do destinatario.
 
-$mail->Subject = "Aqui vai o assunto do email, pode vim atraves de variavel."; 
-$mail->Body = "Aqui vai a mensagem, que tambem pode vim por variavel.";
+$mail->Subject = "Confirmação de cadastro em nossa loja virtual"; 
+$mail->Body = "Seu cadastro foi realizado com sucesso. <br> Aproveite todos os nossos produtos e ofertas.<br><br> IFTech agradece o seu cadastro!" ;
 
 if(!$mail->Send()){}
 
