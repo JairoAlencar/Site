@@ -10,7 +10,7 @@ function index() {
             alert("bem vindo" . $login);
             redirecionar("");
         } else {
-            alert("usuario ou senha invalidos!");
+            alert('usuario ou senha invalidos!');
         }
     }
     exibir("login/index");

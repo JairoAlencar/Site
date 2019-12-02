@@ -120,8 +120,36 @@
 		</h6>
 
 		<div style="border-top: 1.4px solid; border-bottom: 1.4px solid;">
-			<h6 style="margin-top: 4%;">Valor à pagar:
-				<h7>R$ <?=$valor+$_SESSION['valor_frete']?></h7>
+			<h6 style="margin-top: 4%;">Valor Total:
+				<?php
+					if (isset($_SESSION['valor_frete'])) {
+				?>
+						<h7>R$ <?=$valor+$_SESSION['valor_frete']?></h7>
+				<?php		
+					}else{
+						$_SESSION['valor_frete']=0;						
+				?>
+						<h7>R$ <?=$valor+$_SESSION['valor_frete']?></h7>
+				<?php
+					}
+				?>		
+			</h6>
+		</div>
+
+		<div style="margin-top: 1.4px solid; border-bottom: 1.4px solid;">
+			<h6 style="margin-top: 4%;">Valor com desconto:
+				<?php
+					if (isset($_SESSION['desconto'])) {
+				?>
+						<h7>R$ <?= $valor - ($valor * $_SESSION['desconto']/100)?> </h7>
+				<?php		
+					}else{
+						$_SESSION['desconto']=0;						
+				?>
+						<h7>R$ <?= $valor - ($valor * $_SESSION['desconto']/100)?> </h7>
+				<?php
+					}
+				?>
 			</h6>
 		</div>
 
