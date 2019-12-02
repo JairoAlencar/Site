@@ -7,14 +7,9 @@ require_once 'modelo/clienteModelo.php';
 function listaProdQuantiEstq() {
 	$dados = array();
 	$dados["adm"] = pegarTodosProdutoEstoque();
-	exibir("adm/listaProdutoseQuantidadedoEstoque", $dados);
+	exibir("admin/quant_pedido", $dados);
 }
-/** Adm */
-function listaProdutosCategoria() {
-	$dados = array();
-	$dados["adm"] = pegarTodosProdutoeCategoria();
-	exibir("adm/listaProdutosCategoria", $dados);
-}
+
 /** Adm */
 function listaPedidosRealizadosDatas() {
 	if (ehPost()){
@@ -22,16 +17,16 @@ function listaPedidosRealizadosDatas() {
 		$datad2= $_POST ['datad2'];
 		$dados = array();
 		$dados["adm"] = pegarTodosPedidosDatas($datad1, $datad2); 
-		exibir("adm/listaPedidosRealizadosDatas", $dados);
+		exibir("admin/inter_data", $dados);
 	}else{
-		exibir("adm/data");
+		exibir("admin/inter_data");
 	} 
 }
 /** Adm */
 function listaPedidosMunicipioEstado() {
 	$dados = array();
 	$dados["adm"] = pegarTodosPedidosMunicipioEstado();
-	exibir("adm/listaPedidosMunicipioEstado", $dados);	
+	exibir("admin/pedido_regiao", $dados);	
 }
 /** Adm */
 function totalFaturamentoPeriodo() {
@@ -39,10 +34,14 @@ function totalFaturamentoPeriodo() {
 		$fatu = $_POST ['tipo'];
 		$dados = array();
                 $dados["adm"] = pegarTodosTotalFaturamamento($fatu);
-                exibir("adm/totalFaturamentoPeriodo", $dados);
+                exibir("admin/fatur(mensal, anual, sem)", $dados);
 	}else{
-		exibir("adm/faturamento");
+		exibir("admin/fatur(mensal, anual, sem)");
 	} 
 }
 
+/** Adm*/
+function exibir(){
+	exibir("admin/exibir");
+}
 ?>

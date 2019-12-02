@@ -135,7 +135,7 @@
 				?>		
 			</h6>
 		</div>
-
+		
 		<div style="margin-top: 1.4px solid; border-bottom: 1.4px solid;">
 			<h6 style="margin-top: 4%;">Valor com desconto:
 				<?php
@@ -146,7 +146,7 @@
 					}else{
 						$_SESSION['desconto']=0;						
 				?>
-						<h7>R$ <?= $valor - ($valor * $_SESSION['desconto']/100)?> </h7>
+						<h7>R$ <?= $desc = $valor - ($valor * $_SESSION['desconto']/100)?> </h7>
 				<?php
 					}
 				?>
