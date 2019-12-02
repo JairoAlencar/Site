@@ -20,10 +20,12 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
             <div class="col-lg-12">
                 <div class="row">
                         <div class="col-lg-12">
-                            <form class="search-box" action="./cliente/buscar/" method="POST">
-                                <input class="search-txt" type="text" name="busca" placeholder="Pesquisa"> 
-                                <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
-                            </form>    
+                            <center>
+                                <form action="./cliente/buscar/" method="POST">
+                                    <input type="text" name="busca" placeholder="Pesquisa"> 
+                                    <i class="fas fa-search"></i>
+                                </form>
+                            </center>    
                         </div>
                         <br><br>
   			<div class="col-lg-12">

@@ -14,12 +14,6 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
   	<div class="container-fluid">
             <div class="col-lg-12">
                 <div class="row">
-                        <div class="col-lg-12">
-                            <form class="search-box" action="./endereco/buscar/" method="POST">
-                                <input class="search-txt" type="text" name="busca" placeholder="Pesquisa"> 
-                                <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
-                            </form>    
-                        </div>
                         <br><br>
   			<div class="col-lg-12">
                                 <h1 style="color: black; font-size: 45px;">enderecos/admins</h1>

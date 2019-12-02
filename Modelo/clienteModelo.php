@@ -1,4 +1,18 @@
 <?php
+
+function buscar_usuario($buscar){
+	$sql = "SELECT * FROM usuario WHERE (nomeusuario LIKE '%$buscar%' OR email LIKE '%$buscar%' OR cpf LIKE '%$buscar%')";
+
+		$resultado = mysqli_query(conn(), $sql);
+
+		$clientes = array();
+			while($linha = mysqli_fetch_assoc($resultado)){
+				$clientes[] = $linha;
+			}
+
+	return $clientes;
+}
+
 function  adicionarCliente($nome, $email, $senha, $cpf, $nasc, $sexo, $tipo) {
 
 	$sql  =  "INSERT INTO usuario (idusuario ,nomeusuario, email, senha, cpf, datadenascimento, sexo, tipousuario) VALUES (NULL, '$nome', '$email', '$senha', '$cpf', '$nasc', '$sexo', '$tipo')" ;

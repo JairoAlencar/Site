@@ -15,7 +15,7 @@ else{
 $pgn = $_POST['pgn'];
 }
 // definir o numero de itens por pagina
-$itens_por_pagina = 2;
+$itens_por_pagina = 9;
 // pegar a pagina atual
 if (!isset($pgn) && !isset($aaa)){
     $pagina = 0;
@@ -27,7 +27,6 @@ elseif (!isset($pgn) && $aaa==1){
 else{
 $pagina = $pgn;
 }
-print $_SESSION['return'];
 // puxar produtos do banco
 $execute = $cnx -> query("SELECT * FROM produtos ORDER BY idproduto LIMIT $pagina, $itens_por_pagina") or die($cnx->error);
 $produto = $execute->fetch_assoc();
@@ -35,7 +34,6 @@ $num = $execute->num_rows;
 
 // pega a quantidade total de objetos no banco de dados
 $num_total = $cnx->query("select * from produtos") -> num_rows;
-print $num_total;
 // definir numero de páginas
 $num_paginas = ceil($num_total/$itens_por_pagina);
 
@@ -87,9 +85,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
                                         $pagina = intval($pgn);}
                                         if($pagina==0){}
                                         elseif ($pagina>0){?>
-                                            <form action="" method="post">
-                                                <?php echo '<input type="hidden" name="pgn" value="'.$_SESSION['return'].'">'; ?>
-                                                <input type="submit" name="vai" value="<<">	
+                                                <input type="submit" name="vai" value="<<" onclick="javascript:history.go(-1)">	
                                             </form>
                                         <?php } ?>
 				      </a>

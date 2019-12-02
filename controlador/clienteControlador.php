@@ -6,6 +6,20 @@ include("servico/class.pop3.php");
 include("servico/class.smtp.php");
 include("servico/emailServico.php");
 require_once "modelo/clienteModelo.php";
+require_once 'app.php';
+
+/** anon */
+function buscar(){
+	if (ehpost()){
+		$busca = $_POST["busca"];
+	 
+	 	$clientes = array();
+
+		$dados["clientes"] = buscar_usuario($busca);
+		exibir("cliente/listar", $dados);
+		
+	}
+}
 
 /** anon */
 function cadastro(){
