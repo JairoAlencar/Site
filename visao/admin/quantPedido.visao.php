@@ -1,15 +1,16 @@
-<br><h2>Listaa de Produtos e Estoque</h2>
-<table class="table" border="1">
+<br><h2>Lista de Produtos e Estoque</h2>
+
+<table class="table" style="margin-top: -8%; margin-bottom: 3%;">
 	<thead>
 		<tr>
-			<th class="th-produto"> Produto</th>
-			<th class="th-produto">Estoque</th>
+			<th> Produto</th>
+			<th>Estoque</th>
 		</tr>
 	</thead>
 		<?php foreach ($adm as $produto): ?>
 			<tr>
-                            <td class="th-produto"><?=$produto['nomeproduto']?></td><br>
-				<td class="th-produto"><?=$produto['quant_estoque']?></td>
+                            <td><?=$produto['nomeproduto']?></td><br>
+				<td><?=$produto['quant_estoque']?></td>
 			</tr>
 		<?php endforeach; ?>
 </table>

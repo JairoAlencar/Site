@@ -6,8 +6,8 @@ if (ehPost()) {
 }
 ?>
 
-<form method="POST" action="">
-    <h1>Faturamento IFTech</h1>
+<form method="POST" action="" class="box">
+    <h2>Faturamento da Loja</h2>
 
     <select name="tipo" id="pedido" class="formulario-select-option">
         <option value="S">Semanal</option>
@@ -15,5 +15,6 @@ if (ehPost()) {
         <option value="A">Anual</option>
     </select>
 
-    <button type="submit" class="button-fatura"> Enviar </button><br>
+    <input type="submit" name="enviar" value="buscar">
+        <br>
 </form>

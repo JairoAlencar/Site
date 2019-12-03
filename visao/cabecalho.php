@@ -29,7 +29,7 @@
             <a class="icons-box" href="./categoria/listarCategoria/?cod=0"><i class="fas fa-archive" style="font-size: 180%;"></i></a>
             <a class="icons-cupom" href="./cupom/listarCupom/?cod=0"><i class="far fa-clipboard" style="font-size: 180%;"></i></a>
             <a class="icons-pay" href="./FormaPagamento/listarFormaPagamento/?cod=0"><i class="fab fa-cc-amazon-pay" style="font-size: 180%;"></i></a>
-            <a href="./adm/exibir" class="icons-pay"><i class="fas fa-user-lock" style="font-size: 180%;"></i></a>
+            <a href="./adm/aparecer" class="icons-pay"><i class="fas fa-user-lock" style="font-size: 180%;"></i></a>
             <a class="icons-user" href="./login/logout"><i class="fas fa-sign-out-alt" style="font-size: 180%;"></i></a>
           </div>
         <?php  

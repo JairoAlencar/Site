@@ -7,7 +7,7 @@ require_once 'modelo/clienteModelo.php';
 function listaProdQuantiEstq() {
 	$dados = array();
 	$dados["adm"] = pegarTodosProdutoEstoque();
-	exibir("admin/quant_pedido", $dados);
+	exibir("admin/quantPedido", $dados);
 }
 
 /** Adm */
@@ -17,16 +17,16 @@ function listaPedidosRealizadosDatas() {
 		$datad2= $_POST ['datad2'];
 		$dados = array();
 		$dados["adm"] = pegarTodosPedidosDatas($datad1, $datad2); 
-		exibir("admin/inter_data", $dados);
+		exibir("admin/interData", $dados);
 	}else{
-		exibir("admin/inter_data");
+		exibir("admin/interData");
 	} 
 }
 /** Adm */
 function listaPedidosMunicipioEstado() {
 	$dados = array();
 	$dados["adm"] = pegarTodosPedidosMunicipioEstado();
-	exibir("admin/pedido_regiao", $dados);	
+	exibir("admin/pedidoRegiao", $dados);	
 }
 /** Adm */
 function totalFaturamentoPeriodo() {
@@ -34,14 +34,14 @@ function totalFaturamentoPeriodo() {
 		$fatu = $_POST ['tipo'];
 		$dados = array();
                 $dados["adm"] = pegarTodosTotalFaturamamento($fatu);
-                exibir("admin/fatur(mensal, anual, sem)", $dados);
+                exibir("admin/fatur", $dados);
 	}else{
-		exibir("admin/fatur(mensal, anual, sem)");
+		exibir("admin/fatur");
 	} 
 }
 
 /** Adm*/
-function exibir(){
+function aparecer(){
 	exibir("admin/exibir");
 }
 ?>
